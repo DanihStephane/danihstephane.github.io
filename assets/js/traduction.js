@@ -36,7 +36,7 @@ const translations = {
     "june_2023_present" : "Juin 2023 - Présent 2024",
     "first_box_title": "Gestion de données avec ETL",
     "first_box_description": "Extraction : \n Intégration de données variées (CSV, SQL). \n Extraction planifiée et régulière des données. \nPrétraitement pour corriger et normaliser les formats. \n \n Transformation : \n Application de transformations complexes via des pipelines. \n Nettoyage et enrichissement des données. \n Création de nouvelles features à partir des données brutes. \n \n Chargement : \n Stockage des données dans un entrepôt central. \n Disponibilité des données pour analyse et visualisation.",
-    "techno": "Technologies",
+    "techno": "Écosystème de développement",
 
     "june_2022_june_2023": "Juin 2022 - Juin 2023",
     "second_box_title" : "Optimisation d'une SaaS",
@@ -206,7 +206,7 @@ const translations = {
     "june_2023_present": "June 2023 - Present 2024",
     "first_box_title": "Data Management with ETL",
     "first_box_description": "Extraction: \n Integration of various data (CSV, SQL). \n Scheduled and regular data extraction. \n Preprocessing to correct and normalize formats. \n \n Transformation: \n Application of complex transformations via pipelines. \n Data cleaning and enrichment. \n Creation of new features from raw data. \n \n Loading: \n Storage of data in a central warehouse. \n Availability of data for analysis and visualization.",
-    "techno": "Technologies",
+    "techno": "Development ecosystem",
 
     "june_2022_june_2023": "June 2022 - June 2023",
     "second_box_title": "Optimization of a SaaS",
@@ -371,7 +371,7 @@ const translations = {
     "june_2023_present": "Juni 2023 - Gegenwart 2024",
     "first_box_title": "Datenmanagement mit ETL",
     "first_box_description": "Extraktion: \n Integration verschiedener Daten (CSV, SQL). \n Geplante und regelmäßige Datenextraktion. \n Vorverarbeitung zur Korrektur und Normalisierung von Formaten. \n \n Transformation: \n Anwendung komplexer Transformationen über Pipelines. \n Datenbereinigung und -anreicherung. \n Erstellung neuer Funktionen aus Rohdaten. \n \n Laden: \n Speicherung der Daten in einem zentralen Lager. \n Verfügbarkeit der Daten zur Analyse und Visualisierung.",
-    "techno": "Technologien",
+    "techno": "Entwicklungsekosystem",
 
     "june_2022_june_2023": "Juni 2022 - Juni 2023",
     "second_box_title": "Optimierung einer SaaS",
@@ -540,7 +540,7 @@ const translations = {
     "june_2023_present": "Jona 2023 - Ankehitriny 2024",
     "first_box_title": "Fitantanana Angona amin'ny ETL",
     "first_box_description": "Fanangonana: \n Fampidirana angona maro (CSV, SQL). \n Fanangonana angona voalahatra sy mahazatra. \n Fanodinana mialoha hanitsiana sy hanatsarana ny endrika. \n \n Fanovana: \n Fampiharana fanovana sarotra amin'ny alalan'ny pipelines. \n Fanadiovana sy fampanan-karena ny angona. \n Famoronana endri-javatra vaovao avy amin'ny angona voalohany. \n \n Fanangonana: \n Fitahirizana ny angona ao amin'ny trano famakiam-boky afovoany. \n Fisian'ny angona ho an'ny famakafakana sy ny fijerena sary.",
-    "techno": "Teknolojia",
+    "techno": "Tontolo iainana fampandrosoana",
 
     "june_2022_june_2023": "Jona 2022 - Jona 2023",
     "second_box_title": "Fanatsarana SaaS",

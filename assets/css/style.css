@@ -1395,3 +1395,9 @@ textarea.input-field {
     font-size: 25px;
   }
 }
+
+@media (max-width: 391px) {
+  .logo a {
+    font-size: 15px;
+  }
+}

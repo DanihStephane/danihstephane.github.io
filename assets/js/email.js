@@ -151,6 +151,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         message: message
     }).then(function(response) {
         console.log("Email envoyé avec succès!", response.status);
+        envoyerEmailRemerciement({
+            nom: nom,
+            email: email,
+            telephone: telephone,
+            message: message
+        });
         // alert("Votre message a été envoyé !");
         showPopup('success');
         stopLoading();
@@ -162,3 +168,15 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
    
 });
+
+
+// Fonction pour envoyer un email de remerciement à l'utilisateur
+function envoyerEmailRemerciement(params) {
+    emailjs.send('service_0v77t9k', 'template_0eksa5h', params)
+        .then(function(response) {
+            console.log('Email de remerciement envoyé avec succès!', response.status, response.text);
+        }, function(error) {
+            console.log('Échec de l\'envoi de l\'email de remerciement...', error);
+        });
+}
+

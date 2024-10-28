@@ -1401,3 +1401,67 @@ textarea.input-field {
     font-size: 15px;
   }
 }
+
+
+
+
+
+
+
+ /* Style du bouton */
+ .linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0077b5, #005582);
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Contour lumineux */
+.linkedin-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff, #0072ff);
+  z-index: -1;
+  filter: blur(8px);
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+/* Effet de survol */
+.linkedin-btn:hover::before {
+  opacity: 1;
+}
+
+/* Icône LinkedIn */
+.linkedin-btn i {
+  margin-right: 10px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Effet au survol de l'icône */
+.linkedin-btn:hover i {
+  transform: scale(1.2);
+}
+
+/* Effet au survol du bouton */
+.linkedin-btn:hover {
+  color: #e0f7ff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #006aa6, #003c6e);
+}

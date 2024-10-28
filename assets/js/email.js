@@ -130,7 +130,7 @@ function stopLoading() {
 
 // Initialiser EmailJS avec votre utilisateur ID
 (function() {
-    emailjs.init("6QR73bMKseuVsewsA"); // Remplace "YOUR_USER_ID" par votre ID utilisateur EmailJS
+    emailjs.init("zRrOScqfLj4K7IP74"); // Remplace "YOUR_USER_ID" par votre ID utilisateur EmailJS
 })();
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -144,7 +144,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
     startLoading();
     // Envoyer l'e-mail
-    emailjs.send("service_0v77t9k", "template_40weqie", {
+    emailjs.send("service_qpb9jdf", "template_wpthacc", {
         nom: nom,
         email: email,
         telephone: telephone,
@@ -172,7 +172,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 // Fonction pour envoyer un email de remerciement à l'utilisateur
 function envoyerEmailRemerciement(params) {
-    emailjs.send('service_0v77t9k', 'template_0eksa5h', params)
+    emailjs.send('service_qpb9jdf', 'template_d21iizp', params)
         .then(function(response) {
             console.log('Email de remerciement envoyé avec succès!', response.status, response.text);
         }, function(error) {

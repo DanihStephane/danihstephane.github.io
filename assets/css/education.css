@@ -3,8 +3,30 @@
   color: #ffffff;
 }
 
+.recommandation-section {
+  background:
+          linear-gradient(0deg, #00dbde, hsl(0, 0%, 90%)), /* Dégradé vers le haut */
+          linear-gradient(180deg, #00dbde, hsl(0, 0%, 90%)); /* Dégradé vers le bas */
+}
+
+.contact-section{
+  display: flex; /* Active le modèle Flexbox */
+  justify-content: center; /* Centre horizontalement les éléments */
+  align-items: center; /* Centre verticalement les éléments */
+  height: 150px; /* Donne une hauteur au conteneur, par exemple 100% de la hauteur de la fenêtre */
+  background:
+          linear-gradient(180deg, #00dbde, hsl(0, 0%, 90%)), /* Dégradé vers le haut */
+          linear-gradient(0deg, #00dbde, hsl(0, 0%, 90%)); /* Dégradé vers le bas */
+}
+
+.sec-13{
+  max-width: 1150px;
+  padding: 1rem 1rem;
+  margin: 0 auto;
+}
+
 .education__container {
-  max-width: 120rem;
+  max-width: 1150px;
   padding: 4rem 2rem;
   margin: 0 auto;
   display: grid;

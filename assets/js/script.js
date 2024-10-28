@@ -81,6 +81,8 @@ themeToggleBtn.addEventListener("click", function () {
 
   const slashElement = document.getElementById("slash");
   const companyYear = document.querySelectorAll('.company__year');
+  const recommandationSection = document.getElementById('recommandation-section');
+  const contactSection = document.getElementById('contact-section');
 
   if (themeToggleBtn.classList.contains("active")) {
     document.body.classList.remove("dark_theme");
@@ -92,6 +94,8 @@ themeToggleBtn.addEventListener("click", function () {
     companyYear.forEach(element => {
       element.style.color = "#525252"; // Remplace 'red' par la couleur souhaitée
     });
+    recommandationSection.style.background = "linear-gradient(0deg, #00dbde, hsl(0, 0%, 90%)),linear-gradient(180deg, #00dbde, hsl(0, 0%, 90%))";
+    contactSection.style.background = "linear-gradient(180deg, #00dbde, hsl(0, 0%, 90%)),linear-gradient(0deg, #00dbde, hsl(0, 0%, 90%))";
 
     localStorage.setItem("theme", "light_theme");
   } else {
@@ -104,6 +108,10 @@ themeToggleBtn.addEventListener("click", function () {
     companyYear.forEach(element => {
       element.style.color = "white"; // Remplace 'red' par la couleur souhaitée
     });
+    
+    recommandationSection.style.background = "linear-gradient(0deg, #00dbde, hsl(0, 0%, 12%)),linear-gradient(180deg, #00dbde, hsl(0, 0%, 12%))";
+    contactSection.style.background = "linear-gradient(180deg, #00dbde, hsl(0, 0%, 12%)),linear-gradient(0deg, #00dbde, hsl(0, 0%, 12%))";
+    
 
     localStorage.setItem("theme", "dark_theme");
   }

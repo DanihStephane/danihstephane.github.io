@@ -257,3 +257,47 @@ popup.addEventListener('click', (e) => {
   }
 });
 
+
+/*Animation text logo*/
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedText = document.querySelector('.animated-text');
+  const letters = document.querySelectorAll(".harilanto");
+  let isAnimating = false;
+
+  animatedText.addEventListener('mouseenter', function() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    letters.forEach((element, index) => {
+      // D'abord on affiche l'élément
+      element.style.display = 'inline-block';
+      element.style.transition = `all 0.4s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.05}s`; // Délai progressif
+      // Force un reflow
+      element.offsetHeight;
+      // Active l'animation
+      element.classList.add('active');
+    });
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 400 + (letters.length * 50));
+  });
+
+  animatedText.addEventListener('mouseleave', function() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    letters.forEach((element, index) => {
+      element.style.transition = `all 0.4s cubic-bezier(0.4, 0, 0.2, 1)`; // Reset de la transition
+      element.classList.remove('active');
+    });
+
+    setTimeout(() => {
+      letters.forEach((element) => {
+        element.style.display = 'none';
+      });
+      isAnimating = false;
+    }, 400);
+  });
+});
+

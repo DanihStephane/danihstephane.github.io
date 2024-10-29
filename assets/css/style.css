@@ -1465,3 +1465,114 @@ textarea.input-field {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   background: linear-gradient(135deg, #006aa6, #003c6e);
 }
+
+
+/*Animation text logo*/
+
+.animated-text {
+  cursor: pointer;
+  letter-spacing: -0.13em;
+}
+
+.letter {
+  display: inline-block;
+  animation: jumpUp 4s infinite;
+  transform-origin: bottom;
+}
+
+.animated-text:hover .letter {
+  animation: jumpUpHover 1s infinite;
+  color: hsl(180, 88%, 34%);
+}
+
+@keyframes jumpUp {
+  0%, 50%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes jumpUpHover {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+#letter-end {
+  display: inline-block;
+  color: var(--raw-seinna);
+  margin-left: 2px;
+}
+
+/* CSS modifié */
+.letter.harilanto {
+  opacity: 0;
+  transform: translateX(-30px); /* Distance de départ augmentée */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Courbe d'animation plus smooth */
+  display: none;
+}
+
+.letter.harilanto.active {
+  opacity: 1;
+  transform: translateX(0);
+  display: inline-block;
+}
+
+
+/*infobul*/
+
+/* CSS pour l'infobulle */
+.animated-text {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-text:before {
+  letter-spacing: 0.1em;
+  content: "Ceci est mon nom et mon prénom c'est Danih Stephane 😄";
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  min-width: 300px;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Durée augmentée à 0.5s */
+  z-index: 1000;
+  line-height: 1.4;
+}
+
+/* Petite flèche au-dessus de l'infobulle */
+.animated-text:after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Durée augmentée à 0.5s */
+  z-index: 1000;
+}
+
+.animated-text:hover:before,
+.animated-text:hover:after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

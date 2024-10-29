@@ -79,16 +79,19 @@
         <div id="flag-container">
           <img id="flag" src="./assets/img/Flag_of_France.svg" width="20px">
         </div>
-        <select name="language" id="lang" onchange="changeLanguage(this.value)">
+        <select name="language" id="lang" onchange="changeLanguage(this.value)"  class="custom-select">
           <option value="fr">FR</option>
           <option value="en">EN</option>
           <option value="mg">MG</option>
           <option value="de">DE</option>
         </select>
 
-        <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
-          <span class="icon"></span>
-        </button>
+        <div class="theme-container">
+          <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
+              <span class="icon"></span>
+          </button>
+      </div>
+      
 
       </div>
 

@@ -1576,3 +1576,93 @@ textarea.input-field {
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+
+
+/* Custom select */
+
+
+.custom-select {
+  appearance: none; /* Removes default browser styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc; /* Adjust border style and color */
+  border-radius: 5px; /* Adjust border radius */
+  padding: 5px 10px; /* Adjust padding */
+  font-size: 16px; /* Adjust font size */
+  background-color: #fff; /* Adjust background color */
+  color: #333; /* Adjust text color */
+  cursor: pointer;
+}
+
+.custom-select:focus {
+  outline: none; /* Remove focus outline */
+  border-color: #007bff; /* Adjust focus border color */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Adjust focus box shadow */
+}
+
+/* Optional: Customize the dropdown arrow */
+.custom-select::after {
+  content: "\25BC"; /* Unicode for a downward arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+
+/*lumière*/
+.theme-container {
+  position: relative;
+  display: inline-block; /* S'assure que le conteneur s'adapte à la taille du bouton */
+}
+
+.theme-container::before {
+  content: '';
+  background-image: url('../images/soleil.png'); /* Remplace par le chemin de ton image */
+  background-size: contain; /* Ajuste la taille de l'image */
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px; /* Ajuste la taille selon tes besoins */
+  height: 60px; /* Ajuste la taille selon tes besoins */
+  transform: translate(-50%, -50%); /* Centre l'image */
+  animation: rotate 4s ease-in-out infinite; /* Durée totale = 4s animation */
+  z-index: 0; /* Place l'image derrière le bouton */
+}
+
+/* Ajoute une animation de battement au survol */
+.theme-container:hover::before {
+  animation: heartbeat 0.6s ease-in-out infinite; /* Animation de battement */
+}
+
+.theme-btn {
+  position: relative;
+  z-index: 1; /* Assure que le bouton soit au-dessus de l'image */
+}
+
+@keyframes rotate {
+  0% {
+      transform: translate(-50%, -50%) rotate(45deg); /* Départ à 45 degrés */
+  }
+  50% {
+      transform: translate(-50%, -50%) rotate(405deg); /* Rotation totale de 360 degrés + 45 degrés */
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(405deg); /* Maintient la dernière position */
+  }
+}
+
+
+/* Animation de battement */
+@keyframes heartbeat {
+  0%, 100% {
+      transform: translate(-50%, -50%) scale(1) rotate(45deg); /* Départ et fin à 45 degrés */
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.2) rotate(45deg); /* Augmente la taille tout en maintenant l'angle */
+  }
+}
+
+

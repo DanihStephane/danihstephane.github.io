@@ -331,7 +331,7 @@ body.active { overflow: hidden; }
 
 .navbar-actions select {
   color: var(--color-primary);
-  width: 45px;
+  width: 50px;
 }
 
 .navbar-actions option {
@@ -1580,34 +1580,41 @@ textarea.input-field {
 
 /* Custom select */
 
-
 .custom-select {
-  appearance: none; /* Removes default browser styling */
+  width: 45px;
+  padding: 5px;
+  font-size: 14px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1px solid #ccc; /* Adjust border style and color */
-  border-radius: 5px; /* Adjust border radius */
-  padding: 5px 10px; /* Adjust padding */
-  font-size: 16px; /* Adjust font size */
-  background-color: #fff; /* Adjust background color */
-  color: #333; /* Adjust text color */
-  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e ");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+  background-size: 20px;
+  padding-right: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-select:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .custom-select:focus {
-  outline: none; /* Remove focus outline */
-  border-color: #007bff; /* Adjust focus border color */
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Adjust focus box shadow */
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
-/* Optional: Customize the dropdown arrow */
-.custom-select::after {
-  content: "\25BC"; /* Unicode for a downward arrow */
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  pointer-events: none;
+.custom-select option {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
 }
 
 
@@ -1666,3 +1673,48 @@ textarea.input-field {
 }
 
 
+/*ombre sur image*/
+
+.company__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espace entre les images */
+}
+
+.company__skills li {
+  list-style: none;
+}
+
+.company__skills img {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.company__skills img:hover {
+  transform: scale(1.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1; /* Pour que l'image agrandie passe au-dessus des autres */
+}
+
+/*agrandissement des images dans education et experience*/
+
+.education__item img{
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.education__item img:hover{
+  transform: scale(1.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1; /* Pour que l'image agrandie passe au-dessus des autres */
+}
+
+/*agrandissement des recommandation */
+.recommandation {
+  transition: transform 0.3s ease; /* Animation douce */
+  transform: scale(1); /* Taille normale par défaut */
+}
+
+.recommandation:not(:hover) {
+  transform: scale(1.1); /* Agrandissement de 10% quand PAS de survol */
+}

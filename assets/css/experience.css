@@ -7,11 +7,61 @@
   gap: 10rem;
 }
 
+
+
+
+
+
+
+
+
 .experience .subtitle {
-   background: linear-gradient(90deg,#00dbde,#ef86f1);
+   background: linear-gradient(90deg, #00dbde, #ef86f1);
+   -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;
+   transition: all 2s cubic-bezier(0.4, 0, 0.2, 1); /* Transition encore plus douce */
+   filter: blur(0px);
+ }
+
+.experience .subtitle:hover {
+  background: linear-gradient(-90deg, #ef86f1, #00dbde);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  filter: blur(0.5px); /* Flou plus subtil */
+  transform: scale(1.02); /* Zoom plus subtil */
+  letter-spacing: 1px; /* Espacement des lettres */
 }
+
+/* Animation optionnelle pour un effet plus fluide */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.experience .subtitle:hover {
+  animation: gradientFlow 3s ease infinite;
+  background-size: 200% auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .experience__text {
   font-size: 2.4rem;

@@ -1532,6 +1532,101 @@ textarea.input-field {
   display: inline-block;
 }
 
+
+/* Gestion des traductions */
+.animated-text.optionfr:before {
+  content: "Ceci est mon nom et mon prénom c'est Danih Stephane 😄";
+  letter-spacing: 0.1em;
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  min-width: 300px;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Durée augmentée à 0.5s */
+  z-index: 1000;
+  line-height: 1.4;
+}
+
+.animated-text.optionen:before {
+  content: "Here is my name and my first name is Danih Stephane 😄";
+  letter-spacing: 0.1em;
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  min-width: 300px;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Durée augmentée à 0.5s */
+  z-index: 1000;
+  line-height: 1.4;
+}
+
+.animated-text.optionde:before {
+  content: "Hier ist mein Name und mein Vorname ist Danih Stephane 😄";
+  letter-spacing: 0.1em;
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  min-width: 300px;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Durée augmentée à 0.5s */
+  z-index: 1000;
+  line-height: 1.4;
+}
+
+.animated-text.optionmg:before {
+  content: "Ity ny anarako ary ny anarana voalohany dia Danih Stephane 😄";
+  letter-spacing: 0.1em;
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  min-width: 300px;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Durée augmentée à 0.5s */
+  z-index: 1000;
+  line-height: 1.4;
+}
+
+
+
+/* Gestion des traductions  end*/
+
+
 .animated-text:before {
   letter-spacing: 0.1em;
   content: "Ceci est mon nom et mon prénom c'est Danih Stephane 😄";

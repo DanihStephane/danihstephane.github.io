@@ -167,7 +167,51 @@ const translations = {
     "popup_image25": "Affichage Android avec XML : Utilisez XML pour concevoir l'interface utilisateur avec des layouts comme ConstraintLayout. Assurez-vous que l'application est accessible avec des descriptions de contenu et respectez les bonnes pratiques en matière d'accessibilité. Maintenez une cohérence visuelle avec des styles et thèmes XML, et ajoutez des animations pour une interface dynamique.",
     "popup_image26": "Système Orchid (ERP bancaire) : Orchid est un ERP conçu pour les banques, gérant les comptes clients, transactions, prêts et crédits. Il inclut des fonctions de gestion des risques et conformité. En tant que backend pour une application bancaire, il expose des API pour synchroniser les données en temps réel et est déployé sur des serveurs robustes avec des bases de données comme Oracle ou MySQL.",
     "popup_image27": "Langage JAVA pour Android : Java est un langage clé pour le développement Android, permettant la programmation orientée objet et l'interaction avec l'Android SDK. Utilisez des threads pour les tâches lourdes et implémentez des services d'arrière-plan pour la réactivité de l'application, même inactive. Gérer les événements système avec BroadcastReceiver assure une efficacité dans l'expérience utilisateur.",
-    "popup_image28": "WSO2 API Manager : WSO2 est une solution open source pour la gestion des API, sécurisant les accès et surveillant les performances. Dans une application bancaire, il agit comme passerelle entre le front-end et le backend (ERP Orchid), gérant l'authentification avec OAuth2 ou JWT. Il permet de publier et versionner des API, tout en fournissant des outils de monitoring pour analyser les performances et gérer la sécurité des services bancaires."
+    "popup_image28": "WSO2 API Manager : WSO2 est une solution open source pour la gestion des API, sécurisant les accès et surveillant les performances. Dans une application bancaire, il agit comme passerelle entre le front-end et le backend (ERP Orchid), gérant l'authentification avec OAuth2 ou JWT. Il permet de publier et versionner des API, tout en fournissant des outils de monitoring pour analyser les performances et gérer la sécurité des services bancaires.",
+  
+    //service
+    "backend": "Backend",
+    "architecture_robuste_apis_performantes": "Architecture robuste et APIs performantes",
+    "apis_restful": "APIs RESTful",
+    "authentification_securisee": "Authentification sécurisée",
+    "integration_paiement": "Intégration paiement",
+    "cms_sur_mesure": "CMS sur mesure",
+    "optimisation_bdd": "Optimisation BDD",
+    "frontend": "Frontend",
+    "interfaces_modernes_reactives": "Interfaces modernes et réactives",
+    "applications_spa": "Applications SPA",
+    "ui_ux_responsive": "UI/UX responsive",
+    "animations_fluides": "Animations fluides",
+    "dashboards_interactifs": "Dashboards interactifs",
+    "performance_optimisee": "Performance optimisée",
+    "specialises": "Spécialisés",
+    "solutions_techniques_sur_mesure": "Solutions techniques sur mesure",
+    "ecommerce_avance": "E-commerce avancé",
+    "systemes_de_reservation": "Systèmes de réservation",
+    "applications_metier": "Applications métier",
+    "automatisation": "Automatisation",
+    "seo_technique": "SEO technique",
+    "maintenance": "Maintenance",
+    "support_optimisation_continue": "Support et optimisation continue",
+    "maintenance_preventive": "Maintenance préventive",
+    "securite_renforcee": "Sécurité renforcée",
+    "performance_optimale": "Performance optimale",
+    "support_reactif": "Support réactif",
+    "monitoring_24_7": "Monitoring 24/7",
+    "conseil": "Conseil",
+    "expertise_technique_strategique": "Expertise technique et stratégique",
+    "audit_approfondi": "Audit approfondi",
+    "architecture_systeme": "Architecture système",
+    "securite_avancee": "Sécurité avancée",
+    "analyse_strategique": "Analyse stratégique",
+    "formation_equipe": "Formation équipe",
+    "autres_services": "Autres Services",
+    "services_devops": "Services DevOps",
+    "services_tests_qualite": "Services de Tests & Qualité",
+    "services_r_d_technologique": "Services de R&D Technologique",
+    "accompagnement_croissance_digitale": "Accompagnement en Croissance Digitale",
+    "solutions_cloud":"Solutions Cloud",
+  
   },
   "en": {
     "home": "Home.",
@@ -332,7 +376,52 @@ const translations = {
     "popup_image25": "Android Display with XML: Use XML to design the user interface with layouts like ConstraintLayout. Ensure the application is accessible with content descriptions and adhere to accessibility best practices. Maintain visual consistency with XML styles and themes, and add animations for a dynamic interface.",
     "popup_image26": "Orchid System (Banking ERP): Orchid is an ERP designed for banks, managing customer accounts, transactions, loans, and credits. It includes risk management and compliance functions. As a backend for a banking application, it exposes APIs to synchronize data in real-time and is deployed on robust servers with databases like Oracle or MySQL.",
     "popup_image27": "JAVA Language for Android: Java is a key language for Android development, enabling object-oriented programming and interaction with the Android SDK. Use threads for heavy tasks and implement background services for application responsiveness, even when inactive. Managing system events with BroadcastReceiver ensures efficiency in user experience.",
-    "popup_image28": "WSO2 API Manager: WSO2 is an open-source solution for API management, securing access and monitoring performance. In a banking application, it acts as a gateway between the front-end and the back-end (ERP Orchid), managing authentication with OAuth2 or JWT. It allows publishing and versioning APIs while providing monitoring tools to analyze performance and manage the security of banking services."  
+    "popup_image28": "WSO2 API Manager: WSO2 is an open-source solution for API management, securing access and monitoring performance. In a banking application, it acts as a gateway between the front-end and the back-end (ERP Orchid), managing authentication with OAuth2 or JWT. It allows publishing and versioning APIs while providing monitoring tools to analyze performance and manage the security of banking services." ,
+  
+    //service
+
+    "authentification_securisee": "Secure Authentication",
+    "integration_paiement": "Payment Integration",
+    "cms_sur_mesure": "Custom CMS",
+    "optimisation_bdd": "Database Optimization",
+    "frontend": "Frontend",
+    "interfaces_modernes_reactives": "Modern and Reactive Interfaces",
+    "applications_spa": "SPA Applications",
+    "ui_ux_responsive": "Responsive UI/UX",
+    "animations_fluides": "Smooth Animations",
+    "dashboards_interactifs": "Interactive Dashboards",
+    "performance_optimisee": "Optimized Performance",
+    "specialises": "Specialized",
+    "solutions_techniques_sur_mesure": "Custom Technical Solutions",
+    "ecommerce_avance": "Advanced E-commerce",
+    "systemes_de_reservation": "Booking Systems",
+    "applications_metier": "Business Applications",
+    "automatisation": "Automation",
+    "seo_technique": "Technical SEO",
+    "maintenance": "Maintenance",
+    "support_optimisation_continue": "Continuous Support and Optimization",
+    "maintenance_preventive": "Preventive Maintenance",
+    "securite_renforcee": "Enhanced Security",
+    "performance_optimale": "Optimal Performance",
+    "support_reactif": "Reactive Support",
+    "monitoring_24_7": "24/7 Monitoring",
+    "conseil": "Consulting",
+    "expertise_technique_strategique": "Technical and Strategic Expertise",
+    "audit_approfondi": "In-depth Audit",
+    "architecture_systeme": "System Architecture",
+    "securite_avancee": "Advanced Security",
+    "analyse_strategique": "Strategic Analysis",
+    "formation_equipe": "Team Training",
+    "autres_services": "Other Services",
+    "services_devops": "DevOps Services",
+    "services_tests_qualite": "Quality Testing Services",
+    "services_r_d_technologique": "Technological R&D Services",
+    "accompagnement_croissance_digitale": "Digital Growth Support",
+
+    "solutions_cloud": "Cloud Solutions",
+    "backend": "Backend",
+    "architecture_robuste_apis_performantes": "Robust Architecture and High-Performance APIs",
+    "apis_restful": "RESTful APIs",
   },
   "de": {
     "home": "Startseite.",
@@ -500,8 +589,51 @@ const translations = {
     "popup_image25": "Android-Anzeige mit XML: Verwenden Sie XML zur Gestaltung der Benutzeroberfläche mit Layouts wie ConstraintLayout. Stellen Sie sicher, dass die Anwendung mit Inhaltsbeschreibungen zugänglich ist, und befolgen Sie bewährte Verfahren zur Barrierefreiheit. Halten Sie eine visuelle Konsistenz mit XML-Stilen und -Themen aufrecht, und fügen Sie Animationen für eine dynamische Benutzeroberfläche hinzu.",
     "popup_image26": "Orchid-System (Bank-ERP): Orchid ist ein ERP, das für Banken entwickelt wurde und Kundenkonten, Transaktionen, Kredite und Darlehen verwaltet. Es umfasst Funktionen für das Risikomanagement und die Einhaltung von Vorschriften. Als Backend für eine Bankanwendung stellt es APIs bereit, um die Daten in Echtzeit zu synchronisieren, und wird auf robusten Servern mit Datenbanken wie Oracle oder MySQL bereitgestellt.",
     "popup_image27": "JAVA-Sprache für Android: Java ist eine Schlüssel Sprache für die Android-Entwicklung, die objektorientierte Programmierung und die Interaktion mit dem Android SDK ermöglicht. Verwenden Sie Threads für rechenintensive Aufgaben und implementieren Sie Hintergrunddienste für die Reaktionsfähigkeit der Anwendung, auch wenn sie nicht aktiv ist. Die Verwaltung von Systemereignissen mit BroadcastReceiver sorgt für eine Effizienz im Benutzererlebnis.",
-    "popup_image28": "WSO2 API Manager: WSO2 ist eine Open-Source-Lösung für das API-Management, die Zugriffe sichert und die Leistung überwacht. In einer Bankanwendung fungiert es als Gateway zwischen Frontend und Backend (ERP Orchid) und verwaltet die Authentifizierung mit OAuth2 oder JWT. Es ermöglicht das Veröffentlichen und Versionieren von APIs und bietet Monitoring-Tools zur Leistungsanalyse und Sicherheit der Bankdienste."
+    "popup_image28": "WSO2 API Manager: WSO2 ist eine Open-Source-Lösung für das API-Management, die Zugriffe sichert und die Leistung überwacht. In einer Bankanwendung fungiert es als Gateway zwischen Frontend und Backend (ERP Orchid) und verwaltet die Authentifizierung mit OAuth2 oder JWT. Es ermöglicht das Veröffentlichen und Versionieren von APIs und bietet Monitoring-Tools zur Leistungsanalyse und Sicherheit der Bankdienste.",
 
+    //service
+    "authentification_securisee": "Gesicherte Authentifizierung",
+    "integration_paiement": "Zahlungsintegration",
+    "cms_sur_mesure": "Maßgeschneidertes CMS",
+    "optimisation_bdd": "Datenbankoptimierung",
+    "frontend": "Frontend",
+    "interfaces_modernes_reactives": "Moderne und reaktionsschnelle Schnittstellen",
+    "applications_spa": "SPA-Anwendungen",
+    "ui_ux_responsive": "Responsive UI/UX",
+    "animations_fluides": "Flüssige Animationen",
+    "dashboards_interactifs": "Interaktive Dashboards",
+    "performance_optimisee": "Optimierte Leistung",
+    "specialises": "Spezialisiert",
+    "solutions_techniques_sur_mesure": "Maßgeschneiderte technische Lösungen",
+    "ecommerce_avance": "Erweitertes E-Commerce",
+    "systemes_de_reservation": "Buchungssysteme",
+    "applications_metier": "Business-Anwendungen",
+    "automatisation": "Automatisierung",
+    "seo_technique": "Technisches SEO",
+    "maintenance": "Wartung",
+    "support_optimisation_continue": "Support und kontinuierliche Optimierung",
+    "maintenance_preventive": "Präventive Wartung",
+    "securite_renforcee": "Erhöhte Sicherheit",
+    "performance_optimale": "Optimale Leistung",
+    "support_reactif": "Reaktiver Support",
+    "monitoring_24_7": "24/7 Monitoring",
+    "conseil": "Beratung",
+    "expertise_technique_strategique": "Technisches und strategisches Fachwissen",
+    "audit_approfondi": "Tiefgehendes Audit",
+    "architecture_systeme": "Systemarchitektur",
+    "securite_avancee": "Erweiterte Sicherheit",
+    "analyse_strategique": "Strategische Analyse",
+    "formation_equipe": "Team-Schulung",
+    "autres_services": "Weitere Dienstleistungen",
+    "services_devops": "DevOps-Dienste",
+    "services_tests_qualite": "Tests und Qualitätsdienste",
+    "services_r_d_technologique": "Technologische F&E-Dienste",
+    "accompagnement_croissance_digitale": "Begleitung im digitalen Wachstum",
+
+    "solutions_cloud": "Cloud-Lösungen",
+    "backend": "Backend",
+    "architecture_robuste_apis_performantes": "Robuste Architektur und Hochleistungs-APIs",
+    "apis_restful": "RESTful-APIs",
   },
   "mg": {
     "home": "Fandraisana.",
@@ -669,9 +801,51 @@ const translations = {
     "popup_image11": "Metodolojia ETL miaraka amin'ny Laravel : \n Ny metodolojia ETL dia miankina amin'ny Laravel ho an'ny fitantanana ny dingana fanangonana, fanovana ary fametrahana. Laravel dia manamora ny fananganana pipelines ETL modular sy extensible, miaraka amin'ny fitantanana mora ny asa voalahatra sy ny queues ho an'ny fanodinana angon-drakitra ao anaty. Ny fiasa tafiditra, toy ny ORM Eloquent, dia manamora ny fanodinana sy ny fanovana ny angon-drakitra alohan'ny hametrahana azy ao anaty tahirin-kevitra afovoany.",
     "popup_image12": "Famintinana ankapobeny ny ETL : \n Ny tetikasa ETL dia mamaritra ny automatisation ny fanangonana angon-drakitra avy amin'ny loharano samihafa (CSV, SQL), ny fanovana azy ireo amin'ny alalan'ny dingana sarotra (fanadiovana, fanatsarana, famoronana features), ary ny fametrahana azy ireo ao anaty tahirin-kevitra afovoany. Ny dingana ETL dia mikendry ny hanome ny angon-drakitra ho an'ny fanadihadiana sy ny famolavolana amin'ny fotoana tena izy, manome antoka fa ny fanapahan-kevitra dia mifototra amin'ny angon-drakitra azo antoka sy maharitra.",
     "popup_image13": "Dashboard graphique de gestion : \n Dashboard graphique dia napetraka ao amin'ny tetikasa ETL ho an'ny fanaraha-maso ny indicator de performance, ny toe-javatra amin'ny fanovàna, ary ny fahafahana miasa ny angon-drakitra. M thanks to this tool, the users can monitor the execution of the pipelines, identify anomalies or bottlenecks, and obtain immediate insights into the transformed data.",
-    "popup_image14": "Microservice miaraka amin'ny API : \n Ny tetikasa ETL dia noforonina ihany koa amin'ny endrika microservices, ny singa tsirairay amin'ny pipeline dia voafandrika sy mifandray amin'ny alalan'ny APIs REST. Izany dia manome fahafahana lehibe, modularité, ary scalability ho an'ny rafitra. Ny microservice tsirairay dia mandray anjara amin'ny ampahany amin'ny dingana (fanangonana, fanovana na fametrahana) ary azo apetraka sy havaozina tsy miankina, miaraka amin'ny fiaraha-miasa malama amin'ny singa hafa amin'ny alalan'ny APIs voafaritra."
+    "popup_image14": "Microservice miaraka amin'ny API : \n Ny tetikasa ETL dia noforonina ihany koa amin'ny endrika microservices, ny singa tsirairay amin'ny pipeline dia voafandrika sy mifandray amin'ny alalan'ny APIs REST. Izany dia manome fahafahana lehibe, modularité, ary scalability ho an'ny rafitra. Ny microservice tsirairay dia mandray anjara amin'ny ampahany amin'ny dingana (fanangonana, fanovana na fametrahana) ary azo apetraka sy havaozina tsy miankina, miaraka amin'ny fiaraha-miasa malama amin'ny singa hafa amin'ny alalan'ny APIs voafaritra.",
 
+    //service
+    "authentification_securisee": "Fanamarinana voaaro",
+    "integration_paiement": "Fampidirana fandoavam-bola",
+    "cms_sur_mesure": "CMS araka ny filàna",
+    "optimisation_bdd": "Fanatsarana BDD",
+    "frontend": "Frontend",
+    "interfaces_modernes_reactives": "Interface maoderina sy mivantana",
+    "applications_spa": "Fampiharana SPA",
+    "ui_ux_responsive": "UI/UX mivadika",
+    "animations_fluides": "Fampisehoana malefaka",
+    "dashboards_interactifs": "Dashboard mifandray",
+    "performance_optimisee": "Fahaizana voaomana",
+    "specialises": "Manam-pahaizana",
+    "solutions_techniques_sur_mesure": "Vahaolana teknika araka ny filàna",
+    "ecommerce_avance": "E-commerce mandroso",
+    "systemes_de_reservation": "Rafitra famandrihana",
+    "applications_metier": "Fampiharana asa",
+    "automatisation": "Automatisation",
+    "seo_technique": "SEO teknika",
+    "maintenance": "Fikarakarana",
+    "support_optimisation_continue": "Fanohanana sy fanatsarana mitohy",
+    "maintenance_preventive": "Fikarakarana mialoha",
+    "securite_renforcee": "Fiarovana matanjaka",
+    "performance_optimale": "Fahaizana tsara indrindra",
+    "support_reactif": "Fanohanana mivantana",
+    "monitoring_24_7": "Fanaraha-maso 24/7",
+    "conseil": "Torohevitra",
+    "expertise_technique_strategique": "Fahaizana teknika sy stratejika",
+    "audit_approfondi": "Fanadihadiana lalina",
+    "architecture_systeme": "Rafitra sy rafitra",
+    "securite_avancee": "Fiarovana mandroso",
+    "analyse_strategique": "Fanadihadiana stratejika",
+    "formation_equipe": "Fampiofanana ekipa",
+    "autres_services": "Services hafa",
+    "services_devops": "Services DevOps",
+    "services_tests_qualite": "Services fanandramana sy kalitao",
+    "services_r_d_technologique": "Services R&D teknolojika",
+    "accompagnement_croissance_digitale": "Fanohanana amin'ny fitomboana dizitaly",
 
+    "solutions_cloud": "Vahaolana Cloud",
+    "backend": "Backend",
+    "architecture_robuste_apis_performantes": "Rafitra matanjaka sy APIs mahomby",
+    "apis_restful": "APIs RESTful",
   }
 };
 
@@ -701,7 +875,22 @@ function changeLanguage(lang) {
   changeFlag(lang);
   changeLanguageTyped(lang);
   currentLanguage = lang;
-  resetTypedAnimations()
+  resetTypedAnimations();
+  changePopupLogo();
+}
+
+function changePopupLogo(){
+  const animatedTextElement = document.querySelector('.animated-text');
+
+  const classes = animatedTextElement.classList;
+  for (let i = classes.length - 1; i >= 0; i--) {
+    if (classes[i].startsWith('option')) {
+      classes.remove(classes[i]);
+    }
+  }
+
+// Changer pour chaque option
+  animatedTextElement.classList.add('option'+currentLanguage); // Changez à 'option2', 'option3', ou 'option4' pour d'autres textes.
 }
 
 function changeFlag(lang) {

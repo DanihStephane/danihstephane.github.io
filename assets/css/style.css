@@ -1709,12 +1709,3 @@ textarea.input-field {
   z-index: 1; /* Pour que l'image agrandie passe au-dessus des autres */
 }
 
-/*agrandissement des recommandation */
-.recommandation {
-  transition: transform 0.3s ease; /* Animation douce */
-  transform: scale(1); /* Taille normale par défaut */
-}
-
-.recommandation:not(:hover) {
-  transform: scale(1.1); /* Agrandissement de 10% quand PAS de survol */
-}

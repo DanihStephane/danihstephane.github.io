@@ -84,6 +84,8 @@ themeToggleBtn.addEventListener("click", function () {
   const recommandationSection = document.getElementById('recommandation-section');
   const contactSection = document.getElementById('contact-section');
   const lang = document.getElementById('lang');
+  const autotext1 = document.getElementById('autotext1');
+  const autotext2 = document.getElementById('autotext2');
 
   if (themeToggleBtn.classList.contains("active")) {
     document.body.classList.remove("dark_theme");
@@ -96,6 +98,9 @@ themeToggleBtn.addEventListener("click", function () {
     lang.style.backgroundImage = "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e \")";
 
     slashElement ? slashElement.style.color = "black" : '';
+    autotext1.style.color = "black";
+    autotext2.style.color = "black";
+
     companyYear.forEach(element => {
       element.style.color = "#525252"; // Remplace 'red' par la couleur souhaitée
     });
@@ -114,6 +119,9 @@ themeToggleBtn.addEventListener("click", function () {
     lang.style.backgroundImage = "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e \")";
 
     slashElement ? slashElement.style.color = "white" : '';
+    autotext1.style.color = "white";
+    autotext2.style.color = "white";
+
     companyYear.forEach(element => {
       element.style.color = "white"; // Remplace 'red' par la couleur souhaitée
     });

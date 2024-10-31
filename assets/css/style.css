@@ -601,7 +601,7 @@ main { overflow-x: hidden; }
   top: 5px;
   left: 5px;
   bottom: 5px;
-  width: 93px;
+  width: var(--width-value1, 165px);
   background: var(--raw-seinna);
   border-radius: 100px;
   transition: var(--transition-1);
@@ -609,8 +609,8 @@ main { overflow-x: hidden; }
 }
 
 .skills-toggle.active::before {
-  left: 98px;
-  width: 94px;
+  left: var(--width-value2, 165px);
+  width: var(--width-value3, 160px);
 }
 
 .toggle-btn {

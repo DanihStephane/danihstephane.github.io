@@ -26,8 +26,8 @@ const translations = {
     "my_skills": "Mes compétences",
     "title_skills": "Quels sont les éventails de mes compétences techniques en développement ?",
     "skills_desc": "Voici les aptitudes techniques et les outils de développement qui me permettent de transformer des concepts en applications web fonctionnelles et intuitives, alliant maîtrise des langages de programmation, frameworks modernes et environnements de développement optimisés",
-    "skills_button": "Comp.",
-    "tools_button": "App.",
+    "skills_button": "Compétences",
+    "tools_button": "Applications",
 
     "my_experiences": "Professionnelles",
     "experience_title": "Plus de 3 ans d'expérience en entreprise avec une forte implication dans des projets personnels",
@@ -877,6 +877,7 @@ function changeLanguage(lang) {
   currentLanguage = lang;
   resetTypedAnimations();
   changePopupLogo();
+  changeSwithSkills();
 }
 
 function changePopupLogo(){
@@ -891,6 +892,43 @@ function changePopupLogo(){
 
 // Changer pour chaque option
   animatedTextElement.classList.add('option'+currentLanguage); // Changez à 'option2', 'option3', ou 'option4' pour d'autres textes.
+}
+
+function changeSwithSkills(){
+  const widthConfig = {
+    fr: {
+      value1: '165px',
+      value2: '170px',
+      value3: '155px'
+    },
+    en: {
+      value1: '93px',
+      value2: '98px',
+      value3: '94px'
+    },
+    de: {
+      value1: '145px',
+      value2: '150px',
+      value3: '145px'
+    },
+    mg: {
+      value1: '178px',
+      value2: '185px',
+      value3: '138px'
+    }
+  };
+  
+  function setLanguageWidths(language) {
+    if (widthConfig[language]) {
+      const values = widthConfig[language];
+      Object.entries(values).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(`--width-${key}`, value);
+      });
+    }
+  }
+  
+  // Utilisation :
+  setLanguageWidths(currentLanguage);
 }
 
 function changeFlag(lang) {

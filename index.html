@@ -1619,429 +1619,529 @@
 
 
 
-
-
-  
-
   <style>
-    /* Améliorations des animations et du design */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-in-out;
-    backdrop-filter: blur(5px);
-}
-
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff;
-    border-radius: 24px;
-    max-width: 1200px;
-    width: 95%;
-    max-height: 90vh;
-    overflow-y: auto;
-    z-index: 1001;
-    animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.modal-content {
-    padding: 2.5rem;
-}
-
-.modal-header {
-    position: relative;
-    margin-bottom: 35px;
-    border-bottom: 2px solid #f3f4f6;
-    padding-bottom: 25px;
-}
-
-.modal-close {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    background: #ffffff;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #374151;
-}
-
-.modal-close:hover {
-    background-color: #f3f4f6;
-    transform: scale(1.1) rotate(90deg);
-}
-
-.modal-media-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.media-item {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    animation: fadeInUp 0.6s ease-out;
-}
-
-.modal-image-wrapper, .modal-video-wrapper {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.modal-image-wrapper:hover, .modal-video-wrapper:hover {
-    transform: translateY(-5px);
-}
-
-.modal-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 16px;
-    transition: transform 0.5s ease;
-}
-
-.modal-image:hover {
-    transform: scale(1.05);
-}
-
-.media-caption {
-    font-size: 0.9rem;
-    color: #6b7280;
-    text-align: center;
-    padding: 0.5rem;
-    background: #f8fafc;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.media-caption:hover {
-    background: #f1f5f9;
-    transform: translateY(-2px);
-}
-
-.modal-video {
-    width: 100%;
-    height: 300px;
-    border: none;
-    border-radius: 16px;
-}
-
-.modal-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-left: 1rem;
-    animation: fadeInLeft 0.5s ease-out;
-}
-
-.modal-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 70%;
-    background: #3b82f6;
-    border-radius: 2px;
-}
-
-.modal-description {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #4b5563;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    background: #f8fafc;
-    border-radius: 16px;
-    border-left: 4px solid #3b82f6;
-    animation: fadeInUp 0.7s ease-out;
-}
-
-.modal-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 2px solid #f3f4f6;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.modal-date {
-    color: #6b7280;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    background: #f3f4f6;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.modal-date:hover {
-    background: #e5e7eb;
-    transform: translateY(-2px);
-}
-
-.github-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 28px;
-    background: #24292e;
-    color: white;
-    border-radius: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.github-button:hover {
-    background: #1a1e21;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.github-icon {
-    width: 22px;
-    height: 22px;
-    transition: transform 0.3s ease;
-}
-
-.github-button:hover .github-icon {
-    transform: rotate(360deg);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 1000;
+        animation: fadeIn 0.2s ease-in-out;
+        backdrop-filter: blur(8px);
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translate(-50%, -60%);
-        opacity: 0;
-    }
-    to {
+    
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 1;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 20px;
+        max-width: 1100px;
+        width: 95%;
+        max-height: 85vh;
+        overflow-y: auto;
+        z-index: 1001;
+        animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translate(-50%, -50%);
-        opacity: 1;
+    
+    .modal::-webkit-scrollbar {
+        width: 8px;
     }
-    to {
-        transform: translate(-50%, -60%);
-        opacity: 0;
+    
+    .modal::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
     }
-}
-
-@media (max-width: 768px) {
-    .modal-media-container {
-        grid-template-columns: 1fr;
+    
+    .modal::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .modal::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
     
     .modal-content {
         padding: 1.5rem;
     }
     
-    .modal-title {
-        font-size: 24px;
+    .modal-header {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid rgba(59, 130, 246, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-}
+    
+    .modal-title {
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+    }
+    
+    .modal-close {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: none;
+        background: white;
+        color: #1e40af;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .modal-close:hover {
+        background: #1e40af;
+        color: white;
+        transform: rotate(180deg);
+    }
+    
+    .technologies-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1rem 0;
+        padding: 1rem;
+        background: rgba(59, 130, 246, 0.03);
+        border-radius: 12px;
+        border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    .tech-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: white;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tech-badge:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .html-badge { background: linear-gradient(135deg, #e34f26 0%, #ff6d3f 100%); }
+    .css-badge { background: linear-gradient(135deg, #264de4 0%, #2965f1 100%); }
+    .js-badge { background: linear-gradient(135deg, #f7df1e 0%, #ffd700 100%); color: black; }
+    .php-badge { background: linear-gradient(135deg, #777bb3 0%, #8892be 100%); }
+    
+    .modal-media-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .media-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .media-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-image-wrapper, .modal-video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        overflow: hidden;
+    }
+    
+    .modal-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .modal-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .media-caption {
+        font-size: 0.85rem;
+        color: #64748b;
+        padding: 0.75rem;
+        text-align: center;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .modal-description {
+        margin: 1.5rem 0;
+        padding: 1.25rem;
+        background: white;
+        border-radius: 12px;
+        border-left: 4px solid #3b82f6;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #334155;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .modal-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 2px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    .modal-date {
+        color: #64748b;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        background: rgba(59, 130, 246, 0.05);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .modal-date:hover {
+        background: rgba(59, 130, 246, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    .github-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        background: linear-gradient(135deg, #24292e 0%, #1a1e21 100%);
+        color: white;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .github-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .github-button:hover .github-icon {
+        transform: rotate(360deg);
+    }
+    
+    .github-icon {
+        transition: transform 0.6s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideIn {
+        from {
+            transform: translate(-50%, -45%);
+            opacity: 0;
+        }
+        to {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOut {
+        from {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: translate(-50%, -45%);
+            opacity: 0;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .modal {
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+            border-radius: 0;
+        }
+    
+        .modal-content {
+            padding: 1rem;
+        }
+    
+        .modal-media-container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    
+        .modal-title {
+            font-size: 1.5rem;
+        }
+    
+        .technologies-container {
+            justify-content: center;
+        }
+    
+        .modal-footer {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: stretch;
+            text-align: center;
+        }
+    
+        .github-button {
+            justify-content: center;
+        }
+    }
     </style>
     
-    <!-- Modal HTML -->
-    <!-- Modal HTML -->
-<div id="modalOverlay" class="modal-overlay">
-  <div class="modal">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h2 class="modal-title"></h2>
-              <button class="modal-close">&times;</button>
-          </div>
-          
-          <div class="modal-media-container">
-              <div class="media-item">
-                  <div class="modal-image-wrapper">
-                      <img class="modal-image" src="" alt="">
-                  </div>
-                  <div class="media-caption">Aperçu du projet</div>
-              </div>
-              <div class="media-item">
-                  <div class="modal-video-wrapper">
-                      <iframe class="modal-video" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                  <div class="media-caption">Démonstration vidéo</div>
-              </div>
-          </div>
-          
-          <p class="modal-description"></p>
-          
-          <div class="modal-footer">
-              <div class="modal-date"></div>
-              <a href="#" class="github-button">
-                  <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
-                  </svg>
-                  Voir sur Github
-              </a>
-          </div>
-      </div>
-  </div>
-</div>
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"></h2>
+                    <button class="modal-close">&times;</button>
+                </div>
+                
+                <div class="technologies-container">
+                    <div class="tech-badge html-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                        </svg>
+                        HTML
+                    </div>
+                    <div class="tech-badge css-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/>
+                        </svg>
+                        CSS
+                    </div>
+                    <div class="tech-badge js-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                        </svg>
+                        JavaScript
+                    </div>
+                    <div class="tech-badge php-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.174-.193-.46-.29-.857-.29m-.74-1.614h1.696c.814 0 1.42.186 1.82.558.4.372.597.895.594 1.569.004.75-.183 1.385-.56 1.905-.377.52-.933.78-1.668.78h-2.777l1.034-5.282.46 .47zM12.5 0h-11C.673 0 0 .673 0 1.5v21c0 .827.673 1.5 1.5 1.5h11c.827 0 1.5-.673 1.5-1.5v-21c0-.827-.673-1.5-1.5-1.5zM5.264 14.5h2.033c.46 0 .84-.108 1.14-.324.3-.216.506-.522.617-.917.124-.438.113-.837-.033-1.197-.146-.36-.404-.636-.77-.83.31-.174.545-.403.705-.688.16-.285.235-.59.227-.916-.02-.658-.273-1.17-.76-1.535-.487-.365-1.17-.547-2.05-.547H3.076l-1.236 6.953h2.424l.494-2.787z"/>
+                        </svg>
+                        PHP
+                    </div>
+                </div>
+                
+                <div class="modal-media-container">
+                    <div class="media-item">
+                        <div class="modal-image-wrapper">
+                            <img class="modal-image" src="" alt="">
+                        </div>
+                        <div class="media-caption">Aperçu du projet</div>
+                    </div>
+                    <div class="media-item">
+                        <div class="modal-video-wrapper">
+                            <iframe class="modal-video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-caption">Démonstration vidéo</div>
+                    </div>
+                </div>
+                
+                <p class="modal-description"></p>
+                
+                <div class="modal-footer">
+                    <div class="modal-date"></div>
+                    <a href="#" class="github-button">
+                        <svg class="github-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                        </svg>
+                        Voir sur Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script>
-    // Données des projets
-    const projectsData = [
-        {
-            id: 1,
-            title: "Lorem Ipsum Dolor 01",
-            image: "./assets/images/project-1.png",
-            description: "Description détaillée du projet 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-            videoUrl: "https://www.youtube.com/embed/example1",
-            date: "April 2022",
-            githubUrl: "https://github.com/username/project1"
-        },
-        {
-            id: 2,
-            title: "Lorem Ipsum Dolor 02",
-            image: "./assets/images/project-2.png",
-            description: "Description détaillée du projet 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
-            videoUrl: "https://www.youtube.com/embed/example2",
-            date: "April 2022",
-            githubUrl: "https://github.com/username/project2"
-        },
-        {
-            id: 3,
-            title: "Lorem Ipsum Dolor 03",
-            image: "./assets/images/project-3.png",
-            description: "Description détaillée du projet 3. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            videoUrl: "https://www.youtube.com/embed/example3",
-            date: "April 2022",
-            githubUrl: "https://github.com/username/project3"
-        },
-        {
-            id: 4,
-            title: "Lorem Ipsum Dolor 04",
-            image: "./assets/images/project-4.png",
-            description: "Description détaillée du projet 4. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis.",
-            videoUrl: "https://www.youtube.com/embed/example4",
-            date: "April 2022",
-            githubUrl: "https://github.com/username/project4"
-        }
-    ];
-    
-    // Initialisation
-    document.addEventListener('DOMContentLoaded', function() {
-        const projectLinks = document.querySelectorAll('.project-card');
-        
-        projectLinks.forEach((link, index) => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                openModal(projectsData[index]);
-            });
-        });
-    
-        const modalOverlay = document.getElementById('modalOverlay');
-        const closeButton = document.querySelector('.modal-close');
-        
-        closeButton.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                closeModal();
-            }
-        });
-    
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    });
-    
-    function openModal(project) {
-        const modal = document.getElementById('modalOverlay');
-        modal.style.display = 'block';
-        
-        document.querySelector('.modal-title').textContent = project.title;
-        document.querySelector('.modal-image').src = project.image;
-        document.querySelector('.modal-image').alt = project.title;
-        document.querySelector('.modal-video').src = project.videoUrl;
-        document.querySelector('.modal-description').textContent = project.description;
-        document.querySelector('.modal-date').textContent = project.date;
-        document.querySelector('.github-button').href = project.githubUrl;
-    
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal() {
-        const modal = document.getElementById('modalOverlay');
-        const modalContent = document.querySelector('.modal');
-        
-        modalContent.style.animation = 'slideOut 0.3s ease-in-out';
-        
-        setTimeout(() => {
-            modal.style.display = 'none';
-            modalContent.style.animation = '';
-            document.querySelector('.modal-video').src = '';
-            document.body.style.overflow = '';
-        }, 300);
-    }
-    </script>
-
-
+      const projectsData = [
+          {
+              id: 1,
+              title: "Lorem Ipsum Dolor 01",
+              image: "./assets/images/project-1.png",
+              description: "Description détaillée du projet 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+              videoUrl: "https://www.youtube.com/embed/example1",
+              date: "April 2022",
+              githubUrl: "https://github.com/username/project1",
+              technologies: {
+                  html: true,
+                  css: true,
+                  javascript: true,
+                  php: false
+              }
+          },
+          {
+              id: 2,
+              title: "Lorem Ipsum Dolor 02",
+              image: "./assets/images/project-2.png",
+              description: "Description détaillée du projet 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+              videoUrl: "https://www.youtube.com/embed/example2",
+              date: "April 2022",
+              githubUrl: "https://github.com/username/project2",
+              technologies: {
+                  html: true,
+                  css: true,
+                  javascript: true,
+                  php: true
+              }
+          },
+          {
+              id: 3,
+              title: "Lorem Ipsum Dolor 03",
+              image: "./assets/images/project-3.png",
+              description: "Description détaillée du projet 3. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+              videoUrl: "https://www.youtube.com/embed/example3",
+              date: "April 2022",
+              githubUrl: "https://github.com/username/project3",
+              technologies: {
+                  html: true,
+                  css: false,
+                  javascript: true,
+                  php: true
+              }
+          },
+          {
+              id: 4,
+              title: "Lorem Ipsum Dolor 04",
+              image: "./assets/images/project-4.png",
+              description: "Description détaillée du projet 4. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis.",
+              videoUrl: "https://www.youtube.com/embed/example4",
+              date: "April 2022",
+              githubUrl: "https://github.com/username/project4",
+              technologies: {
+                  html: true,
+                  css: true,
+                  javascript: false,
+                  php: true
+              }
+          }
+      ];
+  
+      // Initialisation
+      document.addEventListener('DOMContentLoaded', function() {
+          const projectLinks = document.querySelectorAll('.project-card');
+          
+          projectLinks.forEach((link, index) => {
+              link.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  openModal(projectsData[index]);
+              });
+          });
+  
+          const modalOverlay = document.getElementById('modalOverlay');
+          const closeButton = document.querySelector('.modal-close');
+          
+          closeButton.addEventListener('click', closeModal);
+          modalOverlay.addEventListener('click', (e) => {
+              if (e.target === modalOverlay) {
+                  closeModal();
+              }
+          });
+  
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') {
+                  closeModal();
+              }
+          });
+      });
+  
+      function openModal(project) {
+          const modal = document.getElementById('modalOverlay');
+          modal.style.display = 'block';
+          
+          // Mise à jour du contenu
+          document.querySelector('.modal-title').textContent = project.title;
+          document.querySelector('.modal-image').src = project.image;
+          document.querySelector('.modal-image').alt = project.title;
+          document.querySelector('.modal-video').src = project.videoUrl;
+          document.querySelector('.modal-description').textContent = project.description;
+          document.querySelector('.modal-date').textContent = project.date;
+          document.querySelector('.github-button').href = project.githubUrl;
+  
+          // Gestion de l'affichage des technologies
+          const techBadges = {
+              html: document.querySelector('.html-badge'),
+              css: document.querySelector('.css-badge'),
+              javascript: document.querySelector('.js-badge'),
+              php: document.querySelector('.php-badge')
+          };
+  
+          // Afficher/masquer les badges selon les technologies utilisées
+          Object.entries(project.technologies).forEach(([tech, used]) => {
+              if (techBadges[tech]) {
+                  techBadges[tech].style.display = used ? 'flex' : 'none';
+              }
+          });
+  
+          document.body.style.overflow = 'hidden';
+  
+          // Animation d'entrée
+          const modalContent = document.querySelector('.modal');
+          modalContent.style.animation = 'slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+      }
+  
+      function closeModal() {
+          const modal = document.getElementById('modalOverlay');
+          const modalContent = document.querySelector('.modal');
+          
+          modalContent.style.animation = 'slideOut 0.3s ease-in-out';
+          
+          setTimeout(() => {
+              modal.style.display = 'none';
+              modalContent.style.animation = '';
+              document.querySelector('.modal-video').src = '';
+              document.body.style.overflow = '';
+          }, 300);
+      }
+  </script>
   
 
   

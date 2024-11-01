@@ -1617,6 +1617,442 @@
 
 
 
+
+
+
+
+  
+
+  <style>
+    /* Améliorations des animations et du design */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 24px;
+    max-width: 1200px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1001;
+    animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content {
+    padding: 2.5rem;
+}
+
+.modal-header {
+    position: relative;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 25px;
+}
+
+.modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #ffffff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #374151;
+}
+
+.modal-close:hover {
+    background-color: #f3f4f6;
+    transform: scale(1.1) rotate(90deg);
+}
+
+.modal-media-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.media-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.modal-image-wrapper, .modal-video-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.modal-image-wrapper:hover, .modal-video-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.5s ease;
+}
+
+.modal-image:hover {
+    transform: scale(1.05);
+}
+
+.media-caption {
+    font-size: 0.9rem;
+    color: #6b7280;
+    text-align: center;
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.media-caption:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.modal-video {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 16px;
+}
+
+.modal-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+    animation: fadeInLeft 0.5s ease-out;
+}
+
+.modal-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: #3b82f6;
+    border-radius: 2px;
+}
+
+.modal-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 16px;
+    border-left: 4px solid #3b82f6;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid #f3f4f6;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.modal-date {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.modal-date:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: #24292e;
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.github-button:hover {
+    background: #1a1e21;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.github-icon {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+
+.github-button:hover .github-icon {
+    transform: rotate(360deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-media-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+    }
+    
+    .modal-title {
+        font-size: 24px;
+    }
+}
+    </style>
+    
+    <!-- Modal HTML -->
+    <!-- Modal HTML -->
+<div id="modalOverlay" class="modal-overlay">
+  <div class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 class="modal-title"></h2>
+              <button class="modal-close">&times;</button>
+          </div>
+          
+          <div class="modal-media-container">
+              <div class="media-item">
+                  <div class="modal-image-wrapper">
+                      <img class="modal-image" src="" alt="">
+                  </div>
+                  <div class="media-caption">Aperçu du projet</div>
+              </div>
+              <div class="media-item">
+                  <div class="modal-video-wrapper">
+                      <iframe class="modal-video" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <div class="media-caption">Démonstration vidéo</div>
+              </div>
+          </div>
+          
+          <p class="modal-description"></p>
+          
+          <div class="modal-footer">
+              <div class="modal-date"></div>
+              <a href="#" class="github-button">
+                  <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                  </svg>
+                  Voir sur Github
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+    
+    <script>
+    // Données des projets
+    const projectsData = [
+        {
+            id: 1,
+            title: "Lorem Ipsum Dolor 01",
+            image: "./assets/images/project-1.png",
+            description: "Description détaillée du projet 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            videoUrl: "https://www.youtube.com/embed/example1",
+            date: "April 2022",
+            githubUrl: "https://github.com/username/project1"
+        },
+        {
+            id: 2,
+            title: "Lorem Ipsum Dolor 02",
+            image: "./assets/images/project-2.png",
+            description: "Description détaillée du projet 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+            videoUrl: "https://www.youtube.com/embed/example2",
+            date: "April 2022",
+            githubUrl: "https://github.com/username/project2"
+        },
+        {
+            id: 3,
+            title: "Lorem Ipsum Dolor 03",
+            image: "./assets/images/project-3.png",
+            description: "Description détaillée du projet 3. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            videoUrl: "https://www.youtube.com/embed/example3",
+            date: "April 2022",
+            githubUrl: "https://github.com/username/project3"
+        },
+        {
+            id: 4,
+            title: "Lorem Ipsum Dolor 04",
+            image: "./assets/images/project-4.png",
+            description: "Description détaillée du projet 4. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis.",
+            videoUrl: "https://www.youtube.com/embed/example4",
+            date: "April 2022",
+            githubUrl: "https://github.com/username/project4"
+        }
+    ];
+    
+    // Initialisation
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectLinks = document.querySelectorAll('.project-card');
+        
+        projectLinks.forEach((link, index) => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(projectsData[index]);
+            });
+        });
+    
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeButton = document.querySelector('.modal-close');
+        
+        closeButton.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    });
+    
+    function openModal(project) {
+        const modal = document.getElementById('modalOverlay');
+        modal.style.display = 'block';
+        
+        document.querySelector('.modal-title').textContent = project.title;
+        document.querySelector('.modal-image').src = project.image;
+        document.querySelector('.modal-image').alt = project.title;
+        document.querySelector('.modal-video').src = project.videoUrl;
+        document.querySelector('.modal-description').textContent = project.description;
+        document.querySelector('.modal-date').textContent = project.date;
+        document.querySelector('.github-button').href = project.githubUrl;
+    
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('modalOverlay');
+        const modalContent = document.querySelector('.modal');
+        
+        modalContent.style.animation = 'slideOut 0.3s ease-in-out';
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            modalContent.style.animation = '';
+            document.querySelector('.modal-video').src = '';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+    </script>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
   <!-- 
     - #FOOTER
   -->

@@ -441,14 +441,14 @@ body.active { overflow: hidden; }
 .navbar-link::before {
   content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
   left: 0;
-  height: 5px;
   width: 0;
-  background: var(--raw-seinna);
-  transition: var(--transition-1);
+  height: 2px;
+  background: linear-gradient(90deg, var(--raw-seinna), var(--scarlet));
+  transition: width 0.3s ease;
 }
+ 
 
 .navbar-link:is(:hover, :focus)::before { width: 100%; }
 
@@ -1335,6 +1335,11 @@ textarea.input-field {
 
   .about-banner { max-width: 450px; }
 
+  #image3DMessage{
+    margin-right: 150px !important;
+    margin-top: -20px !important;
+  }
+
 }
 
 
@@ -1804,3 +1809,177 @@ textarea.input-field {
   z-index: 1; /* Pour que l'image agrandie passe au-dessus des autres */
 }
 
+
+/* #image3DMessage {
+  animation: float 2s ease-in-out infinite;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3))
+         drop-shadow(0 15px 10px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+} */
+
+#image3DMessage {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+  
+  /* Animation de base */
+  animation: floatAdvanced 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))
+         drop-shadow(0 20px 20px rgba(0, 0, 0, 0.1));
+  
+  /* Transitions fluides */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation de flottement complexe */
+@keyframes floatAdvanced {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-12px) translateX(5px) rotate(2deg) scale(1.02);
+  }
+  50% {
+    transform: translateY(-8px) translateX(-3px) rotate(-1deg) scale(1.01);
+  }
+  75% {
+    transform: translateY(-4px) translateX(2px) rotate(1deg) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+/* Animation de flip multiple */
+@keyframes multiFlip {
+  0% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  }
+  30% {
+    transform: perspective(1000px) rotateY(360deg) rotateX(0deg);
+  }
+  60% {
+    transform: perspective(1000px) rotateY(360deg) rotateX(360deg);
+  }
+  85% {
+    transform: perspective(1000px) rotateY(720deg) rotateX(360deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(720deg) rotateX(720deg);
+  }
+}
+
+/* Effet au survol */
+#image3DMessage:hover {
+  animation: multiFlip 1.2s ease-in-out;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25))
+         drop-shadow(0 30px 40px rgba(0, 0, 0, 0.2))
+         drop-shadow(0 0 15px rgba(83, 166, 250, 0.4));
+}
+
+/* Effet de halo lumineux */
+#image3DMessage::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(83, 166, 250, 0.2),
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: pulseHalo 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Animation du halo */
+@keyframes pulseHalo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Effet de brillance radial */
+#image3DMessage::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.4) 25%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: shineAdvanced 8s infinite;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+/* Animation de brillance */
+@keyframes shineAdvanced {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+/* Effet d'ondulation */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(83, 166, 250, 0.2),
+                0 0 0 10px rgba(83, 166, 250, 0.2),
+                0 0 0 20px rgba(83, 166, 250, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(83, 166, 250, 0.2),
+                0 0 0 20px rgba(83, 166, 250, 0.2),
+                0 0 0 30px rgba(83, 166, 250, 0);
+  }
+}
+
+/* Animation néon */
+@keyframes neonPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(83, 166, 250, 0.4))
+           drop-shadow(0 0 10px rgba(83, 166, 250, 0.3))
+           drop-shadow(0 0 15px rgba(83, 166, 250, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(83, 166, 250, 0.6))
+           drop-shadow(0 0 15px rgba(83, 166, 250, 0.4))
+           drop-shadow(0 0 20px rgba(83, 166, 250, 0.3));
+  }
+}
+
+/* Effet de click */
+#image3DMessage:active {
+  transform: scale(0.95) translateY(5px);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3))
+         drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
+}

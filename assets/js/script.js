@@ -725,3 +725,50 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Messagerie
+const icon = document.getElementById('image3DMessage');
+let isFlipping = false;
+
+// Effet 3D au mouvement de la souris
+icon.addEventListener('mousemove', (e) => {
+  if (!isFlipping) {
+    const { left, top, width, height } = icon.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    
+    icon.style.transform = `
+      perspective(1000px)
+      rotateY(${x * 30}deg)
+      rotateX(${-y * 30}deg)
+      translateZ(20px)
+    `;
+  }
+});
+
+// Réinitialisation quand la souris sort
+icon.addEventListener('mouseleave', () => {
+  if (!isFlipping) {
+    icon.style.transform = 'none';
+  }
+});
+
+// Animation de flip au click
+icon.addEventListener('click', () => {
+  if (!isFlipping) {
+    isFlipping = true;
+    icon.style.animation = 'multiFlip 1.2s ease-in-out';
+    
+    // Ajouter l'effet d'ondulation
+    icon.style.animation = `
+      multiFlip 1.2s ease-in-out,
+      ripple 1s linear,
+      neonPulse 1.2s ease-in-out
+    `;
+    
+    // Réinitialiser après l'animation
+    setTimeout(() => {
+      isFlipping = false;
+      icon.style.animation = 'floatAdvanced 6s ease-in-out infinite';
+    }, 1200);
+  }
+});

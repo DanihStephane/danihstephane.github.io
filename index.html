@@ -609,14 +609,12 @@
                 </div>
               </li>
   
-
               <li>
-                <div class="skill-card hover-target">
-                  <div class="tooltip">Laravel</div>
-  
-                  <div class="card-icon">
-                    <img src="./assets/images/skills/Laravel.svg.png" width="50px" alt="Laravel logo">
-                  </div>
+                <div class="skill-card hover-target" style="box-shadow: 0 0 15px rgba(255, 2, 2, 0.5);">
+                    <div class="tooltip">Laravel</div>
+                    <div class="card-icon">
+                        <img src="./assets/images/skills/Laravel.svg.png" width="50px" alt="Laravel logo">
+                    </div>
                 </div>
               </li>
 
@@ -840,7 +838,7 @@
 
               <li>
                 <div class="skill-card hover-target">
-                  <div class="tooltip">Postgresql</div>
+                  <div class="tooltip">Postgcosql</div>
   
                   <div class="card-icon">
                     <img src="./assets/images/skills/postgres.png" width="50px" alt="Postgresql logo">
@@ -1221,13 +1219,16 @@
           <div class="contact-content section-content" style="width: 100%;">
             <p class="section-subtitle">Recommandation</p>
 
+            <img src="./assets/images/message.png" width="200px" alt="" style="float: right;" id="image3DMessage">
+
             <h2 class="h3 section-title animate" style="--i:0;width: 100%;" data-translate="recommandation_title">Have You Any Project? Please Drop a Message</h2>
+
 
             <p class="section-text animate" style="--i:1;" data-translate="recommandation_introduction">
               Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.
             </p>
 
-
+            
 
 
 
@@ -2156,22 +2157,199 @@
   <!-- 
     - #FOOTER
   -->
-
-  <footer class="footer">
-    <div class="container">
-
-      <p class="h1 logo">
-        <a href="#" class="hover-target">
-          Danih Stephane<span>.</span>
-        </a>
-      </p>
-
-      <p class="copyright">
-        &copy; 2024 <a href="#" class="hover-target">Rakotoarison Harilanto</a>. <span data-translate="proundly"></span>
-      </p>
-
-    </div>
-  </footer>
+  <html>
+    <style>
+    .footer {
+      background: var(--bg-secondary);
+      padding-block: 20px;  /* Conservé */
+      text-align: center;
+      box-shadow: var(--shadow-1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--raw-seinna), transparent);
+      top: 0;
+      left: -50%;
+      animation: shine 3s infinite linear;
+    }
+    
+    .footer .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .footer .logo { 
+      margin-bottom: 15px;  /* Conservé */
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .footer .logo a {
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .footer .logo a span {
+      color: var(--raw-seinna);
+      display: inline-block;
+      animation: bounce 1s ease infinite;
+    }
+    
+    .footer .logo a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background: var(--raw-seinna);
+      transition: width 0.3s ease;
+    }
+    
+    .footer .logo a:hover::before {
+      width: 100%;
+    }
+    
+    .copyright {
+      color: var(--color-secondary);
+      line-height: 1.6;  /* Conservé */
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards 0.3s;
+    }
+    
+    .copyright a {
+      display: inline-block;  /* Conservé */
+      color: var(--raw-seinna);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .copyright a::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--raw-seinna);
+      opacity: 0.1;
+      top: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    .copyright a:hover {
+      color: var(--raw-seinna);
+    }
+    
+    .copyright a:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    
+    /* Effet de particules plus subtil */
+    .footer-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--raw-seinna);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 15s linear infinite;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        transform: translateY(-50px) translateX(50px);
+        opacity: 0;
+      }
+    }
+    </style>
+    
+    <footer class="footer">
+      <div class="footer-particles">
+        <!-- Les particules seront ajoutées en JS -->
+      </div>
+      
+      <div class="container">
+        <p class="h1 logo">
+          <a href="#" class="hover-target">
+            Danih Stephane<span>.</span>
+          </a>
+        </p>
+    
+        <p class="copyright">
+          &copy; 2024 <a href="#" class="hover-target">Rakotoarison Harilanto</a>. <span data-translate="proundly">Proudly created with passion</span>
+        </p>
+      </div>
+    </footer>
+    
+    <script>
+    // Création des particules
+    function createParticles() {
+      const particlesContainer = document.querySelector('.footer-particles');
+      const numberOfParticles = 15; // Réduit pour un effet plus subtil
+    
+      for (let i = 0; i < numberOfParticles; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
 
 
 

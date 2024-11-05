@@ -259,7 +259,7 @@ function openModal(project) {
 
     // Mise à jour du contenu
     document.querySelector('.modal-title').textContent = project.title;
-    document.querySelector('.modal-image').src = project.image;
+    document.querySelector('.modal-image').src = `${project.image}?v=${Date.now()}`;
     document.querySelector('.modal-image').alt = project.title;
     document.querySelector('.modal-video').src = project.videoUrl;
     document.querySelector('.modal-description').textContent = project.description;

@@ -771,4 +771,13 @@ icon.addEventListener('click', () => {
       icon.style.animation = 'floatAdvanced 6s ease-in-out infinite';
     }, 1200);
   }
+})
+
+var loader = document.getElementById("preloader");
+loader.classList.remove('visible');
+window.addEventListener("load", function(){
+  setTimeout(() =>  {
+    loader.classList.add('hidden');
+    loader.style.zIndex = "0";
+  },0);
 });

@@ -1,16 +1,1 @@
-let sections = document.querySelectorAll('section');
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop;
-        let height = sec.offsetHeight;
-        let triggerOffset = 600;  // Adjust this value to trigger the animation earlier
-
-        if (top >= offset - triggerOffset && top < offset + height){
-            sec.classList.add('show-animate');
-        }else{
-            sec.classList.remove('show-animate');
-        }
-    })
-}
+let sections=document.querySelectorAll("section");window.onscroll=()=>{sections.forEach((o=>{let s=window.scrollY,e=o.offsetTop,t=o.offsetHeight;s>=e-600&&s<e+t?o.classList.add("show-animate"):o.classList.remove("show-animate")}))};

@@ -24,7 +24,7 @@ const projectsData = [
                 date: "15 Novambra 2021"
             },
         },
-        videoUrl: "https://www.youtube.com/embed/zYwTUv5q_Vk?si=MwvwAMWsbs2y0gtQ",
+        videoUrl: "",
         githubUrl: "https://github.com/DanihStephane/Mobile-Banking/tree/main/REAL",
         technologies: {
             php: false,
@@ -75,7 +75,7 @@ const projectsData = [
                 date: "11 Aprily 2022",
             },
         },
-        videoUrl: "https://www.youtube.com/embed/zYwTUv5q_Vk?si=MwvwAMWsbs2y0gtQ",
+        videoUrl: "",
         githubUrl: "https://github.com/DanihStephane/mean",
         technologies: {
             php: false,
@@ -126,7 +126,7 @@ const projectsData = [
                 date: "23 Mey 2022",
             },
         },
-        videoUrl: "https://www.youtube.com/embed/zYwTUv5q_Vk?si=MwvwAMWsbs2y0gtQ",
+        videoUrl: "",
         githubUrl: "https://github.com/DanihStephane/ProjetAndroidMaster1P9/tree/main/android/KidsApp",
         technologies: {
             php: false,
@@ -228,7 +228,7 @@ const projectsData = [
                 date: "21 Jona 2023",
             },
         },
-        videoUrl: "https://www.youtube.com/embed/zYwTUv5q_Vk?si=MwvwAMWsbs2y0gtQ",
+        videoUrl: "https://www.youtube.com/watch?v=zh07mK2wJw8&t=81s",
         githubUrl: "https://github.com/DanihStephane/AssignmentFront",
         technologies: {
             php: false,
@@ -279,7 +279,7 @@ const projectsData = [
                 date: "14 Aogositra 2023",
             },
         },
-        videoUrl: "https://www.youtube.com/embed/zYwTUv5q_Vk?si=MwvwAMWsbs2y0gtQ",
+        videoUrl: "",
         githubUrl: "https://github.com/DanihStephane/e-gouvernance",
         technologies: {
             php: false,
@@ -411,7 +411,95 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
+
+class YouTubeLoader {
+    constructor() {
+        this.loader = document.getElementById('loader');
+        this.overlay = document.getElementById('overlay');
+        this.iframe = document.getElementById('youtubeIframe');
+        this.currentUrl = '';
+    }
+
+    showLoader() {
+        this.overlay.classList.remove('hidden');
+        this.loader.classList.remove('hidden');
+    }
+
+    hideLoader() {
+        this.overlay.classList.add('hidden');
+        this.loader.classList.add('hidden');
+    }
+
+    loadVideo(url) {
+        this.showLoader();
+        // Ne rien faire si c'est la même URL
+        if (url === this.currentUrl) return;
+
+        this.currentUrl = url;
+
+        // Garder l'URL telle quelle si c'est déjà un lien embed
+        if (url.includes('/embed/')) {
+            this.loadWithDelay(url);
+            return;
+        }
+
+        // Extraire l'ID de différents formats d'URL YouTube
+        let videoId = '';
+        const patterns = {
+            shortened: /youtu\.be\/([^?]+)/,
+            standard: /youtube\.com\/watch\?v=([^&]+)/,
+            embed: /youtube\.com\/embed\/([^?]+)/
+        };
+
+        for (let pattern of Object.values(patterns)) {
+            const match = url.match(pattern);
+            if (match) {
+                videoId = match[1];
+                break;
+            }
+        }
+
+        if (videoId) {
+            // Extraire les paramètres supplémentaires s'ils existent
+            const params = url.split('?')[1] || '';
+            const embedUrl = `https://www.youtube.com/embed/${videoId}${params ? '?' + params : ''}`;
+            this.loadWithDelay(embedUrl);
+        } else {
+            console.error('URL YouTube invalide');
+            this.hideLoader();
+        }
+    }
+
+    loadWithDelay(url) {
+        setTimeout(() => {
+            this.iframe.src = url;
+
+            // Attendre que l'iframe soit chargée
+            this.iframe.onload = () => {
+                this.hideLoader();
+            };
+
+            // Fallback si l'événement onload ne se déclenche pas
+            setTimeout(() => {
+                this.hideLoader();
+            }, 2000);
+        }, 1000);
+    }
+}
+
+
+
+
 function openModal(project) {
+    //document.querySelector('.modal-video').src = project.videoUrl;
+
+    // Initialiser le loader
+    const youtubeLoader = new YouTubeLoader();
+
+    // Simuler des changements de vidéo (pour démonstration)
+    youtubeLoader.loadVideo(project.videoUrl);
     //traduction de global
     // Mise à jour des textes traduits
 
@@ -439,7 +527,7 @@ function openModal(project) {
     document.querySelector('.modal-description').textContent = project.translations[currentLanguage].description;
     document.querySelector('.modal-date').textContent = project.translations[currentLanguage].date;
 
-    document.querySelector('.modal-video').src = project.videoUrl;
+
     document.querySelector('.github-button').href = project.githubUrl;
 
     // Gestion de l'affichage des technologies

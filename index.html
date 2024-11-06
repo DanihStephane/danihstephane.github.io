@@ -1879,7 +1879,7 @@
                                   stroke="#000000"></path>
                         </g>
                     </svg>
-                    React
+                    React (&Native)
                 </div>
                 <div class="tech-badge symfony-badge">
                     <svg width="20" height="20" fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -1903,9 +1903,24 @@
                 </div>
                 <div class="media-item">
                     <div class="modal-video-wrapper">
-                        <iframe class="modal-video" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <style>
+
+                        </style>
+                        <div class="video-container" id="videoContainer">
+                            <div class="overlay hidden" id="overlay"></div>
+                            <div class="loader hidden" id="loader">
+                                <div class="loader-ring"></div>
+                                <div class="loader-ring"></div>
+                                <div class="loader-icon"></div>
+                            </div>
+                            <iframe
+                                    id="youtubeIframe"
+                                    class="modal-video"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                     <div class="media-caption" id="demo-project">Démonstration vidéo</div>
                 </div>

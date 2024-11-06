@@ -628,6 +628,7 @@ const popup = document.getElementById('popupImageParent');
 const closeBtn = document.getElementById('closeBtn');
 const popupImage = document.getElementById('popupImage');
 const popupDescription = document.getElementById('popupDescription');
+const imageTitle = document.getElementById('imageTitle');
 
 
 // Ouvrir le popup pour chaque image
@@ -636,26 +637,63 @@ document.querySelectorAll('.popup-image').forEach((image) => {
   image.addEventListener('click', () => {
       const imageSrc = image.src;
       const description = image.nextElementSibling.textContent; // Récupérer le texte du prochain élément (la description)
-
-      popup.style.display = 'flex';
+    const deuxiemeElement = image.nextElementSibling?.nextElementSibling.textContent;
+    popup.style.display = 'flex';
       popupImage.src = imageSrc; // Mettre à jour l'image du popup
       popupDescription.textContent = description; // Mettre à jour la description
+    imageTitle.textContent = deuxiemeElement; // Mettre à jour la description
+
+    showPopupImage();
   });
 });
 
 
 // Fermer le popup
 closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
+    //popup.style.display = 'none';
+  hidePopupImage();
 });
 
 // Fermer le popup si on clique en dehors de l'image
 popup.addEventListener('click', (e) => {
   if (e.target === popup) {
-      popup.style.display = 'none'; // Masquer le popup
+      //popup.style.display = 'none'; // Masquer le popup
+      hidePopupImage();
       e.preventDefault(); // Empêche le rechargement de la page
   }
 });
+
+
+function showPopupImage() {
+  const popup = document.getElementById('popupImageParent');
+  popup.style.display = 'flex';
+  setTimeout(() => {
+    popup.classList.add('active');
+  }, 10);
+}
+
+function hidePopupImage() {
+  const popup = document.getElementById('popupImageParent');
+  popup.classList.remove('active');
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 300);
+}
+
+document.getElementById('closeBtn').addEventListener('click', hidePopupImage);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Animation text logo*/

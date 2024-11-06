@@ -88,6 +88,7 @@
     border: 2px solid rgba(255, 255, 255, 0.2);
     transform: translateZ(20px);
     transition: transform 0.5s ease;
+    animation: bounceTop 1.5s ease-in-out infinite;
 }
 
 .service-title {
@@ -182,5 +183,14 @@
     .service-card {
         height: auto;
         min-height: 400px;
+    }
+}
+
+@keyframes bounceTop {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }

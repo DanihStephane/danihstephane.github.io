@@ -652,6 +652,12 @@ main { overflow-x: hidden; }
   border-radius: var(--radius-12);
   box-shadow: var(--shadow-1);
   cursor: help;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .skill-card:hover .tooltip {

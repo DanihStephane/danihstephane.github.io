@@ -1,6 +1,6 @@
 # Bienvenue sur mon site personnel
 
-![Bannière du site](https://danihstephane.github.io/images/assets/readme.png) 
+![Bannière du site](https://danihstephane.github.io/assets/images/readme.png) 
 
 ## À propos de moi
 

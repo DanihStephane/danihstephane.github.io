@@ -214,7 +214,15 @@ const translations = {
     "services_r_d_technologique": "Services de R&D Technologique",
     "accompagnement_croissance_digitale": "Accompagnement en Croissance Digitale",
     "solutions_cloud":"Solutions Cloud",
-  
+
+
+    "publish-date1":"15 Novembre 2021",
+    "publish-date2":"11 Avril 2022",
+    "publish-date3":"23 Mai 2022",
+    "publish-date4":"8 Mai 2023",
+    "publish-date5":"21 Juin 2023",
+    "publish-date6":"14 Août 2023",
+    "publish-date7":"30 Juin 2024",
   },
   "en": {
     "home": "Home.",
@@ -431,6 +439,14 @@ const translations = {
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Robust Architecture and High-Performance APIs",
     "apis_restful": "RESTful APIs",
+
+      "publish-date1": "November 15, 2021",
+      "publish-date2": "April 11, 2022",
+      "publish-date3": "May 23, 2022",
+      "publish-date4": "May 8, 2023",
+      "publish-date5": "June 21, 2023",
+      "publish-date6": "August 14, 2023",
+      "publish-date7": "June 30, 2024",
   },
   "de": {
     "home": "Startseite.",
@@ -646,6 +662,14 @@ const translations = {
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Robuste Architektur und Hochleistungs-APIs",
     "apis_restful": "RESTful-APIs",
+
+      "publish-date1": "15. November 2021",
+      "publish-date2": "11. April 2022",
+      "publish-date3": "23. Mai 2022",
+      "publish-date4": "8. Mai 2023",
+      "publish-date5": "21. Juni 2023",
+      "publish-date6": "14. August 2023",
+      "publish-date7": "30. Juni 2024",
   },
   "mg": {
     "home": "Fandraisana.",
@@ -861,6 +885,14 @@ const translations = {
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Rafitra matanjaka sy APIs mahomby",
     "apis_restful": "APIs RESTful",
+
+      "publish-date1": "15 Novambra 2021",
+      "publish-date2": "11 Avrily 2022",
+      "publish-date3": "23 Mey 2022",
+      "publish-date4": "8 Mey 2023",
+      "publish-date5": "21 Jiona 2023",
+      "publish-date6": "14 Aogositra 2023",
+      "publish-date7": "30 Jiona 2024",
   }
 };
 

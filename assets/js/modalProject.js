@@ -259,7 +259,17 @@ function openModal(project) {
 
     // Mise à jour du contenu
     document.querySelector('.modal-title').textContent = project.title;
-    document.querySelector('.modal-image').src = `${project.image}?v=${Date.now()}`;
+    const modalImage = document.querySelector('.modal-image');
+    if (modalImage) {
+        modalImage.src = project.image;
+        // Ajoutez un gestionnaire d'erreur
+        modalImage.onerror = function(e) {
+            console.log(e);
+            console.error('Erreur de chargement de l\'image:', project.image);
+        };
+    } else {
+        console.error('Modal image non trouvée');
+    }
     document.querySelector('.modal-image').alt = project.title;
     document.querySelector('.modal-video').src = project.videoUrl;
     document.querySelector('.modal-description').textContent = project.description;

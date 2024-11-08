@@ -819,3 +819,32 @@ window.addEventListener("load", function(){
     loader.style.zIndex = "0";
   },0);
 });
+
+
+/*animation image*/
+const imageHero = document.getElementById('danih-peinture');
+const containerHero = imageHero.parentElement;
+
+containerHero.addEventListener('mousemove', (e) => {
+  const { left, top, width, height } = containerHero.getBoundingClientRect();
+  const x = e.clientX - left;
+  const y = e.clientY - top;
+
+  // Calcul du mouvement (plus la valeur est petite, plus le mouvement est subtil)
+  const moveX = (x - width/2) * 0.05;
+  const moveY = (y - height/2) * 0.05;
+
+  // Application de la transformation
+  imageHero.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+// Réinitialisation quand la souris quitte l'image
+containerHero.addEventListener('mouseleave', () => {
+  imageHero.style.transform = 'translate(0px, 0px)';
+  imageHero.style.transition = 'all 0.5s ease-out';
+});
+
+// Désactive la transition pendant le mouvement pour plus de fluidité
+containerHero.addEventListener('mouseenter', () => {
+  imageHero.style.transition = 'none';
+});

@@ -145,7 +145,8 @@
 .scss-badge { background: linear-gradient(135deg, #cc6699 0%, #d85c8a 100%); }
 .rn-badge { background: linear-gradient(135deg, #61dafb 0%, #51c9fb 100%); }
 .symfony-badge { background: linear-gradient(135deg, #c41e3a 0%, #d3283c 100%); }
-
+.soap-badge { background: linear-gradient(135deg, #264de4 0%, #2965f1 100%); }
+.rest-badge { background: linear-gradient(135deg, #264de4 0%, #2965f1 100%); }
 
 .modal-media-container {
     display: grid;

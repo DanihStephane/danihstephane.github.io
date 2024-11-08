@@ -47,7 +47,9 @@ const projectsData = [
             ts: false,
             scss: false,
             rn: false,
-            symfony: false
+            symfony: false,
+            soap: true,
+            rest: false
         }
     },
     {
@@ -98,7 +100,9 @@ const projectsData = [
             ts: false,
             scss: false,
             rn: false,
-            symfony: false
+            symfony: false,
+            soap: false,
+            rest: false
         }
     },
     {
@@ -149,7 +153,9 @@ const projectsData = [
             ts: false,
             scss: false,
             rn: false,
-            symfony: false
+            symfony: false,
+            soap: false,
+            rest: true
         }
     },
     {
@@ -200,7 +206,9 @@ const projectsData = [
             ts: false,
             scss: false,
             rn: false,
-            symfony: false
+            symfony: false,
+            soap: false,
+            rest: false
         }
     },
     {
@@ -250,8 +258,10 @@ const projectsData = [
             batchfile: false,
             ts: true,
             scss: true,
-            rn: true,
-            symfony: false
+            rn: false,
+            symfony: false,
+            soap: false,
+            rest: true
         }
     },
     {
@@ -302,7 +312,9 @@ const projectsData = [
             ts: true,
             scss: true,
             rn: true,
-            symfony: false
+            symfony: false,
+            soap: false,
+            rest: true
         }
     },
     {
@@ -330,7 +342,7 @@ const projectsData = [
                 date: "30 Jona 2024",
             },
         },
-        videoUrl: "https://www.youtube.com/embed/zYwTUv5q_Vk?si=MwvwAMWsbs2y0gtQ",
+        videoUrl: "",
         githubUrl: "https://github.com/DanihStephane/",
         technologies: {
             php: true,
@@ -353,7 +365,9 @@ const projectsData = [
             ts: false,
             scss: false,
             rn: true,
-            symfony: true
+            symfony: true,
+            soap: false,
+            rest: false
         }
     }
 ];
@@ -552,7 +566,9 @@ function openModal(project) {
         ts: document.querySelector('.ts-badge'),
         scss: document.querySelector('.scss-badge'),
         rn: document.querySelector('.rn-badge'),
-        symfony: document.querySelector('.symfony-badge')
+        symfony: document.querySelector('.symfony-badge'),
+        soap: document.querySelector('.soap-badge'),
+        rest: document.querySelector('.rest-badge')
     };
 
     // Afficher/masquer les badges selon les technologies utilisées

@@ -221,8 +221,9 @@
         <div class="about" id="about">
             <section class="sec-3">
                 <figure class="about-banner animate">
-                    <img src="./assets/images/about-banner.png" alt="Danih Stephane"
-                         class="w-100">
+                    <div id="danih-peinture-container">
+                        <img src="./assets/images/about-banner.png" alt="Danih Stephane" class="w-100" id="danih-peinture">
+                    </div>
                 </figure>
             </section>
             <section class="sec-4">
@@ -821,7 +822,7 @@
                         <div id="popupImageParent" class="popupImageParent">
                             <div class="popup-content">
                                 <span id="closeBtn" class="close">&times;</span>
-                                <img id="popupImage" src="/api/placeholder/500/300" alt="Popup Image"/>
+                                <img id="popupImage" src="" alt="Popup Image"/>
                                 <h3 id="imageTitle" class="image-title">Titre de l'image</h3>
                                 <p id="popupDescription" class="image-description">Description détaillée de l'image. Vous pouvez ajouter ici autant de texte que nécessaire pour décrire l'image ou donner plus d'informations.</p>
                             </div>
@@ -1405,7 +1406,7 @@
                             </div>
                         </li>
                         <li>
-                            <ul class="contac-social-list">
+                            <ul class="contact-social-list">
                                 <li class="animate" style="--i:6;">
                                     <a href="https://www.linkedin.com/in/danihstephane/" class="contact-social-link" target="_blank">
                                         <div class="tooltip">Linkedin</div>
@@ -1413,9 +1414,9 @@
                                     </a>
                                 </li>
                                 <li class="animate" style="--i:7;">
-                                    <a href="https://github.com/DanihStephane" class="contact-social-link" target="_blank">
-                                        <div class="tooltip">Github</div>
-                                        <ion-icon name="logo-github"></ion-icon>
+                                    <a href="https://wa.me/261344567154" class="contact-social-link" target="_blank">
+                                        <div class="tooltip">WhatsApp</div>
+                                        <ion-icon name="logo-whatsapp"></ion-icon>
                                     </a>
                                 </li>
                                 <li class="animate" style="--i:8;">
@@ -1424,30 +1425,34 @@
                                         <ion-icon name="logo-twitter"></ion-icon>
                                     </a>
                                 </li>
-                                <li class="animate" style="--i:9;">
-                                    <a href="https://wa.me/261344567154" class="contact-social-link" target="_blank">
-                                        <div class="tooltip">WhatsApp</div>
-                                        <ion-icon name="logo-whatsapp"></ion-icon>
+                                <li class="contact-social-link-hidden">
+                                    <a href="https://github.com/DanihStephane" class="contact-social-link" target="_blank">
+                                        <div class="tooltip">Github</div>
+                                        <ion-icon name="logo-github"></ion-icon>
                                     </a>
                                 </li>
-                                <li class="animate" style="--i:10;">
-                                    <a href="https://www.facebook.com/profile.php?id=100004143196130"
-                                       class="contact-social-link" target="_blank">
+                                <li class="contact-social-link-hidden">
+                                    <a href="https://www.facebook.com/profile.php?id=100004143196130" class="contact-social-link" target="_blank">
                                         <div class="tooltip">Facebook</div>
                                         <ion-icon name="logo-facebook"></ion-icon>
                                     </a>
                                 </li>
-                                <li class="animate" style="--i:11;">
+                                <li class="contact-social-link-hidden">
                                     <a href="https://www.instagram.com/danihstephane/" class="contact-social-link" target="_blank">
                                         <div class="tooltip">Instagram</div>
                                         <ion-icon name="logo-instagram"></ion-icon>
                                     </a>
                                 </li>
-                                <li class="animate" style="--i:12;">
-                                    <a href="https://www.youtube.com/@DanihStephaneRakotoarisonHaril"
-                                       class="contact-social-link" target="_blank">
+                                <li class="contact-social-link-hidden">
+                                    <a href="https://www.youtube.com/@DanihStephaneRakotoarisonHaril" class="contact-social-link" target="_blank">
                                         <div class="tooltip">Youtube</div>
                                         <ion-icon name="logo-youtube"></ion-icon>
+                                    </a>
+                                </li>
+                                <li class="contact-social-link-more animate" style="--i:9;">
+                                    <a href="#" class="contact-social-link">
+                                        <div class="tooltip">+</div>
+                                        ...
                                     </a>
                                 </li>
                             </ul>
@@ -1794,6 +1799,58 @@
                     Shell
                 </div>
 
+                <!-- soap -->
+                <div class="tech-badge soap-badge">
+                    <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                            <path d="M37 22.0001L34 25.0001L23 14.0001L26 11.0001C27.5 9.50002 33 7.00005 37 11.0001C41 15.0001 38.5 20.5 37 22.0001Z"
+                                  fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M42 6L37 11" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M11 25.9999L14 22.9999L25 33.9999L22 36.9999C20.5 38.5 15 41 11 36.9999C7 32.9999 9.5 27.5 11 25.9999Z"
+                                  fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M23 32L27 28" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M6 42L11 37" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M16 25L20 21" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    SOAP API
+                </div>
+
+                <!-- rest -->
+                <div class="tech-badge rest-badge">
+                    <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                            <path d="M37 22.0001L34 25.0001L23 14.0001L26 11.0001C27.5 9.50002 33 7.00005 37 11.0001C41 15.0001 38.5 20.5 37 22.0001Z"
+                                  fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M42 6L37 11" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M11 25.9999L14 22.9999L25 33.9999L22 36.9999C20.5 38.5 15 41 11 36.9999C7 32.9999 9.5 27.5 11 25.9999Z"
+                                  fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M23 32L27 28" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M6 42L11 37" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M16 25L20 21" stroke="#ffffff" stroke-width="4" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    REST API
+                </div>
+
                 <!-- JVM -->
                 <div class="tech-badge jvm-badge">
                     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -1961,7 +2018,7 @@
         </p>
 
         <p class="copyright">
-            &copy; 2024 <a href="#" class="hover-target">Rakotoarison Harilanto</a>. <span data-translate="proundly">Proudly created with passion</span>
+            &copy; 2024 <a href="https://ngl.link/danihstephane29437" class="hover-target" target="_blank">Rakotoarison Harilanto</a>. <span data-translate="proundly">Proudly created with passion</span>
         </p>
     </div>
 </footer>

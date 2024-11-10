@@ -44,7 +44,16 @@ navToggleBtn.addEventListener("click", function () {
 
 });
 
+// Sélectionner tous les liens de navigation
+const navLinks = document.querySelectorAll(".navbar-link");
 
+// Ajouter un écouteur d'événements à chaque lien
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    // Déclencher artificiellement un clic sur le bouton toggle
+    navToggleBtn.click();
+  });
+});
 
 /**
  * skills toggle

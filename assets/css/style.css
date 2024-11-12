@@ -2173,7 +2173,18 @@ iframe {
   border-radius: 50%;
   text-decoration: none;
   position: relative;
+  margin: 5px;  /* Espacement entre les éléments */
 }
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .contact-social-link {
+    width: 30px;  /* Réduit la taille si nécessaire */
+    height: 30px; /* Réduit la taille si nécessaire */
+    margin: 5px auto; /* Centrer les éléments et ajouter un espacement */
+  }
+}
+
 
 .contact-social-link .tooltip {
   position: absolute;

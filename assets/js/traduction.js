@@ -1116,6 +1116,7 @@ function changeLanguage(lang) {
   resetTypedAnimations();
   changePopupLogo();
   changeSwithSkills();
+  changeGameLang();
 }
 
 function changePopupLogo(){

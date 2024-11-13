@@ -112,8 +112,15 @@ document.addEventListener('click', (e) => {
 });
 
 robotExplosion.addEventListener('click', (e) => {
-    robot.src = "./assets/images/boom.gif";
     robotExplosion.style.display = "none";
+    document.body.style.backgroundImage = "url('./assets/images/confetti.gif')";
+    setTimeout(() => {
+        robot.src = "./assets/images/boom.gif";
+    }, 1000);
+
+    setTimeout(() => {
+        document.body.style.backgroundImage = "";
+    }, 1800);
 
     setTimeout(() => {
         document.querySelector('.close-button').click();

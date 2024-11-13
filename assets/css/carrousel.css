@@ -11,7 +11,7 @@
     /* border: 1px solid salmon; */
     border-radius: 5px;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {.baba .carousel  {

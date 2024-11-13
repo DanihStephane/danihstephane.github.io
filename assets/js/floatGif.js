@@ -114,9 +114,7 @@ document.addEventListener('click', (e) => {
 robotExplosion.addEventListener('click', (e) => {
     robotExplosion.style.display = "none";
     document.body.style.backgroundImage = "url('./assets/images/confetti.gif')";
-    setTimeout(() => {
-        robot.src = "./assets/images/boom.gif";
-    }, 1000);
+    robot.src = "./assets/images/boom.gif";
 
     setTimeout(() => {
         document.body.style.backgroundImage = "";

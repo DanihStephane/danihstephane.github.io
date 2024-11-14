@@ -47,31 +47,49 @@ window.addEventListener('scroll', function() {
     }, 10);
 }, { passive: true });
 
-document.querySelector('.close-button').addEventListener('click', function() {
-    document.querySelector('.floating-container').style.display = 'none';
-    robotExplosion.style.display = "none";
-});
 
 
 
 const translationsGame = {
     fr: {
         game: '🤖 Hey ! Bienvenue l\'ami(e) 👋 Trouve mon mini-clone caché sur le site. Si tu y arrives, prépare-toi… ça va faire BOUM ! 💥😁',
+        close: "Supprimer le jeu",
     },
     en: {
         game: "🤖 Hey! Welcome, friend 👋 Find my mini-clone hidden on the site. If you manage to spot it, get ready... it's going to go BOOM! 💥😁",
+        close: "Delete the game",
     },
     de: {
         game: "🤖 Hey! Willkommen, mein Freund / meine Freundin 👋 Finde meinen Mini-Klon, der auf der Website versteckt ist. Wenn du ihn entdeckst, mach dich bereit… es wird knallen! 💥😁",
+        close: "Spiel löschen",
     },
     mg: {
         game: "🤖 Hey! Tonga soa ry namana 👋 Tadiavo ny mini-clone-ako miafina ao amin'ny tranonkala. Raha mahita azy ianao, miomàna tsara… hisy BOUM hitranga! 💥😁",
+        close: "Hamafa ny lalao",
     },
 };
 
-function changeGameLang(){
-    document.querySelector('.dialog-bubble').textContent = translationsGame[currentLanguage].game;
+const closeButton = document.querySelector('.close-button');
+const floatingContainer = document.querySelector('.floating-container');
+
+function closeFloatingElements() {
+    floatingContainer.style.display = 'none';
+    robotExplosion.style.display = 'none';
 }
+
+function setCloseButtonTitle() {
+    closeButton.setAttribute('title', translationsGame[currentLanguage].close);
+}
+
+function changeGameLang() {
+    document.querySelector('.dialog-bubble').textContent = translationsGame[currentLanguage].game;
+    setCloseButtonTitle();
+}
+
+// Ajout des événements
+closeButton.addEventListener('click', closeFloatingElements);
+setCloseButtonTitle();
+
 
 // Création de la bulle de dialogue
 const dialogBubble = document.createElement('div');
@@ -86,7 +104,6 @@ containerAnimate.appendChild(dialogBubble);
 // Gestion du clic sur le robot
 let isGlitching = false;
 robot.addEventListener('click', (e) => {
-    console.log('click enter');
     e.stopPropagation();
 
     // Activation de l'effet glitch

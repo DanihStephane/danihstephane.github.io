@@ -131,7 +131,29 @@ document.addEventListener('click', (e) => {
 robotExplosion.addEventListener('click', (e) => {
     robotExplosion.style.display = "none";
     document.body.style.backgroundImage = "url('./assets/images/confetti.gif')";
-    robot.src = "./assets/images/boom.gif";
+
+    const start = 200;
+    const end = 400;
+    const duration = 1000; // 1 seconde
+
+    let startTime = performance.now();
+
+    function animate() {
+        const elapsed = performance.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentWidth = start + (end - start) * progress;
+        floatingContainer.style.width = `${currentWidth}px`;
+
+        if (elapsed < duration) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+
+    setTimeout(() => {
+        robot.src = "./assets/images/boom.gif";
+    }, 1000);
 
     setTimeout(() => {
         document.body.style.backgroundImage = "";

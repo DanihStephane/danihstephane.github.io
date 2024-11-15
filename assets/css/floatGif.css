@@ -230,3 +230,20 @@
                 inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     }
 }
+
+
+/* Media query pour les écrans de moins de 500px */
+@media screen and (max-width: 700px) {
+    .floating-container {
+        right: 20px; /* Réduire la marge droite */
+        width: 150px; /* Réduire la largeur du conteneur */
+    }
+}
+
+/* Media query pour les très petits écrans */
+@media screen and (max-width: 360px) {
+    .floating-container {
+        right: 10px;
+        width: 120px;
+    }
+}

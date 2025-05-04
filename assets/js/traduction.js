@@ -1330,9 +1330,12 @@ window.onload = function() {
   resetTypedAnimations();
 
   //particules
-  initParticles();
-  animate();
-  // Sélectionnez l'élément avec la classe 'theme-btn'
+
+particleSystem.init();
+particleSystem.animate();
+
+
+    // Sélectionnez l'élément avec la classe 'theme-btn'
     const themeButton = document.querySelector('.theme-btn');
 
     // Vérifiez si l'élément ne contient pas la classe 'active'

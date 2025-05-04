@@ -483,146 +483,833 @@ if (localStorage.getItem("theme") === "light_theme") {
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 
+// Configuration de base
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const particles = [];
-const maxParticles = 60;
-const minDistance = 140;
-const baseColor = 'rgba(41, 148, 200, 0.7)'; // Couleur légèrement plus claire pour toutes les particules
+// Définition du système de particules
+const particleSystem = {
+  particles: [],
+  maxParticles: 75,
+  colorSchemes: [
+    { // Thème Initial Éclairci
+      main: 'rgba(41, 183, 255, 0.6)',
+      accent: 'rgba(0, 255, 221, 0.7)',
+      highlight: 'rgba(255, 255, 255, 0.9)',
+      lines: 'rgba(41, 183, 255, 0.2)'
+    },
+    { // Thème Sky-Neon
+      main: 'rgba(0, 200, 255, 0.8)',
+      accent: 'rgba(0, 255, 200, 0.9)',
+      highlight: 'rgba(255, 255, 255, 1.0)',
+      lines: 'rgba(0, 200, 255, 0.25)'
+    },
+    { // Thème Pastel Dynamique
+      main: 'rgba(153, 229, 255, 0.8)',
+      accent: 'rgba(153, 255, 230, 0.9)',
+      highlight: 'rgba(255, 250, 240, 0.9)',
+      lines: 'rgba(153, 229, 255, 0.3)'
+    },
+  ],
 
-function Particle() {
-  this.x = Math.random() * canvas.width;
-  this.y = Math.random() * canvas.height;
-  this.size = Math.random() < 0.2 ? 30 : 18; // Agrandissement aléatoire de certains rectangles
-  this.color = baseColor;
-  this.speedX = (Math.random() - 0.5) * 1.5;
-  this.speedY = (Math.random() - 0.5) * 1.5;
-  this.opacity = 0;
-  this.shape = Math.floor(Math.random() * 8); // Ajout de nouvelles formes (6 au total)
-}
+  activeColorScheme: 0,
+  minDistance: 150,
+  interactionRadius: 250,
+  mouseX: undefined,
+  mouseY: undefined,
+  mouseActive: false,
+  lastClickTime: 0,
+  specialEffects: [],
+  techTexts: ['JS', 'CSS', 'HTML', 'API', 'NODE', 'REACT', 'VUE', 'NEXT', 'UI/UX', 'CODE', 'DEV', '</>', 'AI', 'WEB3', 'CLOUD', 'SQL', 'DATA', 'DESIGN'],
 
-function initParticles() {
-  for (let i = 0; i < maxParticles; i++) {
-    particles.push(new Particle());
-  }
-}
+  // Initialiser le système
+  init() {
+    // Créer des particules
+    for (let i = 0; i < this.maxParticles; i++) {
+      this.particles.push(this.createParticle());
+    }
 
-function drawParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Ajouter des écouteurs d'événements
+    window.addEventListener('mousemove', (e) => {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+      this.mouseActive = true;
 
-  particles.forEach((particle) => {
-    particle.opacity = Math.min(1, particle.opacity + 0.02); // Augmenter l'opacité graduellement
-    ctx.globalAlpha = particle.opacity;
+      // Effet discret au mouvement de souris
+      if (Math.random() < 0.1) {
+        this.createMouseTrail(e.clientX, e.clientY);
+      }
+    });
 
+    window.addEventListener('mouseout', () => {
+      this.mouseActive = false;
+    });
+
+    window.addEventListener('click', (e) => {
+      // Limiter les effets à 1 par seconde max
+      const now = Date.now();
+      if (now - this.lastClickTime > 1000) {
+        this.lastClickTime = now;
+        this.createSpecialEffect(e.clientX, e.clientY);
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Changer de schéma de couleur toutes les 30 secondes
+    setInterval(() => {
+      this.activeColorScheme = (this.activeColorScheme + 1) % this.colorSchemes.length;
+      // Transition douce des couleurs
+      this.particles.forEach(p => {
+        p.targetColor = this.getColors().main;
+      });
+    }, 30000);
+  },
+
+  // Obtenir les couleurs actuelles
+  getColors() {
+    return this.colorSchemes[this.activeColorScheme];
+  },
+
+  // Créer une particule
+  createParticle(x, y, isSpecial = false) {
+    const colors = this.getColors();
+    const particle = {
+      x: x || Math.random() * canvas.width,
+      y: y || Math.random() * canvas.height,
+      size: isSpecial ? 35 : Math.random() < 0.2 ? 30 : 18,
+      originalSize: 0, // Sera défini après
+      color: colors.main,
+      targetColor: colors.main,
+      speedX: (Math.random() - 0.5) * (isSpecial ? 3 : 1.5),
+      speedY: (Math.random() - 0.5) * (isSpecial ? 3 : 1.5),
+      opacity: isSpecial ? 1 : 0,
+      targetOpacity: 1,
+      shape: Math.floor(Math.random() * 12), // Plus de formes disponibles
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.02,
+      hovered: false,
+      pulsePhase: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.03 + Math.random() * 0.05,
+      text: this.techTexts[Math.floor(Math.random() * this.techTexts.length)],
+      textOpacity: 0,
+      lifespan: isSpecial ? 5000 + Math.random() * 3000 : Infinity,
+      birth: Date.now(),
+      glowRadius: 0,
+      glowIntensity: 0,
+      connected: []
+    };
+
+    particle.originalSize = particle.size;
+    return particle;
+  },
+
+  // Créer un effet spécial au clic - MODIFIÉ
+  createSpecialEffect(x, y) {
+    // Maintenant, tous les effets incluent une explosion de particules
+    this.createExplosion(x, y);
+
+    // Et on ajoute un effet supplémentaire choisi au hasard
+    const additionalEffectType = Math.floor(Math.random() * 2);
+
+    switch(additionalEffectType) {
+      case 0: // Grid tech effect
+        this.createGridEffect(x, y);
+        break;
+
+      case 1: // Circular data wave
+        this.createDataWave(x, y);
+        break;
+    }
+  },
+
+  // Créer une traînée de particules au mouvement de souris
+  createMouseTrail(x, y) {
+    if (Math.random() < 0.5) return; // Réduire la fréquence
+
+    const colors = this.getColors();
+    const trail = {
+      x: x,
+      y: y,
+      size: 5 + Math.random() * 10,
+      color: colors.accent,
+      opacity: 0.7,
+      speedX: (Math.random() - 0.5) * 1,
+      speedY: (Math.random() - 0.5) * 1,
+      type: Math.floor(Math.random() * 3),
+      lifespan: 1000 + Math.random() * 1000,
+      birth: Date.now()
+    };
+
+    this.specialEffects.push(trail);
+  },
+
+  // Créer une explosion de particules
+  createExplosion(x, y) {
+    const colors = this.getColors();
+    const particleCount = 12 + Math.floor(Math.random() * 8);
+
+    for (let i = 0; i < particleCount; i++) {
+      const angle = (Math.PI * 2 / particleCount) * i;
+      const speed = 2 + Math.random() * 3;
+
+      const particle = this.createParticle(x, y, true);
+      particle.speedX = Math.cos(angle) * speed;
+      particle.speedY = Math.sin(angle) * speed;
+      particle.color = colors.highlight;
+      particle.targetColor = colors.highlight;
+      particle.size = 15 + Math.random() * 15;
+      particle.originalSize = particle.size;
+      this.particles.push(particle);
+    }
+
+    // Onde circulaire
+    for (let i = 0; i < 3; i++) {
+      const wave = {
+        x: x,
+        y: y,
+        radius: 10,
+        maxRadius: 200 + Math.random() * 100,
+        color: colors.highlight,
+        opacity: 0.9,
+        width: 3,
+        type: 'wave',
+        birth: Date.now(),
+        lifespan: 1500 + i * 300
+      };
+
+      this.specialEffects.push(wave);
+    }
+  },
+
+  // Créer un effet de grille technique - MODIFIÉ pour intégrer l'aspect explosif
+  createGridEffect(x, y) {
+    const colors = this.getColors();
+    const gridSize = 40;
+    const gridExtent = 5;
+
+    // Ajouter une onde supplémentaire pour renforcer l'effet d'explosion
+    const extraWave = {
+      x: x,
+      y: y,
+      radius: 5,
+      maxRadius: 150 + Math.random() * 80,
+      color: colors.accent,
+      opacity: 0.7,
+      width: 2,
+      type: 'wave',
+      birth: Date.now(),
+      lifespan: 1200
+    };
+    this.specialEffects.push(extraWave);
+
+    // Cellules de la grille qui s'éloignent du centre
+    for (let i = -gridExtent; i <= gridExtent; i++) {
+      for (let j = -gridExtent; j <= gridExtent; j++) {
+        if (Math.random() < 0.4) {
+          const cell = {
+            x: x + i * gridSize,
+            y: y + j * gridSize,
+            size: gridSize * 0.8,
+            type: 'grid',
+            color: colors.accent,
+            birth: Date.now(),
+            lifespan: 1000 + Math.random() * 1500,
+            opacity: 0.1 + Math.random() * 0.5,
+            distance: Math.sqrt(i*i + j*j),
+            // Ajout d'une vitesse pour imiter une explosion
+            speedX: i * (0.5 + Math.random() * 0.5),
+            speedY: j * (0.5 + Math.random() * 0.5)
+          };
+
+          this.specialEffects.push(cell);
+        }
+      }
+    }
+
+    // Lignes de connexion avec effet d'explosion
+    for (let i = 0; i < 10; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 50 + Math.random() * 150;
+      const endX = x + Math.cos(angle) * distance;
+      const endY = y + Math.sin(angle) * distance;
+
+      const line = {
+        x1: x,
+        y1: y,
+        x2: endX,
+        y2: endY,
+        color: colors.highlight,
+        type: 'line',
+        width: 1 + Math.random() * 2,
+        birth: Date.now(),
+        lifespan: 800 + Math.random() * 1200,
+        opacity: 0.7 + Math.random() * 0.3
+      };
+
+      this.specialEffects.push(line);
+    }
+  },
+
+  // Créer une vague de données - MODIFIÉ pour intégrer l'aspect explosif
+  createDataWave(x, y) {
+    const colors = this.getColors();
+
+    // Ajouter une onde supplémentaire pour renforcer l'effet d'explosion
+    const extraWave = {
+      x: x,
+      y: y,
+      radius: 10,
+      maxRadius: 180 + Math.random() * 100,
+      color: colors.main,
+      opacity: 0.8,
+      width: 2.5,
+      type: 'wave',
+      birth: Date.now(),
+      lifespan: 1800
+    };
+    this.specialEffects.push(extraWave);
+
+    // Créer une onde avec code binaire
+    const wave = {
+      x: x,
+      y: y,
+      radius: 20,
+      maxRadius: 300,
+      type: 'dataWave',
+      color: colors.highlight,
+      birth: Date.now(),
+      lifespan: 3000,
+      opacity: 1,
+      texts: []
+    };
+
+    // Ajouter des textes binaires qui se propagent comme une explosion
+    const textCount = 30;
+    for (let i = 0; i < textCount; i++) {
+      const angle = (Math.PI * 2 / textCount) * i;
+      const dist = 50 + Math.random() * 200;
+      const speed = 0.5 + Math.random() * 1; // Vitesse de propagation
+
+      wave.texts.push({
+        x: Math.cos(angle) * (dist * 0.3), // Position initiale plus près du centre
+        y: Math.sin(angle) * (dist * 0.3),
+        targetX: Math.cos(angle) * dist, // Position cible
+        targetY: Math.sin(angle) * dist,
+        value: Math.random() < 0.5 ? '0' : '1',
+        size: 12 + Math.floor(Math.random() * 10),
+        opacity: 0.7 + Math.random() * 0.3,
+        speed: speed
+      });
+    }
+
+    this.specialEffects.push(wave);
+
+    // Ajouter quelques particules qui s'éloignent du centre
+    for (let i = 0; i < 5; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 1 + Math.random() * 2;
+      const dataParticle = {
+        x: x,
+        y: y,
+        size: 10 + Math.random() * 15,
+        color: colors.accent,
+        opacity: 0.8,
+        speedX: Math.cos(angle) * speed,
+        speedY: Math.sin(angle) * speed,
+        type: Math.floor(Math.random() * 3),
+        lifespan: 1500 + Math.random() * 1000,
+        birth: Date.now()
+      };
+
+      this.specialEffects.push(dataParticle);
+    }
+  },
+
+  // Mettre à jour toutes les particules
+  update() {
+    const now = Date.now();
+    const colors = this.getColors();
+
+    // Mettre à jour les particules
+    this.particles = this.particles.filter(p => now - p.birth < p.lifespan);
+
+    this.particles.forEach(p => {
+      // Animation de pulsation légère
+      const pulse = Math.sin(p.pulsePhase) * 0.1;
+      p.pulsePhase += p.pulseSpeed;
+
+      // Transition de couleur progressive
+      if (p.color !== p.targetColor) {
+        p.color = this.lerpColor(p.color, p.targetColor, 0.05);
+      }
+
+      // Progression de l'opacité
+      if (p.opacity !== p.targetOpacity) {
+        p.opacity = this.lerp(p.opacity, p.targetOpacity, 0.05);
+      }
+
+      // Interaction avec la souris
+      if (this.mouseActive && this.mouseX && this.mouseY) {
+        const dx = this.mouseX - p.x;
+        const dy = this.mouseY - p.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.interactionRadius) {
+          const force = (this.interactionRadius - distance) / this.interactionRadius;
+
+          // Attraction légère vers la souris
+          p.x += dx * 0.01 * force;
+          p.y += dy * 0.01 * force;
+
+          // Effets d'interaction
+          p.size = p.originalSize * (1 + force * 0.7 + pulse);
+          p.color = colors.accent;
+          p.textOpacity = Math.min(1, p.textOpacity + 0.1);
+          p.hovered = true;
+          p.rotationSpeed = (Math.random() - 0.5) * 0.1;
+          p.glowRadius = 15 * force;
+          p.glowIntensity = force;
+        } else {
+          // Retour progressif à l'état normal
+          p.size = p.originalSize * (1 + pulse);
+          p.textOpacity = Math.max(0, p.textOpacity - 0.05);
+          p.hovered = false;
+          p.rotationSpeed = (Math.random() - 0.5) * 0.02;
+          p.glowRadius = Math.max(0, p.glowRadius - 1);
+          p.glowIntensity = Math.max(0, p.glowIntensity - 0.05);
+        }
+      } else {
+        // Animation continue sans interaction
+        p.size = p.originalSize * (1 + pulse);
+      }
+
+      // Mise à jour de la rotation
+      p.rotation += p.rotationSpeed;
+
+      // Mise à jour de la position
+      p.x += p.speedX;
+      p.y += p.speedY;
+
+      // Rebond sur les bords
+      if (p.x < 0 || p.x > canvas.width) {
+        p.speedX *= -1;
+        // Effet de rebond
+        if (Math.random() < 0.3) {
+          this.createSmallPulse(p.x, p.y);
+        }
+      }
+      if (p.y < 0 || p.y > canvas.height) {
+        p.speedY *= -1;
+        // Effet de rebond
+        if (Math.random() < 0.3) {
+          this.createSmallPulse(p.x, p.y);
+        }
+      }
+
+      // Lister les particules connectées
+      p.connected = [];
+      this.particles.forEach(other => {
+        if (p === other) return;
+
+        const dx = p.x - other.x;
+        const dy = p.y - other.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.minDistance) {
+          p.connected.push({
+            particle: other,
+            distance: distance
+          });
+        }
+      });
+    });
+
+    // Mettre à jour les effets spéciaux
+    this.specialEffects = this.specialEffects.filter(effect => now - effect.birth < effect.lifespan);
+
+    this.specialEffects.forEach(effect => {
+      const lifePercent = (now - effect.birth) / effect.lifespan;
+
+      if (effect.type === 'wave') {
+        effect.radius = effect.maxRadius * lifePercent;
+        effect.opacity = 1 - lifePercent;
+      } else if (effect.type === 'grid') {
+        effect.opacity = effect.opacity * (1 - lifePercent);
+        // MODIFIÉ: Ajouter un mouvement pour simuler l'explosion
+        if (effect.speedX && effect.speedY) {
+          effect.x += effect.speedX * (1 - lifePercent * 0.7); // Ralentit avec le temps
+          effect.y += effect.speedY * (1 - lifePercent * 0.7);
+        }
+      } else if (effect.type === 'line') {
+        effect.opacity = effect.opacity * (1 - lifePercent);
+      } else if (effect.type === 'dataWave') {
+        effect.radius = effect.maxRadius * lifePercent;
+        effect.opacity = 1 - lifePercent;
+
+        // MODIFIÉ: Animer les textes pour qu'ils se propagent vers l'extérieur
+        if (effect.texts) {
+          effect.texts.forEach(text => {
+            if (text.targetX && text.targetY) {
+              // Interpolation pour le mouvement d'explosion
+              text.x = this.lerp(text.x, text.targetX, text.speed * 0.05);
+              text.y = this.lerp(text.y, text.targetY, text.speed * 0.05);
+            }
+          });
+        }
+      } else {
+        // Particules de traînée
+        effect.x += effect.speedX;
+        effect.y += effect.speedY;
+        effect.opacity = effect.opacity * (1 - lifePercent);
+      }
+    });
+
+    // Maintenir un nombre constant de particules
+    while (this.particles.length < this.maxParticles) {
+      this.particles.push(this.createParticle());
+    }
+  },
+
+  // Créer une petite pulsation
+  createSmallPulse(x, y) {
+    const colors = this.getColors();
+    const pulse = {
+      x: x,
+      y: y,
+      radius: 5,
+      maxRadius: 30 + Math.random() * 20,
+      color: colors.main,
+      opacity: 0.7,
+      width: 2,
+      type: 'wave',
+      birth: Date.now(),
+      lifespan: 500 + Math.random() * 300
+    };
+
+    this.specialEffects.push(pulse);
+  },
+
+  // Interpolation linéaire
+  lerp(a, b, t) {
+    return a + (b - a) * t;
+  },
+
+  // Interpolation de couleurs
+  lerpColor(color1, color2, t) {
+    const getRGBA = (color) => {
+      const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([0-9.]+))?\)/);
+      if (!match) return [0, 0, 0, 1];
+      return [
+        parseInt(match[1]),
+        parseInt(match[2]),
+        parseInt(match[3]),
+        match[4] ? parseFloat(match[4]) : 1
+      ];
+    };
+
+    const rgba1 = getRGBA(color1);
+    const rgba2 = getRGBA(color2);
+
+    const r = Math.round(this.lerp(rgba1[0], rgba2[0], t));
+    const g = Math.round(this.lerp(rgba1[1], rgba2[1], t));
+    const b = Math.round(this.lerp(rgba1[2], rgba2[2], t));
+    const a = this.lerp(rgba1[3], rgba2[3], t);
+
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+  },
+
+  // Dessiner les particules
+  draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Dessiner les connexions entre particules
+    this.drawConnections();
+
+    // Dessiner les effets spéciaux
+    this.drawSpecialEffects();
+
+    // Dessiner les particules
+    this.particles.forEach(p => this.drawParticle(p));
+  },
+
+  // Dessiner les connexions entre particules
+  drawConnections() {
+    const colors = this.getColors();
+
+    this.particles.forEach(p => {
+      p.connected.forEach(connection => {
+        const other = connection.particle;
+        const distance = connection.distance;
+        const opacity = 1 - (distance / this.minDistance);
+
+        // Style de ligne basé sur l'état de survol
+        if (p.hovered || other.hovered) {
+          ctx.strokeStyle = colors.accent.replace(/[^,]+\)/, `${opacity * 0.5})`);
+          ctx.lineWidth = 1.5;
+        } else {
+          ctx.strokeStyle = colors.lines.replace(/[^,]+\)/, `${opacity * 0.3})`);
+          ctx.lineWidth = 1;
+        }
+
+        // Dessiner la ligne
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(other.x, other.y);
+        ctx.stroke();
+      });
+    });
+  },
+
+  // Dessiner les effets spéciaux
+  drawSpecialEffects() {
+    this.specialEffects.forEach(effect => {
+      ctx.globalAlpha = effect.opacity;
+
+      if (effect.type === 'wave') {
+        // Dessiner une onde circulaire
+        ctx.strokeStyle = effect.color;
+        ctx.lineWidth = effect.width;
+
+        // S'assurer que le rayon est toujours positif
+        const radius = Math.max(0.1, effect.radius);
+
+        ctx.beginPath();
+        ctx.arc(effect.x, effect.y, radius, 0, Math.PI * 2);
+        ctx.stroke();
+      } else if (effect.type === 'grid') {
+        // Dessiner une cellule de grille
+        const fadeDistance = 1 - Math.min(1, effect.distance / 10);
+        ctx.fillStyle = effect.color.replace(/[^,]+\)/, `${effect.opacity * fadeDistance})`);
+        ctx.fillRect(effect.x - effect.size/2, effect.y - effect.size/2, effect.size, effect.size);
+        ctx.strokeStyle = effect.color.replace(/[^,]+\)/, `${effect.opacity * fadeDistance * 1.5})`);
+        ctx.strokeRect(effect.x - effect.size/2, effect.y - effect.size/2, effect.size, effect.size);
+      } else if (effect.type === 'line') {
+        // Dessiner une ligne de connexion
+        ctx.strokeStyle = effect.color;
+        ctx.lineWidth = effect.width;
+        ctx.beginPath();
+        ctx.moveTo(effect.x1, effect.y1);
+        ctx.lineTo(effect.x2, effect.y2);
+        ctx.stroke();
+      } else if (effect.type === 'dataWave') {
+        // Dessiner une vague de données
+        ctx.save();
+        ctx.translate(effect.x, effect.y);
+
+        // Dessiner un cercle de base
+        ctx.strokeStyle = effect.color.replace(/[^,]+\)/, `${effect.opacity * 0.7})`);
+        ctx.lineWidth = 2;
+
+        // S'assurer que le rayon est toujours positif
+        const radius = Math.max(0.1, effect.radius);
+
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Dessiner des textes binaires
+        ctx.fillStyle = effect.color;
+        effect.texts.forEach(text => {
+          ctx.font = `${text.size}px "Courier New", monospace`;
+          ctx.globalAlpha = text.opacity * effect.opacity;
+          ctx.fillText(text.value, text.x, text.y);
+        });
+
+        ctx.restore();
+      } else {
+        // Dessiner une particule de traînée
+        ctx.fillStyle = effect.color;
+        ctx.beginPath();
+
+        switch(effect.type) {
+          case 0: // Pixel
+            ctx.rect(effect.x - effect.size/2, effect.y - effect.size/2, effect.size, effect.size);
+            break;
+          case 1: // Cercle
+            // S'assurer que le rayon est toujours positif
+            ctx.arc(effect.x, effect.y, Math.max(0.1, effect.size), 0, Math.PI * 2);
+            break;
+          case 2: // Triangle
+            ctx.moveTo(effect.x, effect.y - effect.size);
+            ctx.lineTo(effect.x - effect.size, effect.y + effect.size);
+            ctx.lineTo(effect.x + effect.size, effect.y + effect.size);
+            ctx.closePath();
+            break;
+        }
+
+        ctx.fill();
+      }
+    });
+
+    ctx.globalAlpha = 1;
+  },
+
+  // Dessiner une particule
+  drawParticle(p) {
+    ctx.globalAlpha = p.opacity;
+
+    // Dessiner un halo lumineux si la particule est survolée
+    if (p.glowRadius > 0) {
+      // S'assurer que le rayon est toujours positif
+      const glowRadius = Math.max(0.1, p.glowRadius);
+
+      const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glowRadius);
+      gradient.addColorStop(0, p.color.replace(/[^,]+\)/, `${p.glowIntensity * 0.5})`));
+      gradient.addColorStop(1, p.color.replace(/[^,]+\)/, '0)'));
+
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, glowRadius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Configuration de style pour la particule
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
+
+    ctx.strokeStyle = p.color;
+    ctx.fillStyle = p.color;
     ctx.beginPath();
-    ctx.strokeStyle = particle.color;
 
-    switch (particle.shape) {
-      case 0: // Bloc de code { ... } avec cadre plus grand et ajusté
-        ctx.rect(particle.x - particle.size / 1.5, particle.y - particle.size / 1.5, particle.size * 1.4, particle.size * 1.4);
+    // S'assurer que la taille est toujours positive
+    const size = Math.max(0.1, p.size);
+
+    // Dessiner différentes formes selon le type de particule
+    switch (p.shape) {
+      case 0: // Bloc de code { ... }
+        ctx.rect(-size / 1.5, -size / 1.5, size * 1.4, size * 1.4);
         ctx.stroke();
-        ctx.fillStyle = particle.color;
-        ctx.font = "12px Arial";
-        ctx.fillText('{...}', particle.x - particle.size / 3, particle.y + particle.size / 4);
+        ctx.font = `${Math.max(1, 12 * (size / p.originalSize))}px "Courier New", monospace`;
+        ctx.fillText('{...}', -size / 3, size / 4);
         break;
+
       case 1: // Circuit
-        ctx.moveTo(particle.x - particle.size / 2, particle.y);
-        ctx.lineTo(particle.x + particle.size / 2, particle.y);
-        ctx.moveTo(particle.x, particle.y - particle.size / 2);
-        ctx.lineTo(particle.x, particle.y + particle.size / 2);
+        ctx.moveTo(-size / 2, 0);
+        ctx.lineTo(size / 2, 0);
+        ctx.moveTo(0, -size / 2);
+        ctx.lineTo(0, size / 2);
+        ctx.moveTo(-size / 3, -size / 3);
+        ctx.lineTo(-size / 3, -size / 2);
+        ctx.moveTo(size / 3, size / 3);
+        ctx.lineTo(size / 3, size / 2);
         ctx.stroke();
         break;
+
       case 2: // Terminal $
-        ctx.rect(particle.x - particle.size / 2, particle.y - particle.size / 2, particle.size, particle.size);
+        ctx.rect(-size / 2, -size / 2, size, size);
         ctx.stroke();
-        ctx.fillStyle = particle.color;
-        ctx.font = "14px Arial";
-        ctx.fillText('$_', particle.x - particle.size / 4, particle.y + particle.size / 4);
+        ctx.font = `${Math.max(1, 14 * (size / p.originalSize))}px "Courier New", monospace`;
+        ctx.fillText('$_', -size / 4, size / 4);
         break;
+
       case 3: // Balise de code </>
-        ctx.font = "14px Arial";
-        ctx.fillStyle = particle.color;
-        ctx.fillText('</>', particle.x - particle.size / 3, particle.y + particle.size / 4);
+        ctx.font = `${Math.max(1, 14 * (size / p.originalSize))}px "Courier New", monospace`;
+        ctx.fillText('</>', -size / 3, size / 4);
         break;
+
       case 4: // Triangle
-        ctx.moveTo(particle.x, particle.y - particle.size / 2);
-        ctx.lineTo(particle.x - particle.size / 2, particle.y + particle.size / 2);
-        ctx.lineTo(particle.x + particle.size / 2, particle.y + particle.size / 2);
+        ctx.moveTo(0, -size / 2);
+        ctx.lineTo(-size / 2, size / 2);
+        ctx.lineTo(size / 2, size / 2);
         ctx.closePath();
         ctx.stroke();
         break;
+
       case 5: // Hexagone
         for (let j = 0; j < 6; j++) {
           const angle = (Math.PI / 3) * j;
-          const px = particle.x + (particle.size / 2) * Math.cos(angle);
-          const py = particle.y + (particle.size / 2) * Math.sin(angle);
+          const px = (size / 2) * Math.cos(angle);
+          const py = (size / 2) * Math.sin(angle);
           if (j === 0) ctx.moveTo(px, py);
           else ctx.lineTo(px, py);
         }
         ctx.closePath();
         ctx.stroke();
         break;
+
       case 6: // Pixel (petit carré)
-        ctx.rect(particle.x, particle.y, 4, 4); // Petit carré pour effet pixel
-        ctx.fillStyle = particle.color;
+        ctx.rect(-size / 4, -size / 4, size / 2, size / 2);
         ctx.fill();
         break;
-      case 7: // Forme brosse (cercle flou)
-        ctx.arc(particle.x, particle.y, particle.size / 3, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color;
-        ctx.fill();
-        break;
-    }
 
-    // Déplacement des particules
-    particle.x += particle.speedX;
-    particle.y += particle.speedY;
-
-    // Inverser la direction si on atteint le bord
-    if (particle.x < 0 || particle.x > canvas.width) {
-      particle.speedX *= -1;
-    }
-    if (particle.y < 0 || particle.y > canvas.height) {
-      particle.speedY *= -1;
-    }
-  });
-
-  ctx.globalAlpha = 1;
-  drawLines();
-}
-
-function drawLines() {
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < minDistance) {
-        //ctx.strokeStyle = 'white'; // Couleur bleue plus claire avec transparence pour les lignes
-        ctx.strokeStyle = 'rgba(41, 148, 200, 0.3)'; 
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
+      case 7: // Cercle
+              // CORRECTION: S'assurer que le rayon est toujours positif
+        ctx.arc(0, 0, Math.max(0.1, size / 2), 0, Math.PI * 2);
         ctx.stroke();
-      }
+        break;
+
+      case 8: // Grille
+        const gridSize = Math.max(0.1, size / 4);
+        for (let i = -1; i <= 1; i++) {
+          for (let j = -1; j <= 1; j++) {
+            if ((i + j) % 2 === 0) {
+              ctx.fillRect(i * gridSize, j * gridSize, gridSize, gridSize);
+            }
+          }
+        }
+        break;
+
+      case 9: // Croix
+        ctx.lineWidth = 2;
+        ctx.moveTo(-size / 2, -size / 2);
+        ctx.lineTo(size / 2, size / 2);
+        ctx.moveTo(size / 2, -size / 2);
+        ctx.lineTo(-size / 2, size / 2);
+        ctx.stroke();
+        break;
+
+      case 10: // Étoile
+        for (let i = 0; i < 5; i++) {
+          const angle = (Math.PI * 2 / 5) * i - Math.PI / 2;
+          const px = Math.cos(angle) * p.size / 2;
+          const py = Math.sin(angle) * p.size / 2;
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.closePath();
+        ctx.stroke();
+        break;
+
+      case 11: // AI
+        ctx.font = `bold ${14 * (p.size / p.originalSize)}px "Courier New", monospace`;
+        ctx.fillText('AI', -p.size / 4, p.size / 4);
+        break;
     }
+
+    // Afficher le texte technologique si la souris est proche
+    if (p.textOpacity > 0) {
+      ctx.globalAlpha = p.textOpacity;
+      ctx.fillStyle = this.getColors().highlight;
+      ctx.font = `bold ${p.size / 1.5}px "Courier New", monospace`;
+      const textWidth = ctx.measureText(p.text).width;
+      ctx.fillText(p.text, -textWidth / 2, -p.size);
+    }
+
+    ctx.restore();
+  },
+
+  // Animer le système de particules
+  animate() {
+    this.update();
+    this.draw();
+    requestAnimationFrame(() => this.animate());
   }
-}
+};
 
-function animate() {
-  drawParticles();
-  requestAnimationFrame(animate);
-}
+// Initialiser et démarrer l'animation
+particleSystem.init();
+particleSystem.animate();
 
-initParticles();
-animate();
+
+
 
 
 

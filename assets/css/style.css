@@ -479,6 +479,12 @@ main { overflow-x: hidden; }
   max-width: 500px;
   width: 125%;
   margin-bottom: 30px;
+  transform: scale(0.75);
+}
+
+.hero-banner video {
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 :is(.hero-social-list, .scroll-down) { display: none; }
@@ -1133,6 +1139,7 @@ textarea.input-field {
     max-width: unset;
     height: 100%;
     margin-bottom: 0;
+    transform: scale(0.75);
   }
 
   .hero img {

@@ -493,7 +493,7 @@ canvas.height = window.innerHeight;
 // Définition du système de particules
 const particleSystem = {
   particles: [],
-  maxParticles: 75,
+  maxParticles: 50, // Réduit de 75 à 50
   colorSchemes: [
     { // Thème Initial Éclairci
       main: 'rgba(41, 183, 255, 0.6)',
@@ -527,19 +527,15 @@ const particleSystem = {
 
   // Initialiser le système
   init() {
-    // Créer des particules
     for (let i = 0; i < this.maxParticles; i++) {
       this.particles.push(this.createParticle());
     }
 
-    // Ajouter des écouteurs d'événements
     window.addEventListener('mousemove', (e) => {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
       this.mouseActive = true;
-
-      // Effet discret au mouvement de souris
-      if (Math.random() < 0.1) {
+      if (Math.random() < 0.05) { // Réduit de 0.1 à 0.05
         this.createMouseTrail(e.clientX, e.clientY);
       }
     });
@@ -549,7 +545,6 @@ const particleSystem = {
     });
 
     window.addEventListener('click', (e) => {
-      // Limiter les effets à 1 par seconde max
       const now = Date.now();
       if (now - this.lastClickTime > 1000) {
         this.lastClickTime = now;
@@ -562,36 +557,32 @@ const particleSystem = {
       canvas.height = window.innerHeight;
     });
 
-    // Changer de schéma de couleur toutes les 30 secondes
     setInterval(() => {
       this.activeColorScheme = (this.activeColorScheme + 1) % this.colorSchemes.length;
-      // Transition douce des couleurs
       this.particles.forEach(p => {
         p.targetColor = this.getColors().main;
       });
     }, 30000);
   },
 
-  // Obtenir les couleurs actuelles
   getColors() {
     return this.colorSchemes[this.activeColorScheme];
   },
 
-  // Créer une particule
   createParticle(x, y, isSpecial = false) {
     const colors = this.getColors();
     const particle = {
       x: x || Math.random() * canvas.width,
       y: y || Math.random() * canvas.height,
       size: isSpecial ? 35 : Math.random() < 0.2 ? 30 : 18,
-      originalSize: 0, // Sera défini après
+      originalSize: 0,
       color: colors.main,
       targetColor: colors.main,
       speedX: (Math.random() - 0.5) * (isSpecial ? 3 : 1.5),
       speedY: (Math.random() - 0.5) * (isSpecial ? 3 : 1.5),
       opacity: isSpecial ? 1 : 0,
       targetOpacity: 1,
-      shape: Math.floor(Math.random() * 12), // Plus de formes disponibles
+      shape: Math.floor(Math.random() * 12),
       rotation: Math.random() * Math.PI * 2,
       rotationSpeed: (Math.random() - 0.5) * 0.02,
       hovered: false,
@@ -605,34 +596,21 @@ const particleSystem = {
       glowIntensity: 0,
       connected: []
     };
-
     particle.originalSize = particle.size;
     return particle;
   },
 
-  // Créer un effet spécial au clic - MODIFIÉ
   createSpecialEffect(x, y) {
-    // Maintenant, tous les effets incluent une explosion de particules
     this.createExplosion(x, y);
-
-    // Et on ajoute un effet supplémentaire choisi au hasard
     const additionalEffectType = Math.floor(Math.random() * 2);
-
     switch(additionalEffectType) {
-      case 0: // Grid tech effect
-        this.createGridEffect(x, y);
-        break;
-
-      case 1: // Circular data wave
-        this.createDataWave(x, y);
-        break;
+      case 0: this.createGridEffect(x, y); break;
+      case 1: this.createDataWave(x, y); break;
     }
   },
 
-  // Créer une traînée de particules au mouvement de souris
   createMouseTrail(x, y) {
-    if (Math.random() < 0.5) return; // Réduire la fréquence
-
+    if (Math.random() < 0.5) return;
     const colors = this.getColors();
     const trail = {
       x: x,
@@ -646,19 +624,15 @@ const particleSystem = {
       lifespan: 1000 + Math.random() * 1000,
       birth: Date.now()
     };
-
     this.specialEffects.push(trail);
   },
 
-  // Créer une explosion de particules
   createExplosion(x, y) {
     const colors = this.getColors();
-    const particleCount = 12 + Math.floor(Math.random() * 8);
-
+    const particleCount = 8 + Math.floor(Math.random() * 4); // Réduit de 12-20 à 8-12
     for (let i = 0; i < particleCount; i++) {
       const angle = (Math.PI * 2 / particleCount) * i;
       const speed = 2 + Math.random() * 3;
-
       const particle = this.createParticle(x, y, true);
       particle.speedX = Math.cos(angle) * speed;
       particle.speedY = Math.sin(angle) * speed;
@@ -668,9 +642,7 @@ const particleSystem = {
       particle.originalSize = particle.size;
       this.particles.push(particle);
     }
-
-    // Onde circulaire
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) { // Réduit de 3 à 2
       const wave = {
         x: x,
         y: y,
@@ -683,18 +655,14 @@ const particleSystem = {
         birth: Date.now(),
         lifespan: 1500 + i * 300
       };
-
       this.specialEffects.push(wave);
     }
   },
 
-  // Créer un effet de grille technique - MODIFIÉ pour intégrer l'aspect explosif
   createGridEffect(x, y) {
     const colors = this.getColors();
     const gridSize = 40;
-    const gridExtent = 5;
-
-    // Ajouter une onde supplémentaire pour renforcer l'effet d'explosion
+    const gridExtent = 3; // Réduit de 5 à 3
     const extraWave = {
       x: x,
       y: y,
@@ -708,8 +676,6 @@ const particleSystem = {
       lifespan: 1200
     };
     this.specialEffects.push(extraWave);
-
-    // Cellules de la grille qui s'éloignent du centre
     for (let i = -gridExtent; i <= gridExtent; i++) {
       for (let j = -gridExtent; j <= gridExtent; j++) {
         if (Math.random() < 0.4) {
@@ -723,23 +689,18 @@ const particleSystem = {
             lifespan: 1000 + Math.random() * 1500,
             opacity: 0.1 + Math.random() * 0.5,
             distance: Math.sqrt(i*i + j*j),
-            // Ajout d'une vitesse pour imiter une explosion
             speedX: i * (0.5 + Math.random() * 0.5),
             speedY: j * (0.5 + Math.random() * 0.5)
           };
-
           this.specialEffects.push(cell);
         }
       }
     }
-
-    // Lignes de connexion avec effet d'explosion
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) { // Réduit de 10 à 5
       const angle = Math.random() * Math.PI * 2;
       const distance = 50 + Math.random() * 150;
       const endX = x + Math.cos(angle) * distance;
       const endY = y + Math.sin(angle) * distance;
-
       const line = {
         x1: x,
         y1: y,
@@ -752,16 +713,12 @@ const particleSystem = {
         lifespan: 800 + Math.random() * 1200,
         opacity: 0.7 + Math.random() * 0.3
       };
-
       this.specialEffects.push(line);
     }
   },
 
-  // Créer une vague de données - MODIFIÉ pour intégrer l'aspect explosif
   createDataWave(x, y) {
     const colors = this.getColors();
-
-    // Ajouter une onde supplémentaire pour renforcer l'effet d'explosion
     const extraWave = {
       x: x,
       y: y,
@@ -775,8 +732,6 @@ const particleSystem = {
       lifespan: 1800
     };
     this.specialEffects.push(extraWave);
-
-    // Créer une onde avec code binaire
     const wave = {
       x: x,
       y: y,
@@ -789,18 +744,15 @@ const particleSystem = {
       opacity: 1,
       texts: []
     };
-
-    // Ajouter des textes binaires qui se propagent comme une explosion
-    const textCount = 30;
+    const textCount = 15; // Réduit de 30 à 15
     for (let i = 0; i < textCount; i++) {
       const angle = (Math.PI * 2 / textCount) * i;
       const dist = 50 + Math.random() * 200;
-      const speed = 0.5 + Math.random() * 1; // Vitesse de propagation
-
+      const speed = 0.5 + Math.random() * 1;
       wave.texts.push({
-        x: Math.cos(angle) * (dist * 0.3), // Position initiale plus près du centre
+        x: Math.cos(angle) * (dist * 0.3),
         y: Math.sin(angle) * (dist * 0.3),
-        targetX: Math.cos(angle) * dist, // Position cible
+        targetX: Math.cos(angle) * dist,
         targetY: Math.sin(angle) * dist,
         value: Math.random() < 0.5 ? '0' : '1',
         size: 12 + Math.floor(Math.random() * 10),
@@ -808,11 +760,8 @@ const particleSystem = {
         speed: speed
       });
     }
-
     this.specialEffects.push(wave);
-
-    // Ajouter quelques particules qui s'éloignent du centre
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) { // Réduit de 5 à 3
       const angle = Math.random() * Math.PI * 2;
       const speed = 1 + Math.random() * 2;
       const dataParticle = {
@@ -827,48 +776,31 @@ const particleSystem = {
         lifespan: 1500 + Math.random() * 1000,
         birth: Date.now()
       };
-
       this.specialEffects.push(dataParticle);
     }
   },
 
-  // Mettre à jour toutes les particules
   update() {
     const now = Date.now();
     const colors = this.getColors();
-
-    // Mettre à jour les particules
     this.particles = this.particles.filter(p => now - p.birth < p.lifespan);
-
     this.particles.forEach(p => {
-      // Animation de pulsation légère
       const pulse = Math.sin(p.pulsePhase) * 0.1;
       p.pulsePhase += p.pulseSpeed;
-
-      // Transition de couleur progressive
       if (p.color !== p.targetColor) {
         p.color = this.lerpColor(p.color, p.targetColor, 0.05);
       }
-
-      // Progression de l'opacité
       if (p.opacity !== p.targetOpacity) {
         p.opacity = this.lerp(p.opacity, p.targetOpacity, 0.05);
       }
-
-      // Interaction avec la souris
       if (this.mouseActive && this.mouseX && this.mouseY) {
         const dx = this.mouseX - p.x;
         const dy = this.mouseY - p.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
         if (distance < this.interactionRadius) {
           const force = (this.interactionRadius - distance) / this.interactionRadius;
-
-          // Attraction légère vers la souris
           p.x += dx * 0.01 * force;
           p.y += dy * 0.01 * force;
-
-          // Effets d'interaction
           p.size = p.originalSize * (1 + force * 0.7 + pulse);
           p.color = colors.accent;
           p.textOpacity = Math.min(1, p.textOpacity + 0.1);
@@ -877,7 +809,6 @@ const particleSystem = {
           p.glowRadius = 15 * force;
           p.glowIntensity = force;
         } else {
-          // Retour progressif à l'état normal
           p.size = p.originalSize * (1 + pulse);
           p.textOpacity = Math.max(0, p.textOpacity - 0.05);
           p.hovered = false;
@@ -886,65 +817,46 @@ const particleSystem = {
           p.glowIntensity = Math.max(0, p.glowIntensity - 0.05);
         }
       } else {
-        // Animation continue sans interaction
         p.size = p.originalSize * (1 + pulse);
       }
-
-      // Mise à jour de la rotation
       p.rotation += p.rotationSpeed;
-
-      // Mise à jour de la position
       p.x += p.speedX;
       p.y += p.speedY;
-
-      // Rebond sur les bords
       if (p.x < 0 || p.x > canvas.width) {
         p.speedX *= -1;
-        // Effet de rebond
-        if (Math.random() < 0.3) {
+        if (Math.random() < 0.1) { // Réduit de 0.3 à 0.1
           this.createSmallPulse(p.x, p.y);
         }
       }
       if (p.y < 0 || p.y > canvas.height) {
         p.speedY *= -1;
-        // Effet de rebond
-        if (Math.random() < 0.3) {
+        if (Math.random() < 0.1) { // Réduit de 0.3 à 0.1
           this.createSmallPulse(p.x, p.y);
         }
       }
-
-      // Lister les particules connectées
       p.connected = [];
-      this.particles.forEach(other => {
-        if (p === other) return;
-
+      let connectionCount = 0;
+      for (let other of this.particles) {
+        if (p === other || connectionCount >= 5) continue; // Limité à 5 connexions
         const dx = p.x - other.x;
         const dy = p.y - other.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
         if (distance < this.minDistance) {
-          p.connected.push({
-            particle: other,
-            distance: distance
-          });
+          p.connected.push({ particle: other, distance: distance });
+          connectionCount++;
         }
-      });
+      }
     });
-
-    // Mettre à jour les effets spéciaux
     this.specialEffects = this.specialEffects.filter(effect => now - effect.birth < effect.lifespan);
-
     this.specialEffects.forEach(effect => {
       const lifePercent = (now - effect.birth) / effect.lifespan;
-
       if (effect.type === 'wave') {
         effect.radius = effect.maxRadius * lifePercent;
         effect.opacity = 1 - lifePercent;
       } else if (effect.type === 'grid') {
         effect.opacity = effect.opacity * (1 - lifePercent);
-        // MODIFIÉ: Ajouter un mouvement pour simuler l'explosion
         if (effect.speedX && effect.speedY) {
-          effect.x += effect.speedX * (1 - lifePercent * 0.7); // Ralentit avec le temps
+          effect.x += effect.speedX * (1 - lifePercent * 0.7);
           effect.y += effect.speedY * (1 - lifePercent * 0.7);
         }
       } else if (effect.type === 'line') {
@@ -952,32 +864,25 @@ const particleSystem = {
       } else if (effect.type === 'dataWave') {
         effect.radius = effect.maxRadius * lifePercent;
         effect.opacity = 1 - lifePercent;
-
-        // MODIFIÉ: Animer les textes pour qu'ils se propagent vers l'extérieur
         if (effect.texts) {
           effect.texts.forEach(text => {
             if (text.targetX && text.targetY) {
-              // Interpolation pour le mouvement d'explosion
               text.x = this.lerp(text.x, text.targetX, text.speed * 0.05);
               text.y = this.lerp(text.y, text.targetY, text.speed * 0.05);
             }
           });
         }
       } else {
-        // Particules de traînée
         effect.x += effect.speedX;
         effect.y += effect.speedY;
         effect.opacity = effect.opacity * (1 - lifePercent);
       }
     });
-
-    // Maintenir un nombre constant de particules
     while (this.particles.length < this.maxParticles) {
       this.particles.push(this.createParticle());
     }
   },
 
-  // Créer une petite pulsation
   createSmallPulse(x, y) {
     const colors = this.getColors();
     const pulse = {
@@ -992,16 +897,13 @@ const particleSystem = {
       birth: Date.now(),
       lifespan: 500 + Math.random() * 300
     };
-
     this.specialEffects.push(pulse);
   },
 
-  // Interpolation linéaire
   lerp(a, b, t) {
     return a + (b - a) * t;
   },
 
-  // Interpolation de couleurs
   lerpColor(color1, color2, t) {
     const getRGBA = (color) => {
       const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([0-9.]+))?\)/);
@@ -1013,43 +915,29 @@ const particleSystem = {
         match[4] ? parseFloat(match[4]) : 1
       ];
     };
-
     const rgba1 = getRGBA(color1);
     const rgba2 = getRGBA(color2);
-
     const r = Math.round(this.lerp(rgba1[0], rgba2[0], t));
     const g = Math.round(this.lerp(rgba1[1], rgba2[1], t));
     const b = Math.round(this.lerp(rgba1[2], rgba2[2], t));
     const a = this.lerp(rgba1[3], rgba2[3], t);
-
     return `rgba(${r}, ${g}, ${b}, ${a})`;
   },
 
-  // Dessiner les particules
   draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Dessiner les connexions entre particules
     this.drawConnections();
-
-    // Dessiner les effets spéciaux
     this.drawSpecialEffects();
-
-    // Dessiner les particules
     this.particles.forEach(p => this.drawParticle(p));
   },
 
-  // Dessiner les connexions entre particules
   drawConnections() {
     const colors = this.getColors();
-
     this.particles.forEach(p => {
       p.connected.forEach(connection => {
         const other = connection.particle;
         const distance = connection.distance;
         const opacity = 1 - (distance / this.minDistance);
-
-        // Style de ligne basé sur l'état de survol
         if (p.hovered || other.hovered) {
           ctx.strokeStyle = colors.accent.replace(/[^,]+\)/, `${opacity * 0.5})`);
           ctx.lineWidth = 1.5;
@@ -1057,8 +945,6 @@ const particleSystem = {
           ctx.strokeStyle = colors.lines.replace(/[^,]+\)/, `${opacity * 0.3})`);
           ctx.lineWidth = 1;
         }
-
-        // Dessiner la ligne
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(other.x, other.y);
@@ -1067,31 +953,23 @@ const particleSystem = {
     });
   },
 
-  // Dessiner les effets spéciaux
   drawSpecialEffects() {
     this.specialEffects.forEach(effect => {
       ctx.globalAlpha = effect.opacity;
-
       if (effect.type === 'wave') {
-        // Dessiner une onde circulaire
         ctx.strokeStyle = effect.color;
         ctx.lineWidth = effect.width;
-
-        // S'assurer que le rayon est toujours positif
         const radius = Math.max(0.1, effect.radius);
-
         ctx.beginPath();
         ctx.arc(effect.x, effect.y, radius, 0, Math.PI * 2);
         ctx.stroke();
       } else if (effect.type === 'grid') {
-        // Dessiner une cellule de grille
         const fadeDistance = 1 - Math.min(1, effect.distance / 10);
         ctx.fillStyle = effect.color.replace(/[^,]+\)/, `${effect.opacity * fadeDistance})`);
-        ctx.fillRect(effect.x - effect.size/2, effect.y - effect.size/2, effect.size, effect.size);
+        ctx.fillRect(effect.x - effect.size / 2, effect.y - effect.size / 2, effect.size, effect.size);
         ctx.strokeStyle = effect.color.replace(/[^,]+\)/, `${effect.opacity * fadeDistance * 1.5})`);
-        ctx.strokeRect(effect.x - effect.size/2, effect.y - effect.size/2, effect.size, effect.size);
+        ctx.strokeRect(effect.x - effect.size / 2, effect.y - effect.size / 2, effect.size, effect.size);
       } else if (effect.type === 'line') {
-        // Dessiner une ligne de connexion
         ctx.strokeStyle = effect.color;
         ctx.lineWidth = effect.width;
         ctx.beginPath();
@@ -1099,99 +977,67 @@ const particleSystem = {
         ctx.lineTo(effect.x2, effect.y2);
         ctx.stroke();
       } else if (effect.type === 'dataWave') {
-        // Dessiner une vague de données
         ctx.save();
         ctx.translate(effect.x, effect.y);
-
-        // Dessiner un cercle de base
         ctx.strokeStyle = effect.color.replace(/[^,]+\)/, `${effect.opacity * 0.7})`);
         ctx.lineWidth = 2;
-
-        // S'assurer que le rayon est toujours positif
         const radius = Math.max(0.1, effect.radius);
-
         ctx.beginPath();
         ctx.arc(0, 0, radius, 0, Math.PI * 2);
         ctx.stroke();
-
-        // Dessiner des textes binaires
         ctx.fillStyle = effect.color;
         effect.texts.forEach(text => {
           ctx.font = `${text.size}px "Courier New", monospace`;
           ctx.globalAlpha = text.opacity * effect.opacity;
           ctx.fillText(text.value, text.x, text.y);
         });
-
         ctx.restore();
       } else {
-        // Dessiner une particule de traînée
         ctx.fillStyle = effect.color;
         ctx.beginPath();
-
-        switch(effect.type) {
-          case 0: // Pixel
-            ctx.rect(effect.x - effect.size/2, effect.y - effect.size/2, effect.size, effect.size);
-            break;
-          case 1: // Cercle
-            // S'assurer que le rayon est toujours positif
-            ctx.arc(effect.x, effect.y, Math.max(0.1, effect.size), 0, Math.PI * 2);
-            break;
-          case 2: // Triangle
+        switch (effect.type) {
+          case 0: ctx.rect(effect.x - effect.size / 2, effect.y - effect.size / 2, effect.size, effect.size); break;
+          case 1: ctx.arc(effect.x, effect.y, Math.max(0.1, effect.size), 0, Math.PI * 2); break;
+          case 2:
             ctx.moveTo(effect.x, effect.y - effect.size);
             ctx.lineTo(effect.x - effect.size, effect.y + effect.size);
             ctx.lineTo(effect.x + effect.size, effect.y + effect.size);
             ctx.closePath();
             break;
         }
-
         ctx.fill();
       }
     });
-
     ctx.globalAlpha = 1;
   },
 
-  // Dessiner une particule
   drawParticle(p) {
     ctx.globalAlpha = p.opacity;
-
-    // Dessiner un halo lumineux si la particule est survolée
     if (p.glowRadius > 0) {
-      // S'assurer que le rayon est toujours positif
       const glowRadius = Math.max(0.1, p.glowRadius);
-
       const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glowRadius);
       gradient.addColorStop(0, p.color.replace(/[^,]+\)/, `${p.glowIntensity * 0.5})`));
       gradient.addColorStop(1, p.color.replace(/[^,]+\)/, '0)'));
-
       ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.arc(p.x, p.y, glowRadius, 0, Math.PI * 2);
       ctx.fill();
     }
-
-    // Configuration de style pour la particule
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.rotate(p.rotation);
-
     ctx.strokeStyle = p.color;
     ctx.fillStyle = p.color;
     ctx.beginPath();
-
-    // S'assurer que la taille est toujours positive
     const size = Math.max(0.1, p.size);
-
-    // Dessiner différentes formes selon le type de particule
     switch (p.shape) {
-      case 0: // Bloc de code { ... }
+      case 0:
         ctx.rect(-size / 1.5, -size / 1.5, size * 1.4, size * 1.4);
         ctx.stroke();
         ctx.font = `${Math.max(1, 12 * (size / p.originalSize))}px "Courier New", monospace`;
         ctx.fillText('{...}', -size / 3, size / 4);
         break;
-
-      case 1: // Circuit
+      case 1:
         ctx.moveTo(-size / 2, 0);
         ctx.lineTo(size / 2, 0);
         ctx.moveTo(0, -size / 2);
@@ -1202,28 +1048,24 @@ const particleSystem = {
         ctx.lineTo(size / 3, size / 2);
         ctx.stroke();
         break;
-
-      case 2: // Terminal $
+      case 2:
         ctx.rect(-size / 2, -size / 2, size, size);
         ctx.stroke();
         ctx.font = `${Math.max(1, 14 * (size / p.originalSize))}px "Courier New", monospace`;
         ctx.fillText('$_', -size / 4, size / 4);
         break;
-
-      case 3: // Balise de code </>
+      case 3:
         ctx.font = `${Math.max(1, 14 * (size / p.originalSize))}px "Courier New", monospace`;
         ctx.fillText('</>', -size / 3, size / 4);
         break;
-
-      case 4: // Triangle
+      case 4:
         ctx.moveTo(0, -size / 2);
         ctx.lineTo(-size / 2, size / 2);
         ctx.lineTo(size / 2, size / 2);
         ctx.closePath();
         ctx.stroke();
         break;
-
-      case 5: // Hexagone
+      case 5:
         for (let j = 0; j < 6; j++) {
           const angle = (Math.PI / 3) * j;
           const px = (size / 2) * Math.cos(angle);
@@ -1234,19 +1076,15 @@ const particleSystem = {
         ctx.closePath();
         ctx.stroke();
         break;
-
-      case 6: // Pixel (petit carré)
+      case 6:
         ctx.rect(-size / 4, -size / 4, size / 2, size / 2);
         ctx.fill();
         break;
-
-      case 7: // Cercle
-              // CORRECTION: S'assurer que le rayon est toujours positif
+      case 7:
         ctx.arc(0, 0, Math.max(0.1, size / 2), 0, Math.PI * 2);
         ctx.stroke();
         break;
-
-      case 8: // Grille
+      case 8:
         const gridSize = Math.max(0.1, size / 4);
         for (let i = -1; i <= 1; i++) {
           for (let j = -1; j <= 1; j++) {
@@ -1256,8 +1094,7 @@ const particleSystem = {
           }
         }
         break;
-
-      case 9: // Croix
+      case 9:
         ctx.lineWidth = 2;
         ctx.moveTo(-size / 2, -size / 2);
         ctx.lineTo(size / 2, size / 2);
@@ -1265,38 +1102,32 @@ const particleSystem = {
         ctx.lineTo(-size / 2, size / 2);
         ctx.stroke();
         break;
-
-      case 10: // Étoile
+      case 10:
         for (let i = 0; i < 5; i++) {
           const angle = (Math.PI * 2 / 5) * i - Math.PI / 2;
-          const px = Math.cos(angle) * p.size / 2;
-          const py = Math.sin(angle) * p.size / 2;
+          const px = Math.cos(angle) * (size / 2);
+          const py = Math.sin(angle) * (size / 2);
           if (i === 0) ctx.moveTo(px, py);
           else ctx.lineTo(px, py);
         }
         ctx.closePath();
         ctx.stroke();
         break;
-
-      case 11: // AI
-        ctx.font = `bold ${14 * (p.size / p.originalSize)}px "Courier New", monospace`;
-        ctx.fillText('AI', -p.size / 4, p.size / 4);
+      case 11:
+        ctx.font = `bold ${Math.max(1, 14 * (size / p.originalSize))}px "Courier New", monospace`;
+        ctx.fillText('AI', -size / 4, size / 4);
         break;
     }
-
-    // Afficher le texte technologique si la souris est proche
     if (p.textOpacity > 0) {
       ctx.globalAlpha = p.textOpacity;
       ctx.fillStyle = this.getColors().highlight;
-      ctx.font = `bold ${p.size / 1.5}px "Courier New", monospace`;
+      ctx.font = `bold ${Math.max(1, size / 1.5)}px "Courier New", monospace`;
       const textWidth = ctx.measureText(p.text).width;
-      ctx.fillText(p.text, -textWidth / 2, -p.size);
+      ctx.fillText(p.text, -textWidth / 2, -size);
     }
-
     ctx.restore();
   },
 
-  // Animer le système de particules
   animate() {
     this.update();
     this.draw();
@@ -1304,10 +1135,8 @@ const particleSystem = {
   }
 };
 
-// Initialiser et démarrer l'animation
 particleSystem.init();
 particleSystem.animate();
-
 
 
 

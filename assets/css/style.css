@@ -1388,20 +1388,20 @@ textarea.input-field {
     transition: opacity 0.5s ease;
 }
 
-#preloader{
+/*#preloader{
   background: #000 url(../images/load.gif) no-repeat center;
   background-size: 50%;
   height: 100vh;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
 }
 
 #loading{
   display: block;
   margin: 0 auto;
   width: 20%;
-}
+}*/
 
 .recommandation {
   background: var(--bg-secondary);

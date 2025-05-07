@@ -35,10 +35,28 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
             rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/progress-loader.css">
 </head>
 
 <body id="top" class="dark_theme">
-<div id="preloader"><img src="./assets/images/loading.gif" alt="" id="loading"></div>
+    <div id="preloader">
+        <img src="./assets/images/loading.gif" alt="" id="loading">
+        <div class="progress-container">
+          <div class="mosaic-grid" id="mosaicGrid">
+            <!-- Les cellules seront générées dynamiquement par JavaScript -->
+          </div>
+          <div class="progress-text-wrapper">
+            <div class="progress-bar-container">
+              <div class="progress-bar" id="progressBar"></div>
+              <div class="progress-particles" id="progressParticles"></div>
+            </div>
+            <span id="progress-percentage">0%</span>
+            <span class="loading-text">Chargement</span>
+          </div>
+        </div>
+      </div>
+      
+         
 <canvas id="particleCanvas" class="background"></canvas>
 <div class="floating-container" id="robot-container">
     <span class="close-button">×</span>
@@ -2064,8 +2082,7 @@
 <script src="./assets/js/footer.js"></script>
 <script src="./assets/js/floatGif.js"></script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-14WFPZRCG9"></script>
+
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ab8fb7e6-e036-4af6-9f86-38865093d7b2"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -2078,6 +2095,7 @@
 
     gtag('config', 'G-14WFPZRCG9');
 </script>
+<script src="assets/js/progress-loader.js"></script>
 
 </body>
 </html>

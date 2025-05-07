@@ -4,6 +4,13 @@
  * element toggle function
  */
 
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelector('.header').style.zIndex = '4';
+  }, 500); // Délai légèrement supérieur à celui de la disparition du préloader
+});
+
+
 const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 

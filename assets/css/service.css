@@ -5,6 +5,9 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     padding: 1rem;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
 }
 
 .service-card {
@@ -13,10 +16,61 @@
     border-radius: 20px;
     padding: 2rem;
     overflow: hidden;
-    transition: transform 0.5s ease;
     transform-style: preserve-3d;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.1);
+    
+    /* Animation d'apparition améliorée et plus fluide */
+    opacity: 0;
+    transform: 
+        translateY(100px) 
+        translateX(-20px) 
+        translateZ(-100px) 
+        rotateX(20deg) 
+        rotateZ(-5deg);
+    transform-origin: center center;
+    transition: 
+        opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1), 
+        transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: 
+        translateY(0) 
+        translateX(0) 
+        translateZ(0) 
+        rotateX(0) 
+        rotateZ(0);
+}
+
+/* Délai progressif plus court pour les cartes */
+.service-card:nth-child(1) { transition-delay: 0.05s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.15s; }
+.service-card:nth-child(4) { transition-delay: 0.2s; }
+.service-card:nth-child(5) { transition-delay: 0.25s; }
+.service-card:nth-child(6) { transition-delay: 0.3s; }
+
+/* Animation de rebond à l'arrivée plus subtile */
+@keyframes cardBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.01); }
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: 
+        translateY(0) 
+        translateX(0) 
+        translateZ(0) 
+        rotateX(0) 
+        rotateZ(0);
+    animation: cardBounce 0.6s ease-out 0.8s;
 }
 
 .service-card::before {
@@ -173,6 +227,53 @@
 .service-card-wrapper {
     perspective: 1500px;
     transform-style: preserve-3d;
+}
+
+/* Effet sonore de carte (visuel) */
+@keyframes cardSound {
+    0% { box-shadow: 0 0 0 rgba(255, 255, 255, 0); }
+    30% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
+    100% { box-shadow: 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: 
+        translateY(0) 
+        translateX(0) 
+        translateZ(0) 
+        rotateX(0) 
+        rotateZ(0);
+    animation: 
+        cardBounce 0.6s ease-out 0.8s,
+        cardSound 0.5s ease-out 0.8s;
+}
+
+/* Bouton de réinitialisation de l'animation */
+.reset-animation-btn {
+    position: relative;
+    display: block;
+    margin: 2rem auto;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #64ffda, #0a84ff);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+    z-index: 10;
+}
+
+.reset-animation-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(10, 132, 255, 0.4);
+}
+
+.reset-animation-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(10, 132, 255, 0.2);
 }
 
 @media (max-width: 768px) {

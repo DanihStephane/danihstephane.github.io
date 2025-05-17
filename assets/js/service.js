@@ -122,26 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     };
     
-    // Amélioration: préchargement des images pour une animation plus fluide
-    function preloadBackgroundImages() {
-        const imageUrls = [
-            '../images/service/6213731.png',
-            '../images/service/front.png',
-            '../images/service/application-web.png',
-            '../images/service/maintenance.png',
-            '../images/service/conseil.png',
-            '../images/service/otherService.PNG'
-        ];
-        
-        imageUrls.forEach(url => {
-            const img = new Image();
-            img.src = url;
-        });
-    }
-    
-    // Précharger les images en arrière-plan
-    preloadBackgroundImages();
-    
     // Amélioration: détection plus agressive pour les appareils mobiles
     if (window.innerWidth <= 768) {
         // Sur mobile, on montre les cartes plus tôt

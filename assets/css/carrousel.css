@@ -5,57 +5,94 @@
 }
 .baba .carousel {
     width: 1200px;
-    height: 400px;
+    /* height défini dynamiquement par JS selon le card courant */
+    min-height: 80px;
     margin: 5px auto;
-    /*background: #e2ffed;*/
-    /* border: 1px solid salmon; */
     border-radius: 5px;
     position: relative;
     overflow: clip;
+    transition: height 0.4s ease;
 }
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {.baba .carousel  {
-        width: 80%;
-    }}
+@media only screen and (max-width: 600px) {
+    .baba .carousel {
+        width: 90%;
+    }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {.baba .carousel{
-        width: 80%;
-    }}
+@media only screen and (min-width: 600px) {
+    .baba .carousel {
+        width: 85%;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {.baba .carousel{
+@media only screen and (min-width: 768px) {
+    .baba .carousel {
         width: 80%;
-    }}
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {.baba .carousel{
+@media only screen and (min-width: 992px) {
+    .baba .carousel {
         width: 85%;
-    }}
+    }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {.baba .carousel{
+@media only screen and (min-width: 1200px) {
+    .baba .carousel {
         width: 85%;
-    }}
+    }
+}
 
 .carousel .track {
+    /* position: absolute → retiré du flux, offsetWidth = N × carouselWidth */
     position: absolute;
     top: 0;
     left: 0;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     touch-action: none;
-    height: 100%;
-
+    will-change: transform;
 }
 .smooth-transition {
-    transition: all 1s;
+    transition: transform 0.6s ease;
 }
 .carousel .track .card {
-    width: 900px;
+    /* width défini par JS = carouselWidth exactement */
     height: auto;
-    /* background: #cccccc; */
     border-radius: 5px;
-    margin-right: 20px;
+    /* margin-right: 0 — navigation = carouselWidth exact, pas de décalage */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+/* Layout interne : avatar + form côte à côte */
+.carousel .track .card .contact-list-item {
+    width: 100%;
+    margin-bottom: 0;
+    align-items: flex-start;
+}
+
+.carousel .track .card .contact-item-icon {
+    flex-shrink: 0;
+    margin-left: 0 !important;
+}
+
+.carousel .track .card .wrapper {
+    flex: 1;
+    min-width: 0; /* évite le débordement de texte dans flex */
+}
+
+.carousel .track .card .recommandation {
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .nav .arrow {
@@ -68,6 +105,17 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav .arrow {
+        width: 36px;
+        height: 36px;
+        padding: 4px;
+    }
+    .nav div span {
+        font-size: 1.3em;
+    }
 }
 .nav div{
     background: rgba(222,222,222,0.6);

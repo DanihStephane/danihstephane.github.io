@@ -1411,6 +1411,40 @@ textarea.input-field {
 }
 
 
+@media (max-width: 768px) {
+  /* Recommandation section — mobile */
+  #image3DMessage {
+    display: none;
+  }
+
+  .recommandation-section .contact-content {
+    padding-inline: 15px;
+  }
+
+  .recommandation {
+    padding: 14px;
+  }
+
+  .contact-list-item .contact-item-icon {
+    margin-left: 0 !important;
+  }
+
+  /* LinkedIn button — wrap column on mobile */
+  .contact-section .section-text[style] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  .linkedin-btn {
+    font-size: 13px;
+    padding: 10px 18px;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 453px) {
   .logo a {
     font-size: 25px;

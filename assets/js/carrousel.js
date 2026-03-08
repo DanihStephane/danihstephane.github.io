@@ -6,9 +6,46 @@ const right = document.querySelector('.right');
 let babaWidth = document.querySelector('.baba').offsetWidth;
 let carouselWidth = carousel.offsetWidth;
 
+const cards = document.querySelectorAll('.carousel .track .card');
+
 let index = 0;
 let sumOfRight = 0;
 let sumOfLeft = 0;
+
+// Adapte la hauteur du carousel exactement au contenu du card courant
+const updateCarouselHeight = () => {
+    const card = cards[index];
+    if (!card) return;
+    const h = card.scrollHeight;
+    if (h > 0) carousel.style.height = h + 'px';
+};
+
+const syncCardWidths = () => {
+    carouselWidth = carousel.offsetWidth;
+    cards.forEach(card => {
+        card.style.width = carouselWidth + 'px';
+    });
+    track.style.transform = 'translate(0px)';
+    sumOfRight = 0;
+    index = 0;
+    left.classList.remove('show');
+    right.classList.remove('lock');
+    updateCarouselHeight();
+};
+
+syncCardWidths();
+
+// Recalcul après window.onload (traduction.js injecte les textes là)
+window.addEventListener('load', () => {
+    updateCarouselHeight();
+    setTimeout(updateCarouselHeight, 200);
+});
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncCardWidths, 150);
+});
 
 let initialPosition = null;
 let moving = false;
@@ -22,9 +59,8 @@ right.addEventListener('click', function () {
     left.classList.add('show');
     sumOfRight += carouselWidth;
 
-    // Vérifie si on est à la fin du carrousel
+    // position:absolute + flex → offsetWidth = N × carouselWidth (contenu réel)
     if ((sumOfRight + carouselWidth) >= track.offsetWidth) {
-        // Reviens au début (boucle)
         track.style.transform = `translate(0px)`;
         sumOfRight = 0;
         index = 0;
@@ -32,19 +68,18 @@ right.addEventListener('click', function () {
         track.style.transform = `translateX(-${sumOfRight}px)`;
     }
 
-    // Gérer le cas où on arrive à la fin du carrousel
     if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
         right.classList.add('lock');
     }
+
+    updateCarouselHeight();
 });
 
 left.addEventListener('click', function () {
     track.classList.add('smooth-transition');
     sumOfLeft = sumOfRight - carouselWidth;
 
-    // Vérifie si on est au début du carrousel
     if (sumOfLeft < 0) {
-        // Reviens à la fin (boucle)
         sumOfRight = track.offsetWidth - carouselWidth;
         track.style.transform = `translateX(-${sumOfRight}px)`;
         index = Math.floor(track.offsetWidth / carouselWidth) - 1;
@@ -59,7 +94,9 @@ left.addEventListener('click', function () {
     if (index === 0) {
         left.classList.remove('show');
     }
-    stopAutoScroll(); // Arrêter l'auto-défilement
+
+    updateCarouselHeight();
+    stopAutoScroll();
 });
 
 const gestureStart = (e) => {

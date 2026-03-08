@@ -296,110 +296,250 @@
               - #PROJECTS
             -->
             <section class="services" id="services">
+                <!-- Three.js background canvas -->
+                <canvas id="services-canvas" aria-hidden="true"></canvas>
+
+                <!-- Section heading -->
+                <div class="services-header">
+                    <p class="services-label" data-translate="what_i_offer">What I offer</p>
+                    <h2 class="services-heading" data-translate="mes_services">Mes Services</h2>
+                </div>
+
                 <div class="services-container">
                     <!-- Backend Development Card -->
-                    <div class="service-card backend">
+                    <div class="service-card backend" data-num="01">
                         <div class="card-content">
                             <div>
-                                <div class="service-icon">🔧</div>
+                                <div class="service-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="3" width="20" height="4" rx="1"/>
+                                        <rect x="2" y="10" width="20" height="4" rx="1"/>
+                                        <rect x="2" y="17" width="20" height="4" rx="1"/>
+                                        <circle cx="6" cy="5" r="0.8" fill="currentColor" stroke="none"/>
+                                        <circle cx="6" cy="12" r="0.8" fill="currentColor" stroke="none"/>
+                                        <circle cx="6" cy="19" r="0.8" fill="currentColor" stroke="none"/>
+                                        <line x1="10" y1="5" x2="18" y2="5"/>
+                                        <line x1="10" y1="12" x2="18" y2="12"/>
+                                        <line x1="10" y1="19" x2="18" y2="19"/>
+                                    </svg>
+                                </div>
                                 <h3 class="service-title" data-translate="backend">Backend</h3>
                                 <p class="service-description" data-translate="architecture_robuste_apis_performantes">
                                     Architecture robuste et APIs performantes</p>
                             </div>
                             <ul class="service-list">
-                                <li data-translate="apis_restful">APIs RESTful</li>
-                                <li data-translate="authentification_securisee">Authentification sécurisée</li>
-                                <li data-translate="integration_paiement">Intégration paiement</li>
-                                <li data-translate="cms_sur_mesure">CMS sur mesure</li>
-                                <li data-translate="optimisation_bdd">Optimisation BDD</li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                                    <span data-translate="apis_restful">APIs RESTful</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                    <span data-translate="authentification_securisee">Authentification sécurisée</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                    <span data-translate="integration_paiement">Intégration paiement</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                    <span data-translate="cms_sur_mesure">CMS sur mesure</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                                    <span data-translate="optimisation_bdd">Optimisation BDD</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <!-- Frontend Development Card -->
-                    <div class="service-card frontend">
+                    <div class="service-card frontend" data-num="02">
                         <div class="card-content">
                             <div>
-                                <div class="service-icon">💻</div>
+                                <div class="service-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                        <path d="M8 21h8M12 17v4"/>
+                                        <polyline points="9 9 6 12 9 15"/>
+                                        <polyline points="15 9 18 12 15 15"/>
+                                    </svg>
+                                </div>
                                 <h3 class="service-title" data-translate="frontend">Frontend</h3>
                                 <p class="service-description" data-translate="interfaces_modernes_reactives">Interfaces
                                     modernes et réactives</p>
                             </div>
                             <ul class="service-list">
-                                <li data-translate="applications_spa">Applications SPA</li>
-                                <li data-translate="ui_ux_responsive">UI/UX responsive</li>
-                                <li data-translate="animations_fluides">Animations fluides</li>
-                                <li data-translate="dashboards_interactifs">Dashboards interactifs</li>
-                                <li data-translate="performance_optimisee">Performance optimisée</li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                    <span data-translate="applications_spa">Applications SPA</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                    <span data-translate="ui_ux_responsive">UI/UX responsive</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                    <span data-translate="animations_fluides">Animations fluides</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                                    <span data-translate="dashboards_interactifs">Dashboards interactifs</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                                    <span data-translate="performance_optimisee">Performance optimisée</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <!-- Specialized Services Card -->
-                    <div class="service-card specialized">
+                    <div class="service-card specialized" data-num="03">
                         <div class="card-content">
                             <div>
-                                <div class="service-icon">🚀</div>
+                                <div class="service-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/>
+                                        <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/>
+                                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M15 12v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                                    </svg>
+                                </div>
                                 <h3 class="service-title" data-translate="specialises">Spécialisés</h3>
                                 <p class="service-description" data-translate="solutions_techniques_sur_mesure">
                                     Solutions techniques sur mesure</p>
                             </div>
                             <ul class="service-list">
-                                <li data-translate="ecommerce_avance">E-commerce avancé</li>
-                                <li data-translate="systemes_de_reservation">Systèmes de réservation</li>
-                                <li data-translate="applications_metier">Applications métier</li>
-                                <li data-translate="automatisation">Automatisation</li>
-                                <li data-translate="seo_technique">SEO technique</li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                    <span data-translate="ecommerce_avance">E-commerce avancé</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    <span data-translate="systemes_de_reservation">Systèmes de réservation</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                                    <span data-translate="applications_metier">Applications métier</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                                    <span data-translate="automatisation">Automatisation</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                    <span data-translate="seo_technique">SEO technique</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <!-- Maintenance Card -->
-                    <div class="service-card maintenance">
+                    <div class="service-card maintenance" data-num="04">
                         <div class="card-content">
                             <div>
-                                <div class="service-icon">🛠️</div>
+                                <div class="service-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+                                    </svg>
+                                </div>
                                 <h3 class="service-title" data-translate="maintenance">Maintenance</h3>
                                 <p class="service-description" data-translate="support_optimisation_continue">Support et
                                     optimisation continue</p>
                             </div>
                             <ul class="service-list">
-                                <li data-translate="maintenance_preventive">Maintenance préventive</li>
-                                <li data-translate="securite_renforcee">Sécurité renforcée</li>
-                                <li data-translate="performance_optimale">Performance optimale</li>
-                                <li data-translate="support_reactif">Support réactif</li>
-                                <li data-translate="monitoring_24_7">Monitoring 24/7</li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    <span data-translate="maintenance_preventive">Maintenance préventive</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                    <span data-translate="securite_renforcee">Sécurité renforcée</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                    <span data-translate="performance_optimale">Performance optimale</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+                                    <span data-translate="support_reactif">Support réactif</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <span data-translate="monitoring_24_7">Monitoring 24/7</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <!-- Consulting Card -->
-                    <div class="service-card consulting">
+                    <div class="service-card consulting" data-num="05">
                         <div class="card-content">
                             <div>
-                                <div class="service-icon">📊</div>
+                                <div class="service-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <line x1="18" y1="20" x2="18" y2="10"/>
+                                        <line x1="12" y1="20" x2="12" y2="4"/>
+                                        <line x1="6" y1="20" x2="6" y2="14"/>
+                                        <line x1="2" y1="20" x2="22" y2="20"/>
+                                        <polyline points="4 13 8 9 13 12 18 6"/>
+                                    </svg>
+                                </div>
                                 <h3 class="service-title" data-translate="conseil">Conseil</h3>
                                 <p class="service-description" data-translate="expertise_technique_strategique">
                                     Expertise technique et stratégique</p>
                             </div>
                             <ul class="service-list">
-                                <li data-translate="audit_approfondi">Audit approfondi</li>
-                                <li data-translate="architecture_systeme">Architecture système</li>
-                                <li data-translate="securite_avancee">Sécurité avancée</li>
-                                <li data-translate="analyse_strategique">Analyse stratégique</li>
-                                <li data-translate="formation_equipe">Formation équipe</li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                                    <span data-translate="audit_approfondi">Audit approfondi</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 01-9 9"/></svg>
+                                    <span data-translate="architecture_systeme">Architecture système</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                                    <span data-translate="securite_avancee">Sécurité avancée</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
+                                    <span data-translate="analyse_strategique">Analyse stratégique</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                                    <span data-translate="formation_equipe">Formation équipe</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="service-card other">
+                    <!-- Other Services Card -->
+                    <div class="service-card other" data-num="06">
                         <div class="card-content">
                             <div>
-                                <div class="service-icon" style="font-size: 2em; color: #4CAF50;">+</div>
+                                <div class="service-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                    </svg>
+                                </div>
                                 <h3 class="service-title" data-translate="autres_services">Autres Services</h3>
+                                <p class="service-description" data-translate="solutions_cloud">Solutions sur mesure &amp; conseil stratégique</p>
                             </div>
                             <ul class="service-list">
-                                <li data-translate="services_devops">Services DevOps & Infrastructure</li>
-                                <li data-translate="services_tests_qualite">Services de Tests & Qualité</li>
-                                <li data-translate="services_r_d_technologique">Services de R&D Technologique</li>
-                                <li data-translate="solutions_cloud">Analyse stratégique</li>
-                                <li data-translate="accompagnement_croissance_digitale">Accompagnement en Croissance
-                                    Digitale
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                    <span data-translate="services_devops">Services DevOps & Infrastructure</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                                    <span data-translate="services_tests_qualite">Services de Tests & Qualité</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                                    <span data-translate="services_r_d_technologique">Services de R&D Technologique</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                                    <span data-translate="accompagnement_croissance_digitale">Croissance Digitale</span>
                                 </li>
                             </ul>
                         </div>
@@ -735,7 +875,7 @@
             </section>
         </div>
 
-        <section class="sec-7">
+        <section>
             <div class="experience" id="experience" aria-label="Experience">
                 <h2 class="subtitle">
                     <div style="display: flex;"><span class="auto-type4"></span></div>
@@ -2051,7 +2191,7 @@
         </p>
 
         <p class="copyright">
-            &copy; 2025 <a href="https://ngl.link/danihstephane29437" class="hover-target" target="_blank">Rakotoarison Harilanto</a>. <span data-translate="proundly">Proudly created with passion</span>
+            &copy; 2026 <a href="https://ngl.link/danihstephane29437" class="hover-target" target="_blank">Rakotoarison Harilanto</a>. <span data-translate="proundly">Proudly created with passion</span>
         </p>
     </div>
 </footer>
@@ -2075,7 +2215,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script src="./assets/js/carrousel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
 <script src="./assets//js/service.js"></script>
+<script src="./assets/js/service-threejs.js"></script>
 <script src="./assets/js/cursor.js"></script>
 <script src="./assets/js/animation.js"></script>
 <script src="./assets/js/traduction.js"></script>
@@ -2100,7 +2242,6 @@
     gtag('config', 'G-14WFPZRCG9');
 </script>
 <script src="assets/js/progress-loader.js"></script>
-<script src="assets/js/experienceAnimation.js"></script>
 <script src="assets/js/educationAnimation.js"></script>
 
 

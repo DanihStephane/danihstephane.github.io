@@ -1,131 +1,47 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.service-card');
-    
-    // Configuration de l'animation au survol
-    cards.forEach(card => {
-        card.addEventListener('mousemove', handleMouseMove);
-        card.addEventListener('mouseleave', handleMouseLeave);
-    });
 
-    function handleMouseMove(e) {
-        // Préserver l'animation d'apparition
-        if (!e.currentTarget.classList.contains('visible')) return;
-        
-        const card = e.currentTarget;
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    // Entry animation stagger — JS controls delays so exit uses 0s (no linger on scroll-up)
+    const ENTRY_DELAYS = [0.05, 0.13, 0.21, 0.29, 0.37, 0.45];
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = -(x - centerX) / 10;
+    const cardIndex = new Map();
+    cards.forEach((card, i) => cardIndex.set(card, i));
 
-        // Utilisation de requestAnimationFrame pour une animation plus fluide
-        requestAnimationFrame(() => {
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-        });
-
-        // Effet de brillance dynamique
-        const percentX = x / rect.width;
-        const percentY = y / rect.height;
-        card.style.setProperty('--mouse-x', `${percentX * 100}%`);
-        card.style.setProperty('--mouse-y', `${percentY * 100}%`);
-    }
-
-    function handleMouseLeave(e) {
-        // Préserver l'animation d'apparition
-        if (!e.currentTarget.classList.contains('visible')) return;
-        
-        const card = e.currentTarget;
-        requestAnimationFrame(() => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-        });
-    }
-    
-    // Configuration de l'Intersection Observer pour l'animation d'apparition
-    // Modifié pour détecter les cartes plus tôt dans le scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -10% 0px', // Détecte les éléments quand ils sont à 10% du bas du viewport
-        threshold: 0.05 // Déclenche quand seulement 5% de l'élément est visible
-    };
-    
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry, index) => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const idx = cardIndex.get(entry.target) ?? 0;
             if (entry.isIntersecting) {
-                // Ajouter un délai progressif plus court pour l'effet de distribution
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 50); // Délai réduit à 50ms entre chaque carte
+                entry.target.style.transitionDelay = `${ENTRY_DELAYS[idx] ?? 0}s`;
+                entry.target.classList.add('visible');
             } else {
-                // Réinitialiser l'animation quand l'élément sort du viewport
+                // Exit: no delay so cards disappear immediately when scrolled out
+                entry.target.style.transitionDelay = '0s';
                 entry.target.classList.remove('visible');
             }
         });
-    }, observerOptions);
-    
-    // Observer chaque carte
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-    
-    // Fonction pour précharger les cartes qui sont déjà visibles au chargement
-    function checkInitialVisibility() {
-        cards.forEach((card, index) => {
-            const rect = card.getBoundingClientRect();
-            const isVisible = (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0
-            );
-            
-            if (isVisible) {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 50);
-            }
-        });
-    }
-    
-    // Vérifier les cartes visibles au chargement initial
-    checkInitialVisibility();
-    
-    // Optimisation pour le défilement fluide
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                // Rien à faire ici car IntersectionObserver s'en charge
-                ticking = false;
-            });
-            ticking = true;
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    cards.forEach(card => observer.observe(card));
+
+    // Cards already in viewport on load
+    cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            card.style.transitionDelay = `${ENTRY_DELAYS[i] ?? 0}s`;
+            card.classList.add('visible');
         }
     });
-    
-    // Fonction pour réinitialiser et rejouer l'animation
-    window.resetCardAnimation = function() {
+
+    window.resetCardAnimation = function () {
         cards.forEach(card => {
+            card.style.transitionDelay = '0s';
             card.classList.remove('visible');
         });
-        
-        // Forcer un reflow pour réinitialiser les animations
-        void cards[0].offsetWidth;
-        
-        // Réappliquer les animations après un court délai
-        setTimeout(() => {
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 50);
+        requestAnimationFrame(() => {
+            cards.forEach((card, i) => {
+                card.style.transitionDelay = `${ENTRY_DELAYS[i] ?? 0}s`;
+                card.classList.add('visible');
             });
-        }, 100);
+        });
     };
-    
-    // Amélioration: détection plus agressive pour les appareils mobiles
-    if (window.innerWidth <= 768) {
-        // Sur mobile, on montre les cartes plus tôt
-        observerOptions.rootMargin = '0px 0px -5% 0px';
-        observerOptions.threshold = 0.01;
-    }
 });

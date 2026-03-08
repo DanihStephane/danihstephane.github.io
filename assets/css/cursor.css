@@ -1,31 +1,47 @@
 
-.cursor-dot{
-    width: 10px;
-    height: 10px;
-    background-color: black;
-}
-
-.cursor-outline{
-    width: 50px;
-    height: 50px;
-    border: 2px solid hsla(0, 0%, 0%, 0.5);
-}
-
+/* Cursor elements — positioned via JS transform only (no left/top changes) */
 .cursor-dot,
-.cursor-outline{
+.cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 0;
+    z-index: 9999;
     pointer-events: none;
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Animation de transformation, largeur et hauteur */
+    /* will-change hints compositor to create a dedicated layer */
+    will-change: transform;
 }
 
-.square {
-    width: 15px;  /* Ajuste la taille si nécessaire */
-    height: 15px;
-    background-color: rgb(16, 70, 131); /* Changer la couleur ou toute autre propriété */
-    border-radius: 50%; /* Retirer l'arrondi pour un carré */
+.cursor-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #0aa2a2;
+    /* Only transition non-transform properties to avoid fighting JS */
+    transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-outline {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(10, 162, 162, 0.55);
+    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+/* Hover state — cursor hides dot, expands outline */
+.cursor-dot.is-hovering {
+    opacity: 0;
+}
+
+.cursor-outline.is-hovering {
+    width: 70px;
+    height: 70px;
+    border-color: rgba(10, 162, 162, 0.8);
+}
+
+/* Click state */
+.cursor-outline.square {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(10, 162, 162, 0.12);
+    border-radius: 50%;
 }

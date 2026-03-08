@@ -30,7 +30,7 @@ const translations = {
     "tools_button": "Applications",
 
     "my_experiences": "Professionnelles",
-    "experience_title": "Plus de 3 ans d'expérience en entreprise avec une forte implication dans des projets personnels",
+    "experience_title": "Plus de 5 ans d'expérience en entreprise avec une forte implication dans des projets personnels",
     "experience_introduction": "J’ai eu l’opportunité de travailler sur divers projets, principalement dans le domaine des solutions SaaS et des services cloud. Au cours de ces expériences, j'ai été impliqué dans plusieurs tâches et responsabilités, allant du développement de fonctionnalités spécifiques à l'optimisation de l'architecture des systèmes. Cette immersion m'a permis d'acquérir une solide compréhension des défis techniques et des meilleures pratiques associés à ces environnements dynamiques.",
 
     "june_2023_present" : "Juin 2023 - Présent 2024",
@@ -220,6 +220,8 @@ const translations = {
       "popup_image28": "WSO2 est une solution open source de gestion d'API, sécurisant les accès et surveillant les performances. Dans une application bancaire, il sert de passerelle entre le front-end et le backend (ERP Orchid), en gérant l'authentification via OAuth2 ou JWT. Il permet la publication et le versionnage des API, tout en offrant des outils de surveillance pour analyser les performances et sécuriser les services bancaires.",
       "popup_image28title": "WSO2 API Manager",
       //service
+    "what_i_offer": "Ce que je propose",
+    "mes_services": "Mes Services",
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Architecture robuste et APIs performantes",
     "apis_restful": "APIs RESTful",
@@ -302,7 +304,7 @@ const translations = {
     "tools_button": "Tools",
 
     "my_experiences": "Professional",
-    "experience_title": "Over 3 years of experience in the industry with a strong involvement in personal projects",
+    "experience_title": "Over 5 years of experience in the industry with a strong involvement in personal projects",
     "experience_introduction": "I have had the opportunity to work on various projects, primarily in the field of SaaS solutions and cloud services. During these experiences, I have been involved in several tasks and responsibilities, ranging from developing specific features to optimizing system architecture. This immersion has allowed me to gain a solid understanding of the technical challenges and best practices associated with these dynamic environments.",
 
     "june_2023_present": "June 2023 - Present 2024",
@@ -530,6 +532,8 @@ const translations = {
     "services_r_d_technologique": "Technological R&D Services",
     "accompagnement_croissance_digitale": "Digital Growth Support",
 
+    "what_i_offer": "What I offer",
+    "mes_services": "My Services",
     "solutions_cloud": "Cloud Solutions",
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Robust Architecture and High-Performance APIs",
@@ -801,6 +805,8 @@ const translations = {
     "services_r_d_technologique": "Technologische F&E-Dienste",
     "accompagnement_croissance_digitale": "Begleitung im digitalen Wachstum",
 
+    "what_i_offer": "Was ich anbiete",
+    "mes_services": "Meine Dienste",
     "solutions_cloud": "Cloud-Lösungen",
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Robuste Architektur und Hochleistungs-APIs",
@@ -1072,6 +1078,8 @@ const translations = {
     "services_r_d_technologique": "Services R&D teknolojika",
     "accompagnement_croissance_digitale": "Fanohanana amin'ny fitomboana dizitaly",
 
+    "what_i_offer": "Izay atolotro",
+    "mes_services": "Ny Serivisy",
     "solutions_cloud": "Vahaolana Cloud",
     "backend": "Backend",
     "architecture_robuste_apis_performantes": "Rafitra matanjaka sy APIs mahomby",

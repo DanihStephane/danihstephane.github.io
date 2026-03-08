@@ -1,0 +1,9 @@
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <title>Project Management</title>
+  <path d="M9 2a1 1 0 0 0-1 1H5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-3a1 1 0 0 0-1-1H9zm0 2h6v1H9V4zM5 5h2v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5h2v15H5V5z"/>
+  <rect x="7" y="10" width="4" height="1.5" rx="0.5"/>
+  <rect x="7" y="13" width="6" height="1.5" rx="0.5"/>
+  <rect x="7" y="16" width="3" height="1.5" rx="0.5"/>
+  <rect x="12" y="10" width="5" height="1.5" rx="0.5"/>
+  <rect x="14" y="16" width="3" height="1.5" rx="0.5"/>
+</svg>

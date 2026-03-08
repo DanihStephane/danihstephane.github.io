@@ -1,1 +1,47 @@
-document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".service-card");function t(e){if(!e.currentTarget.classList.contains("visible"))return;let t=e.currentTarget,r=t.getBoundingClientRect(),i=e.clientX-r.left,s=e.clientY-r.top,n=r.width/2,o=r.height/2,a=(s-o)/10,l=-(i-n)/10;requestAnimationFrame(()=>{t.style.transform=`perspective(1000px) rotateX(${a}deg) rotateY(${l}deg) scale3d(1.05, 1.05, 1.05)`});let c=i/r.width,$=s/r.height;t.style.setProperty("--mouse-x",`${100*c}%`),t.style.setProperty("--mouse-y",`${100*$}%`)}function r(e){if(!e.currentTarget.classList.contains("visible"))return;let t=e.currentTarget;requestAnimationFrame(()=>{t.style.transform="perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"})}e.forEach(e=>{e.addEventListener("mousemove",t),e.addEventListener("mouseleave",r)});let i={root:null,rootMargin:"0px 0px -10% 0px",threshold:.05},s=new IntersectionObserver((e,t)=>{e.forEach((e,t)=>{e.isIntersecting?setTimeout(()=>{e.target.classList.add("visible")},50*t):e.target.classList.remove("visible")})},i);e.forEach(e=>{s.observe(e)}),e.forEach((e,t)=>{let r=e.getBoundingClientRect(),i=r.top<=(window.innerHeight||document.documentElement.clientHeight)&&r.bottom>=0;i&&setTimeout(()=>{e.classList.add("visible")},50*t)});let n=!1;window.addEventListener("scroll",function(){n||(window.requestAnimationFrame(function(){n=!1}),n=!0)}),window.resetCardAnimation=function(){e.forEach(e=>{e.classList.remove("visible")}),e[0].offsetWidth,setTimeout(()=>{e.forEach((e,t)=>{setTimeout(()=>{e.classList.add("visible")},50*t)})},100)},window.innerWidth<=768&&(i.rootMargin="0px 0px -5% 0px",i.threshold=.01)});
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.service-card');
+
+    // Entry animation stagger — JS controls delays so exit uses 0s (no linger on scroll-up)
+    const ENTRY_DELAYS = [0.05, 0.13, 0.21, 0.29, 0.37, 0.45];
+
+    const cardIndex = new Map();
+    cards.forEach((card, i) => cardIndex.set(card, i));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const idx = cardIndex.get(entry.target) ?? 0;
+            if (entry.isIntersecting) {
+                entry.target.style.transitionDelay = `${ENTRY_DELAYS[idx] ?? 0}s`;
+                entry.target.classList.add('visible');
+            } else {
+                // Exit: no delay so cards disappear immediately when scrolled out
+                entry.target.style.transitionDelay = '0s';
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    cards.forEach(card => observer.observe(card));
+
+    // Cards already in viewport on load
+    cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            card.style.transitionDelay = `${ENTRY_DELAYS[i] ?? 0}s`;
+            card.classList.add('visible');
+        }
+    });
+
+    window.resetCardAnimation = function () {
+        cards.forEach(card => {
+            card.style.transitionDelay = '0s';
+            card.classList.remove('visible');
+        });
+        requestAnimationFrame(() => {
+            cards.forEach((card, i) => {
+                card.style.transitionDelay = `${ENTRY_DELAYS[i] ?? 0}s`;
+                card.classList.add('visible');
+            });
+        });
+    };
+});

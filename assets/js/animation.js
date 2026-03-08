@@ -1,6 +1,6 @@
 let sections = document.querySelectorAll('section');
 
-window.onscroll = () => {
+function checkSections() {
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop;
@@ -14,3 +14,8 @@ window.onscroll = () => {
         }
     })
 }
+
+window.onscroll = checkSections;
+
+// Déclenche au chargement pour que la section hero soit visible immédiatement
+document.addEventListener('DOMContentLoaded', checkSections);

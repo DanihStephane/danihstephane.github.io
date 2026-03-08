@@ -1714,8 +1714,19 @@ const translationsEducation = {
     }
 };
 
-function startTyped(element, strings, speed) {
-  let typed = new Typed(element, {
+// Stocke les instances Typed.js et les RAF IDs pour pouvoir les annuler au re-déclenchement
+const typedInstances = {};
+const fastTypedRAFs = {};
+
+function startTyped(selector, strings, speed) {
+  // Détruire l'instance précédente si elle existe
+  if (typedInstances[selector]) {
+      typedInstances[selector].destroy();
+      delete typedInstances[selector];
+  }
+  const el = document.querySelector(selector);
+  if (el) el.textContent = '';
+  typedInstances[selector] = new Typed(selector, {
       strings: strings,
       typeSpeed: speed,
       backSpeed: speed,
@@ -1724,37 +1735,56 @@ function startTyped(element, strings, speed) {
   });
 }
 
-
-// Fonction pour réinitialiser les animations
-function resetTypedAnimations() {
-  // Pour chaque cible, on recrée l'animation avec le texte traduit
-  targets.forEach(target => {
-      observer.unobserve(target); // Arrête d'observer l'élément
-      if (target.classList.contains('auto-type4')) {
-          startTyped(".auto-type4", translationsEducation[currentLanguage].autoType4, 150);
-      } else if (target.classList.contains('auto-type5')) {
-          startTyped(".auto-type5", translationsEducation[currentLanguage].autoType5, 1);
-      } else if (target.classList.contains('auto-type6')) {
-          startTyped(".auto-type6", translationsEducation[currentLanguage].autoType6, 150);
-      } else if (target.classList.contains('auto-type7')) {
-          startTyped(".auto-type7", translationsEducation[currentLanguage].autoType7, 1);
+// Fonction typewriter rapide via RAF : tape charsPerFrame caractères par frame
+// Utilisée uniquement pour les longs textes (auto-type5 et auto-type7)
+function startFastTyped(selector, strings, charsPerFrame) {
+  // Annuler le RAF précédent si en cours
+  if (fastTypedRAFs[selector]) {
+      cancelAnimationFrame(fastTypedRAFs[selector]);
+      delete fastTypedRAFs[selector];
+  }
+  const el = document.querySelector(selector);
+  if (!el) return;
+  const text = strings[0] || '';
+  el.textContent = '';
+  let index = 0;
+  function tick() {
+      if (index < text.length) {
+          index = Math.min(index + charsPerFrame, text.length);
+          el.textContent = text.slice(0, index);
+          fastTypedRAFs[selector] = requestAnimationFrame(tick);
+      } else {
+          delete fastTypedRAFs[selector];
       }
-  });
+  }
+  fastTypedRAFs[selector] = requestAnimationFrame(tick);
+}
+
+// Fonction pour démarrer l'animation d'un seul élément ciblé
+function startAnimationForTarget(target) {
+  if (target.classList.contains('auto-type4')) {
+      startTyped(".auto-type4", translationsEducation[currentLanguage].autoType4, 150);
+  } else if (target.classList.contains('auto-type5')) {
+      startFastTyped(".auto-type5", translationsEducation[currentLanguage].autoType5, 30);
+  } else if (target.classList.contains('auto-type6')) {
+      startTyped(".auto-type6", translationsEducation[currentLanguage].autoType6, 150);
+  } else if (target.classList.contains('auto-type7')) {
+      startFastTyped(".auto-type7", translationsEducation[currentLanguage].autoType7, 30);
+  }
 }
 
 // Crée un observer pour déclencher l'animation lorsque l'élément entre dans la vue
 let options = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.5
+  threshold: 0.3
 };
 
 // Fonction d'observation des éléments
 let observer = new IntersectionObserver(function(entries) {
   entries.forEach(entry => {
       if (entry.isIntersecting) {
-          resetTypedAnimations(); // Démarre les animations avec la langue actuelle
-          observer.unobserve(entry.target); // Arrête d'observer une fois l'animation lancée
+          startAnimationForTarget(entry.target); // Déclenche à chaque passage
       }
   });
 }, options);

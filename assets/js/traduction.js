@@ -55,12 +55,12 @@ const translations = {
 
     "nov_2024_jan_2025": "Nov. 2024 - Janv. 2025",
     "seventh_box_title": "Développeur IA & Mentor",
-    "seventh_box_role": "React & Symfony",
+    "seventh_box_role": "Mentorat Technique & Intégration IA",
     "seventh_box_description": "Développeur IA et Mentor Technique spécialisé en solutions React et Symfony. Encadrement d'équipes de développement, intégration de solutions IA locales (Ollama), architecture scalable avec Docker et Mercure pour le temps réel, et mise en place des meilleures pratiques de développement.",
 
     "jan_2025_jun_2025": "Janv. 2025 - Juin 2025",
     "sixth_box_title": "Refonte d'une Plateforme de Réservation de Véhicules",
-    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_role": "Architecte Fullstack & Performance",
     "sixth_box_description": "Refonte d'une plateforme de location de véhicules : interface Next.js/React ultra-réactive, backend Symfony sécurisé, filtrage intelligent, paiements mobile banking, dashboard back-office sur-mesure et optimisation SEO. Résultats : +40% réservations, -30% abandon, -50% temps de chargement.",
 
     "nov_2025_present": "Nov. 2025 - Présent",
@@ -442,12 +442,12 @@ const translations = {
 
     "nov_2024_jan_2025": "Nov. 2024 - Jan. 2025",
     "seventh_box_title": "AI Developer & Mentor",
-    "seventh_box_role": "React & Symfony",
+    "seventh_box_role": "Technical Mentoring & AI Integration",
     "seventh_box_description": "AI Developer and Technical Mentor specializing in React and Symfony solutions. Team coaching, local AI integration (Ollama), scalable architecture with Docker and Mercure for real-time features, and implementation of development best practices.",
 
     "jan_2025_jun_2025": "Jan. 2025 - Jun. 2025",
     "sixth_box_title": "Vehicle Booking Platform Redesign",
-    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_role": "Fullstack Architect & Performance",
     "sixth_box_description": "Full redesign of a vehicle rental platform: ultra-reactive Next.js/React interface, secure Symfony backend, smart vehicle filtering, mobile banking payments, custom back-office dashboard and SEO optimization. Results: +40% bookings, -30% abandon rate, -50% loading time.",
 
     "nov_2025_present": "Nov. 2025 - Present",
@@ -829,12 +829,12 @@ const translations = {
 
     "nov_2024_jan_2025": "Nov. 2024 - Jan. 2025",
     "seventh_box_title": "KI-Entwickler & Mentor",
-    "seventh_box_role": "React & Symfony",
+    "seventh_box_role": "Technisches Mentoring & KI-Integration",
     "seventh_box_description": "KI-Entwickler und technischer Mentor für React- und Symfony-Lösungen. Team-Coaching, Integration lokaler KI-Lösungen (Ollama), skalierbare Architektur mit Docker und Mercure für Echtzeit-Funktionen und Einführung von Entwicklungs-Best-Practices.",
 
     "jan_2025_jun_2025": "Jan. 2025 - Jun. 2025",
     "sixth_box_title": "Neugestaltung einer Fahrzeugbuchungsplattform",
-    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_role": "Fullstack-Architekt & Performance",
     "sixth_box_description": "Vollständige Neugestaltung einer Fahrzeugvermietungsplattform: ultrareaktives Next.js/React-Interface, sicheres Symfony-Backend, intelligente Fahrzeugfilterung, Mobile-Banking-Zahlungen, maßgeschneidertes Back-Office-Dashboard und SEO-Optimierung.",
 
     "nov_2025_present": "Nov. 2025 - Heute",
@@ -1215,12 +1215,12 @@ const translations = {
 
     "nov_2024_jan_2025": "Nov. 2024 - Jan. 2025",
     "seventh_box_title": "Mpamorona IA & Mpanoro",
-    "seventh_box_role": "React & Symfony",
+    "seventh_box_role": "Fanofanana Teknika & Saidim-pifandraisana IA",
     "seventh_box_description": "Mpamorona rindrambaiko IA sy Mpanoro Teknika amin'ny vahaolana React sy Symfony. Fampianarana ekipa, fampidirana vahaolana IA eo an-toerana (Ollama), rafitra scalable miaraka amin'ny Docker sy Mercure ary fampandehanana fomba fijery tsara indrindra.",
 
     "jan_2025_jun_2025": "Jan. 2025 - Jun. 2025",
     "sixth_box_title": "Fanavaozana Sehatra Fametahana Fiara",
-    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_role": "Architecte Fullstack & Performance",
     "sixth_box_description": "Fanavaozana tanteraka ny sehatra fametahana fiara: interface Next.js/React mahomby, Symfony backend voarindrina, filtrage maranitra, fandoavana mobile banking, dashboard back-office manokana ary fanatsarana SEO.",
 
     "nov_2025_present": "Nov. 2025 - Ankehitriny",

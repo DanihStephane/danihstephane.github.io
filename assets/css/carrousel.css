@@ -12,6 +12,8 @@
     position: relative;
     overflow: clip;
     transition: height 0.4s ease;
+    /* Espace pour que le shadow bas ne soit pas clipé */
+    padding-bottom: 20px;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -67,10 +69,10 @@
     /* width défini par JS = carouselWidth exactement */
     height: auto;
     border-radius: 5px;
-    /* margin-right: 0 — navigation = carouselWidth exact, pas de décalage */
     flex-shrink: 0;
     box-sizing: border-box;
-    padding: 4px;
+    /* padding-inline: 20px → le shadow (15px blur) ne touche plus le bord clip */
+    padding: 4px 20px;
 }
 
 /* Layout interne : avatar + form côte à côte */
@@ -93,6 +95,8 @@
 .carousel .track .card .recommandation {
     box-sizing: border-box;
     width: 100%;
+    /* Shadow vertical seulement → aucun blur latéral coupé par overflow:clip */
+    box-shadow: 0 4px 15px var(--card-shadow);
 }
 
 .nav .arrow {
@@ -118,14 +122,16 @@
     }
 }
 .nav div{
-    background: rgba(222,222,222,0.6);
+    /* Fond identique à la section → se fond parfaitement, plus d'effet d'ombre */
+    background: var(--bg-primary);
+    border: 1px solid rgba(128, 128, 128, 0.25);
 }
 .nav div:hover{
-    background: rgba(222,222,222,0.2);
+    background: var(--bg-secondary);
 }
 .nav div span{
     font-size: 2em;
-    color:hsl(229, 93%, 23%);;
+    color: var(--color-primary);
     width: 100%;
     height: 100%;
     display: flex;

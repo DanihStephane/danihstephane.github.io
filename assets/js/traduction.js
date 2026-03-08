@@ -19,7 +19,7 @@ const translations = {
 
     "about_me": "à propos de moi",
     "title_introduction": "Solution d'application innovante ? Réalisons vos idées !",
-    "introduction": "Salut 👨‍💻, je suis Danih Stéphane Rakotoarison Harilanto, développeur confirmé en applications. Passionné par les technologies de l'information, j'ai travaillé sur divers projets, notamment des solutions SaaS et des services cloud. Mon expertise couvre le développement full stack et la collaboration avec des équipes créatives, visant à transformer des idées en solutions concrètes. Que ce soit en solo ou en équipe, je mise sur une gestion efficace des projets, l'agilité et une communication ouverte pour assurer le succès.",
+    "introduction": "Salut 👨‍💻, je suis Danih Stéphane Rakotoarison Harilanto, développeur sénior. Passionné par les technologies de l'information, j'ai travaillé sur divers projets, notamment des solutions SaaS et des services cloud. Mon expertise couvre le développement full stack et la collaboration avec des équipes créatives, visant à transformer des idées en solutions concrètes. Que ce soit en solo ou en équipe, je mise sur une gestion efficace des projets, l'agilité et une communication ouverte pour assurer le succès.",
     "hire_me": "Embauchez-moi",
     "download_cv": "Telecharger CV",
 

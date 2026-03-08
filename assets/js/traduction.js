@@ -53,6 +53,26 @@ const translations = {
     "fourth_box_description": "Mobile Banking, application android native, améliore l'accessibilité et la commodité des services bancaires, permettant aux utilisateurs de gérer leurs finances à tout moment et de n'importe où.",
     "characteristics": "Caractéristiques",
 
+    "nov_2024_jan_2025": "Nov. 2024 - Janv. 2025",
+    "seventh_box_title": "Développeur IA & Mentor",
+    "seventh_box_role": "React & Symfony",
+    "seventh_box_description": "Développeur IA et Mentor Technique spécialisé en solutions React et Symfony. Encadrement d'équipes de développement, intégration de solutions IA locales (Ollama), architecture scalable avec Docker et Mercure pour le temps réel, et mise en place des meilleures pratiques de développement.",
+
+    "jan_2025_jun_2025": "Janv. 2025 - Juin 2025",
+    "sixth_box_title": "Refonte d'une Plateforme de Réservation de Véhicules",
+    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_description": "Refonte d'une plateforme de location de véhicules : interface Next.js/React ultra-réactive, backend Symfony sécurisé, filtrage intelligent, paiements mobile banking, dashboard back-office sur-mesure et optimisation SEO. Résultats : +40% réservations, -30% abandon, -50% temps de chargement.",
+
+    "nov_2025_present": "Nov. 2025 - Présent",
+    "eighth_box_title": "Agentic IA & Analyse Géospatiale",
+    "eighth_box_role": "Projet AGREETECH",
+    "eighth_box_description": "Développement d'une plateforme d'analyse géospatiale agentique dans le cadre du projet AGREETECH. Conception de modules permettant le dessin interactif de zones agricoles sur carte, l'analyse d'imagerie satellite via Google Earth Engine, les calculs géospatiaux avancés (surface, périmètre, centroïde) avec Turf.js, et la visualisation de données environnementales via Chart.js. Architecture React 19 + TypeScript, état applicatif Redux Toolkit, données serveur React Query, UI Material-UI et build Vite.",
+
+    "jul_2025_present": "Juil. 2025 - Présent",
+    "fifth_box_title": "Lead Technique & PMO — IA et Cartographie Temps Réel",
+    "fifth_box_role": "Lead Technique & PMO IA",
+    "fifth_box_description": "Élu Développeur Senior après un assessment interne exigeant. En tant que Lead Technique et PMO, pilotage de modules critiques intégrant cartographie temps réel et IA, conduite des code reviews, coordination du cycle projet complet et interface stratégique entre les équipes techniques et les directions métier.",
+
     "my_education": "Mes antécédents",
     "education_title": "Comment un voyage éducatif peut-il mener à l'excellence en technologie ?",
     "education_description": "Au cours de mon parcours scolaire en développement informatique, j'ai eu l'opportunité d'obtenir une maîtrise dans l'une des meilleures universités d'Europe, où j'ai approfondi mes connaissances théoriques et pratiques. Cette expérience m'a permis de renforcer mes compétences en développement d'applications, tout en bénéficiant d'une solide formation en informatique dispensée par des universités locales. Parallèlement, j'ai acquis une base rigoureuse en mathématiques, essentielle pour la résolution de problèmes complexes et l'optimisation des algorithmes, me préparant ainsi à relever les défis techniques du secteur.",
@@ -219,6 +239,99 @@ const translations = {
 
       "popup_image28": "WSO2 est une solution open source de gestion d'API, sécurisant les accès et surveillant les performances. Dans une application bancaire, il sert de passerelle entre le front-end et le backend (ERP Orchid), en gérant l'authentification via OAuth2 ou JWT. Il permet la publication et le versionnage des API, tout en offrant des outils de surveillance pour analyser les performances et sécuriser les services bancaires.",
       "popup_image28title": "WSO2 API Manager",
+
+      "popup_image29title": "Symfony — Backend Senior",
+      "popup_image29": "Symfony est utilisé comme framework backend robuste dans ce rôle Senior. Il assure la solidité de l'architecture API, la gestion des entités complexes et l'intégration avec les modules cartographiques et IA. Sa maturité et ses composants découplés garantissent performance et scalabilité.",
+
+      "popup_image30title": "WebSocket & Mercure — Temps Réel",
+      "popup_image30": "Le protocole WebSocket via Mercure est utilisé pour diffuser en temps réel les données de suivi cartographique. Il permet une communication bidirectionnelle persistante entre serveur et clients, garantissant des mises à jour instantanées sur la carte sans polling.",
+
+      "popup_image31title": "Symfony & API REST — Plateforme de Réservation",
+      "popup_image31": "Symfony avec API Platform sert de backend RESTful sécurisé pour la plateforme de réservation. Il gère la logique métier complexe : disponibilité des véhicules, statuts de réservation, intégration des paiements et génération automatique des confirmations.",
+
+      "popup_image32title": "Symfony 7 — Mentorat & Architecture",
+      "popup_image32": "Symfony 7 est au cœur des projets mentorisés, offrant un cadre structuré pour l'enseignement de l'architecture moderne. Il permet d'illustrer les concepts de DDD, CQRS et d'intégration d'IA directement dans un framework professionnel éprouvé.",
+
+      "popup_image33title": "Docker — Environnements Reproductibles",
+      "popup_image33": "Docker est utilisé pour créer des environnements de développement reproductibles, idéaux pour l'enseignement et l'intégration de modèles IA locaux (Ollama). Chaque stack (Symfony, Redis, Mercure, IA) est containerisée, permettant un déploiement instantané et une isolation complète.",
+
+      "popup_image34title": "Next.js — SSR & App Router",
+      "popup_image34": "Next.js est le framework React de référence utilisé dans le rôle Senior pour les interfaces full-stack. Il permet le rendu côté serveur (SSR), la génération statique (SSG) et l'App Router pour une architecture modulaire, garantissant performance et SEO optimal.",
+
+      "popup_image35title": "React — Composants & État",
+      "popup_image35": "React est utilisé pour construire l'interface utilisateur sous forme de composants réutilisables. La gestion d'état avancée (Context API, hooks personnalisés) permet de piloter les données cartographiques en temps réel et les interactions complexes.",
+
+      "popup_image36title": "TypeScript — Typage Statique",
+      "popup_image36": "TypeScript apporte un typage statique strict à l'ensemble du codebase, réduisant les erreurs à la compilation. Dans ce rôle Senior, il garantit la maintenabilité du code, facilite les code reviews et assure la robustesse des interfaces entre modules.",
+
+      "popup_image37title": "Claude AI — Intégration IA",
+      "popup_image37": "L'IA Anthropic Claude est intégrée pour enrichir les modules métier : génération de résumés, aide à la décision et automatisation de tâches complexes. L'API Claude est consommée côté backend Symfony, garantissant sécurité et contrôle des appels.",
+
+      "popup_image38title": "Mercure — Push Temps Réel",
+      "popup_image38": "Le protocole Mercure (basé sur SSE) est utilisé pour diffuser en temps réel les événements cartographiques et les notifications métier. Il remplace le polling inefficace par un push serveur natif, intégré nativement avec Symfony.",
+
+      "popup_image39title": "Next.js — Interface de Réservation",
+      "popup_image39": "Next.js structure l'interface de réservation avec l'App Router, offrant une navigation fluide, un rendu hybride SSR/CSR et une optimisation automatique des images et ressources pour un chargement ultra-rapide.",
+
+      "popup_image40title": "React — UX Dynamique",
+      "popup_image40": "React est utilisé pour le filtrage dynamique des véhicules, l'affichage en temps réel des disponibilités et la gestion du parcours de réservation, avec un état local optimisé pour les interactions rapides.",
+
+      "popup_image41title": "REST API — API Platform",
+      "popup_image41": "API Platform (sur Symfony) génère automatiquement les endpoints RESTful documentés. Il gère les ressources véhicules, réservations et paiements avec validation, sérialisation et sécurité JWT intégrées.",
+
+      "popup_image42title": "SEO — Visibilité & Performance",
+      "popup_image42": "Le SEO est optimisé via Next.js : métadonnées dynamiques, sitemap automatique, rendu SSR pour l'indexation Google et optimisation Core Web Vitals. Résultat : meilleure visibilité et plus de trafic organique.",
+
+      "popup_image43title": "React — Projets Mentorisés",
+      "popup_image43": "React est la technologie centrale enseignée lors du mentorat. Les juniors apprennent les composants fonctionnels, les hooks (useState, useEffect, useContext) et les patterns professionnels à travers des projets concrets.",
+
+      "popup_image44title": "Tailwind CSS — Design Utilitaire",
+      "popup_image44": "Tailwind CSS est utilisé pour construire des interfaces modernes rapidement grâce à ses classes utilitaires. Il est enseigné comme alternative à Bootstrap, favorisant un design cohérent sans CSS personnalisé superflu.",
+
+      "popup_image45title": "Mercure — Temps Réel en Mentorat",
+      "popup_image45": "Le protocole Mercure est intégré dans les projets mentorisés pour initier les équipes au temps réel. Il illustre concrètement comment remplacer le polling par du push serveur dans une architecture Symfony.",
+
+      "popup_image46title": "Claude AI — Solutions IA Locales",
+      "popup_image46": "Des solutions IA locales basées sur Ollama (LLaMA, Mistral) et l'API Claude sont intégrées dans les projets. Elles permettent d'automatiser la génération de code, les tests et l'assistance technique sans dépendre du cloud.",
+
+      "popup_image47title": "shadcn/ui — Composants UI Modernes",
+      "popup_image47": "shadcn/ui est utilisé dans le rôle Senior pour accélérer la construction d'interfaces professionnelles avec des composants accessibles, personnalisables et non-bundlés. Il s'intègre nativement avec Next.js, Tailwind CSS et TypeScript, garantissant cohérence visuelle et maintenabilité du design system.",
+
+      "popup_image48title": "PMO — Pilotage de Projet",
+      "popup_image48": "En tant que PMO (Project Management Officer), je coordonne le cycle de vie complet des projets : cadrage, planification, suivi des roadmaps, gestion des risques et mise en production. Je suis l'interface stratégique entre les équipes techniques et les directions métier, assurant alignement des objectifs et livraison dans les délais.",
+
+      "popup_image49title": "shadcn/ui — Interface de Réservation",
+      "popup_image49": "shadcn/ui a été utilisé pour construire rapidement l'interface de la plateforme de réservation : formulaires multi-étapes, modales, sélecteurs de dates et tableaux de bord. Sa compatibilité native avec Next.js et Tailwind a permis un développement fluide et un rendu soigné.",
+
+      "popup_image50title": "Leaflet — Cartes Interactives",
+      "popup_image50": "Leaflet (via React-Leaflet) est le moteur de cartographie d'AGREETECH. Il affiche les zones agricoles, gère les couches de données géospatiales et s'intègre avec Leaflet Draw pour permettre le dessin interactif de polygones, rectangles et marqueurs directement sur la carte.",
+
+      "popup_image51title": "Google Earth Engine — Imagerie Satellite",
+      "popup_image51": "Google Earth Engine est utilisé pour l'analyse d'imagerie satellite à grande échelle. Il permet d'interroger des indices de végétation (NDVI), d'analyser l'occupation des sols, de détecter les changements climatiques et d'extraire des indicateurs environnementaux sur les zones agricoles dessinées.",
+
+      "popup_image52title": "Turf.js — Calculs Géospatiaux",
+      "popup_image52": "Turf.js réalise tous les calculs géospatiaux côté client : calcul de surface et périmètre des zones dessinées, détermination du centroïde, validation des géométries GeoJSON, intersections et buffers. Son exécution côté browser garantit une réponse instantanée sans appel serveur.",
+
+      "popup_image53title": "React 19 — Interface Agentique",
+      "popup_image53": "React 19 avec ses nouvelles fonctionnalités (Server Components, Actions, use()) structure l'interface d'AGREETECH. Les composants géospatiaux (carte, panneaux d'analyse, visualisations) sont construits de façon modulaire et réactive, garantissant fluidité et maintenabilité.",
+
+      "popup_image54title": "TypeScript 5.8 — Géométries Typées",
+      "popup_image54": "TypeScript 5.8 type l'ensemble des structures géospatiales : interfaces GeoJSON (Feature, FeatureCollection, Geometry), types Redux et API REST. Le typage strict prévient les erreurs sur les coordonnées et garantit l'intégrité des données géographiques tout au long du pipeline.",
+
+      "popup_image55title": "Redux Toolkit — État Applicatif",
+      "popup_image55": "Redux Toolkit gère l'état global d'AGREETECH : zones dessinées, résultats d'analyse, état de la carte, filtres et navigation. Ses slices structurés et son immuabilité garantissent une gestion prévisible des données géospatiales complexes.",
+
+      "popup_image56title": "React Query — Données Serveur",
+      "popup_image56": "TanStack React Query synchronise les données entre le frontend et l'API REST avec cache intelligent, re-fetching automatique et gestion des états de chargement/erreur. Il optimise les requêtes vers l'API GeoJSON et Google Earth Engine.",
+
+      "popup_image57title": "Material-UI — Design System",
+      "popup_image57": "Material-UI (MUI v7) avec Emotion fournit le design system complet d'AGREETECH : panneaux d'analyse, formulaires de configuration, drawers cartographiques et tableaux de bord. Son thème personnalisé assure une cohérence visuelle professionnelle.",
+
+      "popup_image58title": "Vite — Build Ultra-Rapide",
+      "popup_image58": "Vite 7 assure un démarrage instantané du serveur de développement et des builds de production optimisés pour AGREETECH. Son HMR (Hot Module Replacement) ultra-rapide accélère le cycle de développement des composants cartographiques complexes.",
+
+      "popup_image59title": "Chart.js — Visualisation Environnementale",
+      "popup_image59": "Chart.js (via react-chartjs-2) visualise les données environnementales extraites : graphiques NDVI temporels, histogrammes d'occupation des sols, courbes climatiques et indicateurs agricoles. Les graphiques sont synchronisés avec les zones sélectionnées sur la carte.",
       //service
     "what_i_offer": "Ce que je propose",
     "mes_services": "Mes Services",
@@ -326,6 +439,26 @@ const translations = {
     "fourth_box_title": "Java Developer",
     "fourth_box_description": "Mobile Banking, native Android application, enhances accessibility and convenience of banking services, allowing users to manage their finances anytime and anywhere.",
     "characteristics": "Characteristics",
+
+    "nov_2024_jan_2025": "Nov. 2024 - Jan. 2025",
+    "seventh_box_title": "AI Developer & Mentor",
+    "seventh_box_role": "React & Symfony",
+    "seventh_box_description": "AI Developer and Technical Mentor specializing in React and Symfony solutions. Team coaching, local AI integration (Ollama), scalable architecture with Docker and Mercure for real-time features, and implementation of development best practices.",
+
+    "jan_2025_jun_2025": "Jan. 2025 - Jun. 2025",
+    "sixth_box_title": "Vehicle Booking Platform Redesign",
+    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_description": "Full redesign of a vehicle rental platform: ultra-reactive Next.js/React interface, secure Symfony backend, smart vehicle filtering, mobile banking payments, custom back-office dashboard and SEO optimization. Results: +40% bookings, -30% abandon rate, -50% loading time.",
+
+    "nov_2025_present": "Nov. 2025 - Present",
+    "eighth_box_title": "Agentic AI & Geospatial Analysis",
+    "eighth_box_role": "AGREETECH Project",
+    "eighth_box_description": "Development of an agentic geospatial analysis platform within the AGREETECH project. Design of modules enabling interactive drawing of agricultural zones on a map, satellite imagery analysis via Google Earth Engine, advanced geospatial calculations (area, perimeter, centroid) with Turf.js, and environmental data visualization via Chart.js. React 19 + TypeScript architecture, Redux Toolkit for app state, React Query for server state, Material-UI and Vite build.",
+
+    "jul_2025_present": "Jul. 2025 - Present",
+    "fifth_box_title": "Lead Technical & PMO — AI and Real-Time Mapping",
+    "fifth_box_role": "Lead Technical & PMO AI",
+    "fifth_box_description": "Promoted to Senior Developer following a rigorous internal assessment. As Lead Technical and PMO, I drove critical modules integrating real-time mapping and AI, led code reviews, managed the full project lifecycle and acted as strategic bridge between technical teams and business stakeholders.",
 
     "my_education": "My background",
     "education_title": "How can an educational journey lead to excellence in technology?",
@@ -492,6 +625,99 @@ const translations = {
 
       "popup_image28": "WSO2 is an open-source API management solution that secures access and monitors performance. In a banking application, it acts as a gateway between the front end and the backend (Orchid ERP), managing authentication via OAuth2 or JWT. It allows API publishing and versioning, with monitoring tools for performance analysis and banking service security.",
       "popup_image28title": "WSO2 API Manager",
+
+      "popup_image29title": "Symfony — Senior Backend",
+      "popup_image29": "Symfony is used as a robust backend framework in this Senior role. It ensures solid API architecture, complex entity management and integration with mapping and AI modules. Its maturity and decoupled components guarantee performance and scalability.",
+
+      "popup_image30title": "WebSocket & Mercure — Real Time",
+      "popup_image30": "The WebSocket protocol via Mercure is used to stream real-time mapping data. It enables persistent bidirectional communication between server and clients, ensuring instant map updates without polling.",
+
+      "popup_image31title": "Symfony & REST API — Booking Platform",
+      "popup_image31": "Symfony with API Platform serves as a secure RESTful backend for the booking platform. It handles complex business logic: vehicle availability, booking statuses, payment integration and automatic confirmation generation.",
+
+      "popup_image32title": "Symfony 7 — Mentoring & Architecture",
+      "popup_image32": "Symfony 7 is at the core of mentored projects, providing a structured framework for teaching modern architecture. It illustrates DDD, CQRS and AI integration concepts directly within a proven professional framework.",
+
+      "popup_image33title": "Docker — Reproducible Environments",
+      "popup_image33": "Docker is used to create reproducible development environments, ideal for teaching and integrating local AI models (Ollama). Each stack (Symfony, Redis, Mercure, AI) is containerized, enabling instant deployment and complete isolation.",
+
+      "popup_image34title": "Next.js — SSR & App Router",
+      "popup_image34": "Next.js is the reference React framework used in the Senior role for full-stack interfaces. It enables server-side rendering (SSR), static generation (SSG) and App Router for a modular architecture, ensuring top performance and SEO.",
+
+      "popup_image35title": "React — Components & State",
+      "popup_image35": "React is used to build the UI with reusable components. Advanced state management (Context API, custom hooks) drives real-time map data and complex user interactions.",
+
+      "popup_image36title": "TypeScript — Static Typing",
+      "popup_image36": "TypeScript brings strict static typing to the entire codebase, catching errors at compile time. In this Senior role, it ensures code maintainability, simplifies code reviews and guarantees robust interfaces between modules.",
+
+      "popup_image37title": "Claude AI — AI Integration",
+      "popup_image37": "Anthropic Claude AI is integrated to enhance business modules: summary generation, decision support and complex task automation. The Claude API is consumed server-side via Symfony, ensuring security and request control.",
+
+      "popup_image38title": "Mercure — Real-Time Push",
+      "popup_image38": "The Mercure protocol (SSE-based) is used to stream real-time map events and business notifications. It replaces inefficient polling with native server push, integrated natively with Symfony.",
+
+      "popup_image39title": "Next.js — Booking Interface",
+      "popup_image39": "Next.js structures the booking interface with App Router, providing smooth navigation, hybrid SSR/CSR rendering and automatic image optimization for ultra-fast loading.",
+
+      "popup_image40title": "React — Dynamic UX",
+      "popup_image40": "React powers dynamic vehicle filtering, real-time availability display and the booking flow management, with optimized local state for fast user interactions.",
+
+      "popup_image41title": "REST API — API Platform",
+      "popup_image41": "API Platform (on Symfony) auto-generates documented RESTful endpoints. It handles vehicle, booking and payment resources with built-in validation, serialization and JWT security.",
+
+      "popup_image42title": "SEO — Visibility & Performance",
+      "popup_image42": "SEO is optimized via Next.js: dynamic metadata, automatic sitemap, SSR rendering for Google indexing and Core Web Vitals optimization. Result: better visibility and more organic traffic.",
+
+      "popup_image43title": "React — Mentored Projects",
+      "popup_image43": "React is the core technology taught during mentoring. Junior developers learn functional components, hooks (useState, useEffect, useContext) and professional patterns through real-world projects.",
+
+      "popup_image44title": "Tailwind CSS — Utility-First Design",
+      "popup_image44": "Tailwind CSS is used to build modern interfaces quickly with utility classes. It is taught as an alternative to Bootstrap, encouraging consistent design without unnecessary custom CSS.",
+
+      "popup_image45title": "Mercure — Real-Time Mentoring",
+      "popup_image45": "The Mercure protocol is integrated in mentored projects to introduce teams to real-time concepts, illustrating how to replace polling with server push in a Symfony architecture.",
+
+      "popup_image46title": "Claude AI — Local AI Solutions",
+      "popup_image46": "Local AI solutions based on Ollama (LLaMA, Mistral) and the Claude API are integrated in projects, automating code generation, testing and technical assistance without cloud dependency.",
+
+      "popup_image47title": "shadcn/ui — Modern UI Components",
+      "popup_image47": "shadcn/ui is used in the Senior role to accelerate the construction of professional interfaces with accessible, customizable and non-bundled components. It integrates natively with Next.js, Tailwind CSS and TypeScript, ensuring visual consistency and design system maintainability.",
+
+      "popup_image48title": "PMO — Project Management",
+      "popup_image48": "As PMO (Project Management Officer), I coordinate the full project lifecycle: scoping, planning, roadmap tracking, risk management and production delivery. I act as the strategic interface between technical teams and business stakeholders, ensuring goal alignment and on-time delivery.",
+
+      "popup_image49title": "shadcn/ui — Booking Interface",
+      "popup_image49": "shadcn/ui was used to rapidly build the booking platform interface: multi-step forms, modals, date pickers and dashboards. Its native compatibility with Next.js and Tailwind enabled smooth development and polished rendering.",
+
+      "popup_image50title": "Leaflet — Interactive Maps",
+      "popup_image50": "Leaflet (via React-Leaflet) is AGREETECH's mapping engine. It displays agricultural zones, manages geospatial data layers and integrates with Leaflet Draw for interactive drawing of polygons, rectangles and markers directly on the map.",
+
+      "popup_image51title": "Google Earth Engine — Satellite Imagery",
+      "popup_image51": "Google Earth Engine is used for large-scale satellite imagery analysis. It enables querying vegetation indices (NDVI), land use analysis, climate change detection and extraction of environmental indicators on drawn agricultural zones.",
+
+      "popup_image52title": "Turf.js — Geospatial Calculations",
+      "popup_image52": "Turf.js handles all client-side geospatial calculations: area and perimeter of drawn zones, centroid determination, GeoJSON geometry validation, intersections and buffers. Client-side execution ensures instant response without server calls.",
+
+      "popup_image53title": "React 19 — Agentic Interface",
+      "popup_image53": "React 19 with its new features (Server Components, Actions, use()) structures AGREETECH's interface. Geospatial components (map, analysis panels, visualizations) are built modularly and reactively for fluidity and maintainability.",
+
+      "popup_image54title": "TypeScript 5.8 — Typed Geometries",
+      "popup_image54": "TypeScript 5.8 types all geospatial structures: GeoJSON interfaces (Feature, FeatureCollection, Geometry), Redux types and REST API. Strict typing prevents errors on coordinates and ensures geographic data integrity throughout the pipeline.",
+
+      "popup_image55title": "Redux Toolkit — App State",
+      "popup_image55": "Redux Toolkit manages AGREETECH's global state: drawn zones, analysis results, map state, filters and navigation. Structured slices and immutability ensure predictable management of complex geospatial data.",
+
+      "popup_image56title": "React Query — Server Data",
+      "popup_image56": "TanStack React Query synchronizes data between the frontend and REST API with smart caching, automatic re-fetching and loading/error state management. It optimizes requests to the GeoJSON API and Google Earth Engine.",
+
+      "popup_image57title": "Material-UI — Design System",
+      "popup_image57": "Material-UI (MUI v7) with Emotion provides AGREETECH's complete design system: analysis panels, configuration forms, map drawers and dashboards. Its custom theme ensures professional visual consistency.",
+
+      "popup_image58title": "Vite — Ultra-Fast Build",
+      "popup_image58": "Vite 7 provides instant dev server startup and optimized production builds for AGREETECH. Its ultra-fast HMR (Hot Module Replacement) accelerates the development cycle of complex mapping components.",
+
+      "popup_image59title": "Chart.js — Environmental Visualization",
+      "popup_image59": "Chart.js (via react-chartjs-2) visualizes extracted environmental data: temporal NDVI charts, land use histograms, climate curves and agricultural indicators, synchronized with zones selected on the map.",
       //service
 
     "authentification_securisee": "Secure Authentication",
@@ -600,6 +826,26 @@ const translations = {
     "fourth_box_title": "Java-Entwickler",
     "fourth_box_description": "Mobile Banking, native Android-Anwendung, verbessert die Zugänglichkeit und den Komfort von Bankdienstleistungen und ermöglicht es den Benutzern, ihre Finanzen jederzeit und überall zu verwalten.",
     "characteristics": "Eigenschaften",
+
+    "nov_2024_jan_2025": "Nov. 2024 - Jan. 2025",
+    "seventh_box_title": "KI-Entwickler & Mentor",
+    "seventh_box_role": "React & Symfony",
+    "seventh_box_description": "KI-Entwickler und technischer Mentor für React- und Symfony-Lösungen. Team-Coaching, Integration lokaler KI-Lösungen (Ollama), skalierbare Architektur mit Docker und Mercure für Echtzeit-Funktionen und Einführung von Entwicklungs-Best-Practices.",
+
+    "jan_2025_jun_2025": "Jan. 2025 - Jun. 2025",
+    "sixth_box_title": "Neugestaltung einer Fahrzeugbuchungsplattform",
+    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_description": "Vollständige Neugestaltung einer Fahrzeugvermietungsplattform: ultrareaktives Next.js/React-Interface, sicheres Symfony-Backend, intelligente Fahrzeugfilterung, Mobile-Banking-Zahlungen, maßgeschneidertes Back-Office-Dashboard und SEO-Optimierung.",
+
+    "nov_2025_present": "Nov. 2025 - Heute",
+    "eighth_box_title": "Agentische KI & Geodatenanalyse",
+    "eighth_box_role": "AGREETECH-Projekt",
+    "eighth_box_description": "Entwicklung einer agentischen Geodatenanalyse-Plattform im Rahmen des AGREETECH-Projekts. Module für interaktives Zeichnen landwirtschaftlicher Zonen auf der Karte, Satellitenbildanalyse via Google Earth Engine, erweiterte räumliche Berechnungen mit Turf.js und Datenvisualisierung mit Chart.js. React 19 + TypeScript, Redux Toolkit, React Query, Material-UI und Vite.",
+
+    "jul_2025_present": "Jul. 2025 - Heute",
+    "fifth_box_title": "Lead Technisch & PMO — KI und Echtzeit-Kartierung",
+    "fifth_box_role": "Lead Technisch & PMO KI",
+    "fifth_box_description": "Nach einer anspruchsvollen internen Beurteilung zum Senior-Entwickler ernannt. Als Lead Technical und PMO leitete ich kritische Module mit Echtzeit-Kartierung und KI, führte Code-Reviews durch, koordinierte den gesamten Projektzyklus und fungierte als strategische Schnittstelle zwischen technischen Teams und Geschäftsleitungen.",
 
     "my_education": "Mein Hintergrund",
     "education_title": "Wie kann ein Bildungsweg zu technischer Exzellenz führen?",
@@ -766,6 +1012,99 @@ const translations = {
 
       "popup_image28title": "WSO2 API Manager",
       "popup_image28": "WSO2 ist eine Open-Source-Lösung für das API-Management, die den Zugriff sichert und die Leistung überwacht. In einer Banking-Anwendung fungiert er als Gateway zwischen Frontend und Backend (Orchid-ERP) und verwaltet die Authentifizierung über OAuth2 oder JWT. Er ermöglicht die Veröffentlichung und Versionierung von APIs und bietet Überwachungstools, um die Leistung zu analysieren und Bankdienste zu sichern.",
+
+      "popup_image29title": "Symfony — Senior Backend",
+      "popup_image29": "Symfony wird als robustes Backend-Framework in dieser Senior-Rolle verwendet. Es gewährleistet eine solide API-Architektur, komplexe Entity-Verwaltung und Integration mit Kartierungs- und KI-Modulen.",
+
+      "popup_image30title": "WebSocket & Mercure — Echtzeit",
+      "popup_image30": "Das WebSocket-Protokoll über Mercure wird für das Echtzeit-Streaming von Kartierungsdaten verwendet. Es ermöglicht eine persistente bidirektionale Kommunikation zwischen Server und Clients ohne Polling.",
+
+      "popup_image31title": "Symfony & REST API — Buchungsplattform",
+      "popup_image31": "Symfony mit API Platform dient als sicheres RESTful-Backend für die Buchungsplattform und verwaltet Fahrzeugverfügbarkeit, Buchungsstatusänderungen und Zahlungsintegration.",
+
+      "popup_image32title": "Symfony 7 — Mentoring & Architektur",
+      "popup_image32": "Symfony 7 bildet das Herzstück der betreuten Projekte und bietet einen strukturierten Rahmen für die Vermittlung moderner Architektur, DDD und CQRS-Konzepte.",
+
+      "popup_image33title": "Docker — Reproduzierbare Umgebungen",
+      "popup_image33": "Docker wird verwendet, um reproduzierbare Entwicklungsumgebungen zu erstellen, ideal für die Integration lokaler KI-Modelle (Ollama). Jeder Stack ist containerisiert für sofortige Bereitstellung.",
+
+      "popup_image34title": "Next.js — SSR & App Router",
+      "popup_image34": "Next.js ist das bevorzugte React-Framework in der Senior-Rolle. Es ermöglicht serverseitiges Rendering, statische Generierung und App Router für eine modulare Architektur mit optimaler Performance.",
+
+      "popup_image35title": "React — Komponenten & State",
+      "popup_image35": "React wird für wiederverwendbare UI-Komponenten eingesetzt. Fortschrittliches State Management steuert Echtzeit-Kartendaten und komplexe Benutzerinteraktionen.",
+
+      "popup_image36title": "TypeScript — Statische Typisierung",
+      "popup_image36": "TypeScript bringt strikte statische Typisierung in die gesamte Codebasis, erkennt Fehler zur Kompilierzeit und gewährleistet Wartbarkeit und robuste Schnittstellen zwischen Modulen.",
+
+      "popup_image37title": "Claude AI — KI-Integration",
+      "popup_image37": "Anthropic Claude KI wird für Zusammenfassungen, Entscheidungsunterstützung und Automatisierung komplexer Aufgaben integriert. Die API wird serverseitig über Symfony konsumiert.",
+
+      "popup_image38title": "Mercure — Echtzeit-Push",
+      "popup_image38": "Das Mercure-Protokoll (SSE-basiert) streamt Echtzeit-Kartenereignisse und Benachrichtigungen, ersetzt ineffizientes Polling durch nativen Server-Push, nativ in Symfony integriert.",
+
+      "popup_image39title": "Next.js — Buchungsinterface",
+      "popup_image39": "Next.js strukturiert das Buchungsinterface mit App Router, flüssiger Navigation und hybridem SSR/CSR-Rendering für ultraschnelles Laden.",
+
+      "popup_image40title": "React — Dynamische UX",
+      "popup_image40": "React steuert die dynamische Fahrzeugfilterung, Echtzeit-Verfügbarkeitsanzeige und den Buchungsprozess mit optimiertem lokalem State.",
+
+      "popup_image41title": "REST API — API Platform",
+      "popup_image41": "API Platform auf Symfony generiert automatisch dokumentierte RESTful-Endpunkte mit eingebetteter Validierung, Serialisierung und JWT-Sicherheit.",
+
+      "popup_image42title": "SEO — Sichtbarkeit & Performance",
+      "popup_image42": "SEO wird über Next.js optimiert: dynamische Metadaten, automatische Sitemap, SSR für Google-Indexierung und Core Web Vitals-Optimierung.",
+
+      "popup_image43title": "React — Betreute Projekte",
+      "popup_image43": "React ist die zentrale Technologie im Mentoring. Junior-Entwickler lernen funktionale Komponenten, Hooks und professionelle Patterns in realen Projekten.",
+
+      "popup_image44title": "Tailwind CSS — Utility-First Design",
+      "popup_image44": "Tailwind CSS wird für schnelle, moderne Interfaces mit Utility-Klassen eingesetzt und als Bootstrap-Alternative mit konsistentem Design unterrichtet.",
+
+      "popup_image45title": "Mercure — Echtzeit im Mentoring",
+      "popup_image45": "Das Mercure-Protokoll wird in betreuten Projekten eingesetzt, um Teams in Echtzeit-Konzepten zu schulen und Server-Push in Symfony zu demonstrieren.",
+
+      "popup_image46title": "Claude AI — Lokale KI-Lösungen",
+      "popup_image46": "Lokale KI-Lösungen auf Ollama-Basis (LLaMA, Mistral) und die Claude API automatisieren Code-Generierung und technische Unterstützung ohne Cloud-Abhängigkeit.",
+
+      "popup_image47title": "shadcn/ui — Moderne UI-Komponenten",
+      "popup_image47": "shadcn/ui wird in der Senior-Rolle eingesetzt, um professionelle Interfaces mit zugänglichen, anpassbaren Komponenten schnell aufzubauen. Nativ kompatibel mit Next.js, Tailwind CSS und TypeScript.",
+
+      "popup_image48title": "PMO — Projektmanagement",
+      "popup_image48": "Als PMO koordiniere ich den vollständigen Projektlebenszyklus: Planung, Roadmap-Verfolgung, Risikomanagement und Produktionslieferung als strategische Schnittstelle zwischen technischen Teams und Geschäftsleitungen.",
+
+      "popup_image49title": "shadcn/ui — Buchungsinterface",
+      "popup_image49": "shadcn/ui wurde für den schnellen Aufbau der Buchungsplattform eingesetzt: mehrstufige Formulare, Modals, Datumsauswahl und Dashboards, nativ kompatibel mit Next.js und Tailwind.",
+
+      "popup_image50title": "Leaflet — Interaktive Karten",
+      "popup_image50": "Leaflet (via React-Leaflet) ist die Kartierungs-Engine von AGREETECH. Zeigt landwirtschaftliche Zonen an und integriert Leaflet Draw für interaktives Zeichnen von Polygonen und Markierungen.",
+
+      "popup_image51title": "Google Earth Engine — Satellitenbilder",
+      "popup_image51": "Google Earth Engine analysiert Satellitenbilder: NDVI-Indizes, Landnutzungsanalyse, Klimaänderungserkennung und Umweltindikatoren auf gezeichneten landwirtschaftlichen Zonen.",
+
+      "popup_image52title": "Turf.js — Geodatenberechnungen",
+      "popup_image52": "Turf.js führt clientseitige Geodatenberechnungen durch: Fläche, Umfang, Zentroid, GeoJSON-Validierung, Schnittmengen und Puffer — ohne Serveraufruf.",
+
+      "popup_image53title": "React 19 — Agentisches Interface",
+      "popup_image53": "React 19 strukturiert AGREETECH's Interface mit modularen Karten-, Analyse- und Visualisierungskomponenten für maximale Reaktivität und Wartbarkeit.",
+
+      "popup_image54title": "TypeScript 5.8 — Typisierte Geometrien",
+      "popup_image54": "TypeScript 5.8 typisiert GeoJSON-Strukturen, Redux und REST-API streng, verhindert Koordinatenfehler und sichert die Geodatenintegrität.",
+
+      "popup_image55title": "Redux Toolkit — App-Zustand",
+      "popup_image55": "Redux Toolkit verwaltet den globalen Zustand: Zonen, Analyseergebnisse, Kartenzustand und Filter mit strukturierten Slices und Unveränderlichkeit.",
+
+      "popup_image56title": "React Query — Serverdaten",
+      "popup_image56": "TanStack React Query synchronisiert Frontend und REST-API mit intelligentem Cache, automatischem Re-Fetching und Lade-/Fehlerzustandsverwaltung.",
+
+      "popup_image57title": "Material-UI — Design-System",
+      "popup_image57": "MUI v7 mit Emotion liefert das komplette Design-System: Analyse-Panels, Formulare, Karten-Drawer und Dashboards mit professionellem Custom-Theme.",
+
+      "popup_image58title": "Vite — Ultraschneller Build",
+      "popup_image58": "Vite 7 bietet sofortigen Dev-Server-Start und optimierte Produktions-Builds mit ultraschnellem HMR für komplexe Kartenkomponenten.",
+
+      "popup_image59title": "Chart.js — Umweltdatenvisualisierung",
+      "popup_image59": "Chart.js visualisiert Umweltdaten: zeitliche NDVI-Diagramme, Landnutzungshistogramme und Klimakurven, synchronisiert mit Kartenzonen.",
 //service
     "authentification_securisee": "Gesicherte Authentifizierung",
     "integration_paiement": "Zahlungsintegration",
@@ -873,6 +1212,26 @@ const translations = {
     "fourth_box_title": "Mpamorona rindrambaiko Java",
     "fourth_box_description": "Mobile Banking, fampiasana Android ifotony, manatsara ny fahafahana miditra sy ny fahafahan'ny serivisy ara-bola, mamela ny mpampiasa hitantana ny volany na aiza na aiza ary amin'ny fotoana rehetra.",
     "characteristics": "Toetra teknolojia",
+
+    "nov_2024_jan_2025": "Nov. 2024 - Jan. 2025",
+    "seventh_box_title": "Mpamorona IA & Mpanoro",
+    "seventh_box_role": "React & Symfony",
+    "seventh_box_description": "Mpamorona rindrambaiko IA sy Mpanoro Teknika amin'ny vahaolana React sy Symfony. Fampianarana ekipa, fampidirana vahaolana IA eo an-toerana (Ollama), rafitra scalable miaraka amin'ny Docker sy Mercure ary fampandehanana fomba fijery tsara indrindra.",
+
+    "jan_2025_jun_2025": "Jan. 2025 - Jun. 2025",
+    "sixth_box_title": "Fanavaozana Sehatra Fametahana Fiara",
+    "sixth_box_role": "Next.js & Symfony",
+    "sixth_box_description": "Fanavaozana tanteraka ny sehatra fametahana fiara: interface Next.js/React mahomby, Symfony backend voarindrina, filtrage maranitra, fandoavana mobile banking, dashboard back-office manokana ary fanatsarana SEO.",
+
+    "nov_2025_present": "Nov. 2025 - Ankehitriny",
+    "eighth_box_title": "Agentic AI & Famakafakana Jeospasialy",
+    "eighth_box_role": "Tetikasa AGREETECH",
+    "eighth_box_description": "Fampandrosoana sehatra famakafakana jeospasialy agentique amin'ny tetikasa AGREETECH. Modiolin'ny famoronana tanana ny faritra fambolena amin'ny sarintany, famakafakana sarin'ny satalaita amin'ny Google Earth Engine, kajy jeospasialy mandroso (velarana, sisiny, centroïde) amin'ny Turf.js ary fisehoana angon-drakitra amin'ny Chart.js. React 19 + TypeScript, Redux Toolkit, React Query, Material-UI ary Vite.",
+
+    "jul_2025_present": "Jul. 2025 - Ankehitriny",
+    "fifth_box_title": "Lead Teknika & PMO — AI sy Sarintany Fotoana Tena",
+    "fifth_box_role": "Lead Teknika & PMO IA",
+    "fifth_box_description": "Nofidin'ny mpiasa avo lenta taorian'ny fanombanana anatiny henjana. Amin'ny maha Lead Technique sy PMO, nitantana modiolin'asa manan-danja miantanana amin'ny sarintany sy AI aho, nitondra ny fandinihana code, nandrindra ny dingana feno ny tetikasa ary nisolo tena ny mpandraharaha teknika sy ny fitantanana.",
 
     "my_education": "Ny fianarako",
     "education_title": "Ahoana no ahafahan'ny fianarana mitondra ho amin'ny zava-bita amin'ny teknolojia?",
@@ -1038,6 +1397,99 @@ const translations = {
 
       "popup_image28title": "WSO2 API Manager",
       "popup_image28": "WSO2 dia vahaolana open source amin'ny fitantanana API, miaro ny fidirana sy manara-maso ny fahombiazan'ny asa. Amin'ny fampiharana banky, dia miasa ho vavahady eo amin'ny front-end sy backend (ERP Orchid), amin'ny fitantanana ny fanamarinana amin'ny alàlan'ny OAuth2 na JWT. Izy io dia mamela ny famoahana sy ny fanavaozana ny API, miaraka amin'ny fitaovana fanaraha-maso mba hijerena ny fahombiazan'ny asa sy hiarovana ny tolotra banky.",
+
+      "popup_image29title": "Symfony — Backend Senior",
+      "popup_image29": "Symfony ampiasaina ho rafitra backend matanjaka amin'ny andraikitra Senior. Miantoka ny fahatanterahana ny API, ny fitantanana entité sarotra sy ny fampifangaroana amin'ny modiolin'ny sarintany sy AI.",
+
+      "popup_image30title": "WebSocket & Mercure — Fotoana Tena",
+      "popup_image30": "Ny WebSocket amin'ny alàlan'ny Mercure dia ampiasaina handefa angona sarintany amin'ny fotoana tena. Mamela fifandraisana roa-lela maharitra eo amin'ny mpizara sy ny mpanjifa tsy misy polling.",
+
+      "popup_image31title": "Symfony & REST API — Sehatra Fametahana",
+      "popup_image31": "Symfony miaraka amin'ny API Platform miasa ho backend RESTful voarindrina ho an'ny sehatra fametahana. Mitantana ny fahazoan'ny fiara, ny toetran'ny fametahana ary ny fampidirana ny fandoavana.",
+
+      "popup_image32title": "Symfony 7 — Fanofanana & Rafitra",
+      "popup_image32": "Symfony 7 ao amin'ny foibe ny tetikasa ampianarina, manome rafitra voalamina hampianarina ny rafitra maoderina, DDD sy ny foto-kevitr'ny CQRS.",
+
+      "popup_image33title": "Docker — Tontolo Azo Averina",
+      "popup_image33": "Docker ampiasaina hamoronana tontolo fampandrosoana azo averina, mahafeno ho an'ny fampidirana modely AI eo an-toerana (Ollama). Ny stack tsirairay dia containerisée ho an'ny fampiasana avy hatrany.",
+
+      "popup_image34title": "Next.js — SSR & App Router",
+      "popup_image34": "Next.js no framework React ampiasaina amin'ny andraikitra Senior. Mamela SSR, SSG ary App Router ho an'ny rafitra modular miaraka amin'ny fahombiazan'ny asa tsara.",
+
+      "popup_image35title": "React — Composants & State",
+      "popup_image35": "React ampiasaina hamoronana composant azo ampiasaina indray. Ny fitantanana ny state mandroso dia mitantana ny angon-drakitra sarintany sy ny fifandraisana sarotra.",
+
+      "popup_image36title": "TypeScript — Type Static",
+      "popup_image36": "TypeScript mitondra type static hentitra amin'ny codebase manontolo, mahita hadisoana amin'ny fotoana fanangonana ary miantoka ny fitantanana ny code sy ny interface matanjaka.",
+
+      "popup_image37title": "Claude AI — Fampidirana AI",
+      "popup_image37": "Ny Claude AI Anthropic dia ampidirina mba hampitombo ny modiolin'ny raharaha: famoronana famintinana, fanampy fanapahan-kevitra ary fanentanana asa sarotra amin'ny alàlan'ny Symfony.",
+
+      "popup_image38title": "Mercure — Push Fotoana Tena",
+      "popup_image38": "Ny protokola Mercure (mifototra amin'ny SSE) dia ampiasaina handefa amin'ny fotoana tena ny zava-mitranga sarintany sy ny fampandrenesana. Manalana ny polling tsy mahomby amin'ny alàlan'ny push server Symfony.",
+
+      "popup_image39title": "Next.js — Interface Fametahana",
+      "popup_image39": "Next.js manamboatra ny interface fametahana miaraka amin'ny App Router, navigation malefaka ary SSR/CSR hybrid rendering ho an'ny fampiana haingana.",
+
+      "popup_image40title": "React — UX Manetsika",
+      "popup_image40": "React mitantana ny filtrage dinamika ny fiara, fisehoana amin'ny fotoana tena ny fisian'ny fiara ary ny fitantanana ny dingana fametahana.",
+
+      "popup_image41title": "REST API — API Platform",
+      "popup_image41": "API Platform (amin'ny Symfony) mamorona amin'ny ho azy ny endpoint RESTful voarakitra. Mitantana ny loharanon'ny fiara, fametahana ary fandoavana miaraka amin'ny fiarovana JWT.",
+
+      "popup_image42title": "SEO — Fahitana & Fahombiazan'ny Asa",
+      "popup_image42": "Ny SEO dia amboarina amin'ny alàlan'ny Next.js: metadata dinamika, sitemap amin'ny ho azy, SSR ho an'ny Google indexing ary fanamboarana Core Web Vitals.",
+
+      "popup_image43title": "React — Tetikasa Nofaizina",
+      "popup_image43": "React no teknolojia fototra ampianarina amin'ny fanofanana. Ny mpandray anjara amin'ny karama ambany dia mianatra composant, hooks ary pattern matihanina amin'ny tetikasa tena izy.",
+
+      "popup_image44title": "Tailwind CSS — Design Utilitaire",
+      "popup_image44": "Tailwind CSS ampiasaina hamoronana interface maoderina haingana amin'ny alàlan'ny kilasy utility. Ampianarina ho solon'ny Bootstrap miaraka amin'ny fanaraha-maso design.",
+
+      "popup_image45title": "Mercure — Fotoana Tena amin'ny Fanofanana",
+      "popup_image45": "Ny protokola Mercure dia ampidirina amin'ny tetikasa nofaizina mba hampianatra ny ekipa ny foto-kevitry ny fotoana tena ary ny server push amin'ny Symfony.",
+
+      "popup_image46title": "Claude AI — Vahaolana AI eo An-toerana",
+      "popup_image46": "Vahaolana AI eo an-toerana mifototra amin'ny Ollama (LLaMA, Mistral) sy ny API Claude dia ampidirina amin'ny tetikasa, manampy ny famoronana code sy fanampiana teknika.",
+
+      "popup_image47title": "shadcn/ui — Composants UI Maoderina",
+      "popup_image47": "shadcn/ui ampiasaina amin'ny andraikitra Senior hanamboarana interface matihanina haingana miaraka amin'ny composants azo ovana sy tsy bundlés, mifanentana amin'ny Next.js, Tailwind CSS ary TypeScript.",
+
+      "popup_image48title": "PMO — Fitantanana Tetikasa",
+      "popup_image48": "Amin'ny maha PMO, nitantana ny dingana feno ny tetikasa aho: drafitry ny asa, fanaraha-maso roadmap, fitantanana ny hasasarana ary fandefasana amin'ny famokarana. Nisolo tena ny mpandraharaha teknika sy ny fitantanana.",
+
+      "popup_image49title": "shadcn/ui — Interface Fametahana",
+      "popup_image49": "shadcn/ui nampiasaina hanamboarana haingana ny interface fametahana: forms dingana maro, modals, fipiliana daty ary dashboards, mifanentana amin'ny Next.js sy Tailwind.",
+
+      "popup_image50title": "Leaflet — Sarintany Mifanerasera",
+      "popup_image50": "Leaflet (React-Leaflet) no injiny sarintany amin'ny AGREETECH. Mampiseho ny faritra fambolena ary mampifandray Leaflet Draw ho an'ny famoronana tanana polygon sy marque amin'ny sarintany.",
+
+      "popup_image51title": "Google Earth Engine — Sary Satalaita",
+      "popup_image51": "Google Earth Engine ampiasaina amin'ny famakafakana sary satalaita: NDVI, fampiasana ny tany, fanovana ny toetrandro ary famotopotorana ny tontolo iainana amin'ny faritra nosaritana.",
+
+      "popup_image52title": "Turf.js — Kajy Jeospasialy",
+      "popup_image52": "Turf.js manatanteraka kajy jeospasialy amin'ny client: velarana, sisiny, centroïde, fanamarinanana GeoJSON, fifanentanana sy buffer — tsy mila antso server.",
+
+      "popup_image53title": "React 19 — Interface Agentique",
+      "popup_image53": "React 19 manamboatra ny interface AGREETECH miaraka amin'ny composants sarintany, famakafakana ary fisehoana modular sy mivantana.",
+
+      "popup_image54title": "TypeScript 5.8 — Type Jeometria",
+      "popup_image54": "TypeScript 5.8 manampy type amin'ny rafitra GeoJSON, Redux ary REST API, miaro amin'ny hadisoana coordinates ary miantoka ny fahamendrehan'ny angona jeografy.",
+
+      "popup_image55title": "Redux Toolkit — State Fampiharana",
+      "popup_image55": "Redux Toolkit mitantana ny state global: faritra nosaritana, vokatra famakafakana, state sarintany ary filters miaraka amin'ny slices voalamina.",
+
+      "popup_image56title": "React Query — Angona Server",
+      "popup_image56": "TanStack React Query mampifandray ny frontend sy REST API miaraka amin'ny cache maranitra, re-fetching amin'ny ho azy ary fitantanana ny state fampiana/hadisoana.",
+
+      "popup_image57title": "Material-UI — Design System",
+      "popup_image57": "MUI v7 miaraka amin'ny Emotion manome ny design system feno: panels famakafakana, forms, drawers sarintany ary dashboards miaraka amin'ny theme manokana.",
+
+      "popup_image58title": "Vite — Build Haingana",
+      "popup_image58": "Vite 7 manome fandehanana haingana ny server dev sy build famokarana optimisé miaraka amin'ny HMR haingana ho an'ny composants sarintany sarotra.",
+
+      "popup_image59title": "Chart.js — Fisehoana Tontolo Iainana",
+      "popup_image59": "Chart.js (react-chartjs-2) mampiseho angon-drakitra tontolo iainana: grafika NDVI, histograma fampiasana tany ary setriny ara-toetrandro, mifandray amin'ny faritra voafantina amin'ny sarintany.",
 
       //service
     "authentification_securisee": "Fanamarinana voaaro",

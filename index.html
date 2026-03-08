@@ -100,15 +100,31 @@
             </div>
         </div>
         <div class="navbar-actions">
-            <div id="flag-container">
-                <img id="flag" src="./assets/img/Flag_of_France.svg" width="20px">
+            <div class="lang-switcher" id="lang-switcher">
+                <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Changer de langue">
+                    <img id="lang-flag" src="./assets/img/Flag_of_France.svg" alt="FR" width="22" height="15">
+                    <span id="lang-code">FR</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <ul class="lang-dropdown" id="lang-dropdown" role="listbox">
+                    <li class="lang-option active" data-lang="fr" role="option">
+                        <img src="./assets/img/Flag_of_France.svg" alt="Français" width="22" height="15">
+                        <span>Français</span>
+                    </li>
+                    <li class="lang-option" data-lang="en" role="option">
+                        <img src="./assets/img/Flag_of_the_United_States.svg" alt="English" width="22" height="15">
+                        <span>English</span>
+                    </li>
+                    <li class="lang-option" data-lang="mg" role="option">
+                        <img src="./assets/img/Flag_of_Madagascar.svg" alt="Malagasy" width="22" height="15">
+                        <span>Malagasy</span>
+                    </li>
+                    <li class="lang-option" data-lang="de" role="option">
+                        <img src="./assets/img/Flag_of_Germany.svg" alt="Deutsch" width="22" height="15">
+                        <span>Deutsch</span>
+                    </li>
+                </ul>
             </div>
-            <select name="language" id="lang" onchange="changeLanguage(this.value)" class="custom-select">
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-                <option value="mg">MG</option>
-                <option value="de">DE</option>
-            </select>
             <div class="theme-container">
                 <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
                     <span class="icon"></span>

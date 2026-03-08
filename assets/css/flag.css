@@ -1,8 +1,114 @@
-#flag-container {
-    display: flex; /* Utilise flexbox pour l'alignement */
-    align-items: center; /* Centre verticalement les images */
-  }
-  
-  #flag-container img {
-    margin: 0 5px; /* Ajoute un espacement horizontal entre les drapeaux */
-  }
+/* ---- Language Switcher Dropdown ---- */
+
+.lang-switcher {
+    position: relative;
+    z-index: 200;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 10px 6px 8px;
+    background: transparent;
+    border: 1.5px solid rgba(128, 128, 128, 0.35);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    color: var(--color-primary);
+}
+
+.lang-btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--raw-seinna);
+}
+
+.lang-btn img {
+    border-radius: 3px;
+    object-fit: cover;
+    width: 22px;
+    height: 15px;
+    display: block;
+}
+
+#lang-code {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--ff-poppins);
+    color: var(--color-primary);
+    letter-spacing: 0.04em;
+}
+
+.lang-chevron {
+    width: 12px;
+    height: 12px;
+    stroke: var(--color-secondary);
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.lang-switcher.open .lang-chevron {
+    transform: rotate(180deg);
+}
+
+/* Dropdown list */
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 12px;
+    padding: 6px;
+    list-style: none;
+    min-width: 140px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px) scale(0.97);
+    transform-origin: top right;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.lang-switcher.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.lang-option:hover {
+    background: var(--bg-primary);
+}
+
+.lang-option.active {
+    background: hsla(24, 74%, 58%, 0.15);
+}
+
+.lang-option img {
+    border-radius: 3px;
+    object-fit: cover;
+    width: 22px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.lang-option span {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--ff-poppins);
+    color: var(--color-primary);
+}
+
+.lang-option.active span {
+    color: var(--raw-seinna);
+}

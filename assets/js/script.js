@@ -99,7 +99,6 @@ themeToggleBtn.addEventListener("click", function () {
   const companyYear = document.querySelectorAll('.company__year');
   const recommandationSection = document.getElementById('recommandation-section');
   const contactSection = document.getElementById('contact-section');
-  const lang = document.getElementById('lang');
   const autotext1 = document.getElementById('autotext1');
   const autotext2 = document.getElementById('autotext2');
 
@@ -109,9 +108,6 @@ themeToggleBtn.addEventListener("click", function () {
 
     cursorDot.style.backgroundColor = "black";
     cursorOutline.style.border = "2px solid hsla(0, 0%, 0%, 0.5)";
-
-    lang.style.border = "2px solid rgba(0, 0, 0, 0.3)";
-    lang.style.backgroundImage = "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e \")";
 
     slashElement ? slashElement.style.color = "black" : '';
     autotext1.style.color = "black";
@@ -130,9 +126,6 @@ themeToggleBtn.addEventListener("click", function () {
 
     cursorDot.style.backgroundColor = "white";
     cursorOutline.style.border = "2px solid hsla(0, 0%, 100%, 0.5)";
-
-    lang.style.border = "2px solid rgba(255, 255, 255, 0.3)";
-    lang.style.backgroundImage = "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e \")";
 
     slashElement ? slashElement.style.color = "white" : '';
     autotext1.style.color = "white";

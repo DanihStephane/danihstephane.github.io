@@ -118,7 +118,7 @@ robot.addEventListener('click', (e) => {
 
 // Gestion du clic en dehors
 document.addEventListener('click', (e) => {
-    if (!container.contains(e.target) && !e.target.closest('.right')) {
+    if (!containerAnimate.contains(e.target) && !e.target.closest('.right')) {
         // Désactivation de l'effet glitch
         robot.classList.remove('glitch');
         isGlitching = false;

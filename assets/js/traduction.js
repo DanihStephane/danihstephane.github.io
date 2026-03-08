@@ -1631,40 +1631,26 @@ function changeSwithSkills(){
 }
 
 function changeFlag(lang) {
-  const flagContainer = document.getElementById('flag-container');
-  flagContainer.innerHTML = '';  // Vide le conteneur pour ajouter le(s) drapeau(x)
+  const flagMap = {
+    "fr": { src: "./assets/img/Flag_of_France.svg",                  code: "FR" },
+    "en": { src: "./assets/img/Flag_of_the_United_States.svg",       code: "EN" },
+    "mg": { src: "./assets/img/Flag_of_Madagascar.svg",              code: "MG" },
+    "de": { src: "./assets/img/Flag_of_Germany.svg",                 code: "DE" }
+  };
 
-  if (lang === "en") {
+  const data = flagMap[lang];
+  if (!data) return;
 
-    // Ajouter les drapeaux américain et britannique avec un slash
-    const usFlag = document.createElement('img');
-    usFlag.src = "./assets/img/Flag_of_the_United_States.svg";
-    usFlag.width = 20;
+  // Mettre à jour le bouton du switcher
+  const langFlag = document.getElementById('lang-flag');
+  const langCode = document.getElementById('lang-code');
+  if (langFlag) langFlag.src = data.src;
+  if (langCode) langCode.textContent = data.code;
 
-    const slash = document.createElement('span');
-    slash.innerText = ' / ';  // Ajouter un slash entre les drapeaux
-    slash.id = 'slash';  // Ajout de l'ID
-
-    const ukFlag = document.createElement('img');
-    ukFlag.src = "./assets/img/Flag_of_the_United_Kingdom.svg";
-    ukFlag.width = 20;
-
-    flagContainer.appendChild(usFlag);
-    flagContainer.appendChild(slash);
-    flagContainer.appendChild(ukFlag);
-  } else {
-    // Ajouter un seul drapeau selon la langue
-    const flag = document.createElement('img');
-    const flagMap = {
-      "fr": "./assets/img/Flag_of_France.svg",
-      "mg": "./assets/img/Flag_of_Madagascar.svg",
-      "de": "./assets/img/Flag_of_Germany.svg"
-    };
-    flag.src = flagMap[lang];
-    flag.width = 20;
-
-    flagContainer.appendChild(flag);
-  }
+  // Mettre à jour l'option active dans la liste
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === lang);
+  });
 }
 
 
@@ -1803,4 +1789,29 @@ particleSystem.animate();
         // Lancez l'action .click() sur l'élément
         themeButton.click();
     }
+
+    // --- Lang switcher dropdown open/close ---
+    const langSwitcher = document.getElementById('lang-switcher');
+    const langBtn      = document.getElementById('lang-btn');
+
+    langBtn.addEventListener('click', () => {
+        const isOpen = langSwitcher.classList.toggle('open');
+        langBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+            changeLanguage(opt.dataset.lang);
+            langSwitcher.classList.remove('open');
+            langBtn.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Fermer UNIQUEMENT si le clic est en dehors du switcher (et clic réel utilisateur)
+    document.addEventListener('click', (e) => {
+        if (e.isTrusted && !langSwitcher.contains(e.target)) {
+            langSwitcher.classList.remove('open');
+            langBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
 };

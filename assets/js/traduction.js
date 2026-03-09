@@ -1179,7 +1179,7 @@ const translations = {
 
     "about_me": "Momba ahy",
     "title_introduction": "Vahaolana amin'ny tetikasa vaovao ? Aleo fa ho ataontsika tanteraka izay eritreritrao!",
-    "introduction": "Veloma sy fiarahabana feno hafaliana 👨‍💻, Danih Stéphane Rakotoarison Harilanto no anarako, mpamorona rindrambaiko efa za-draharaha. Mahafinaritra ahy ny haitao fampahalalam-baovao amin'ny teknolojia, ary efa niasa tamin'ny tetikasa maro, anisan'izany ny vahaolana SaaS sy ny serivisy rahona (Cloud). Ny fahaizako dia mandrakotra ny fampivoarana feno ary ny fiaraha-miasa amin'ny ekipa famoronana mba hanova hevitra ho vahaolana azo tanterahina. Na miasa irery na ao anaty ekipa, mifantoka amin'ny fitantanana tetikasa mahomby, ny fahamatorana, ary ny fifandraisana misokatra mba hahazoana antoka ny fahombiazana.",
+    "introduction": "Faly miarahaba 👨‍💻, Danih Stéphane Rakotoarison Harilanto no anarako, mpamorona rindrambaiko efa za-draharaha. Mahafinaritra ahy ny haitao fampahalalam-baovao amin'ny teknolojia, ary efa niasa tamin'ny tetikasa maro, anisan'izany ny vahaolana SaaS sy ny serivisy rahona (Cloud). Ny fahaizako dia mandrakotra ny fampivoarana feno ary ny fiaraha-miasa amin'ny ekipa famoronana mba hanova hevitra ho vahaolana azo tanterahina. Na miasa irery na ao anaty ekipa, mifantoka amin'ny fitantanana tetikasa mahomby, ny fahamatorana, ary ny fifandraisana misokatra mba hahazoana antoka ny fahombiazana.",
     "hire_me": "Hiasa miaraka amiko",
     "download_cv": "Hisintona ny taratasy Fiainan'asa",
 

@@ -19,7 +19,7 @@ const translations = {
 
     "about_me": "à propos de moi",
     "title_introduction": "Solution d'application innovante ? Réalisons vos idées !",
-    "introduction": "Salut 👨‍💻, je suis Danih Stéphane Rakotoarison Harilanto, développeur sénior. Passionné par les technologies de l'information, j'ai travaillé sur divers projets, notamment des solutions SaaS et des services cloud. Mon expertise couvre le développement full stack et la collaboration avec des équipes créatives, visant à transformer des idées en solutions concrètes. Que ce soit en solo ou en équipe, je mise sur une gestion efficace des projets, l'agilité et une communication ouverte pour assurer le succès.",
+    "introduction": "Mes chères salutations 👨‍💻, je suis Danih Stéphane Rakotoarison Harilanto, développeur sénior. Passionné par les technologies de l'information, j'ai travaillé sur divers projets, notamment des solutions SaaS et des services cloud. Mon expertise couvre le développement full stack et la collaboration avec des équipes créatives, visant à transformer des idées en solutions concrètes. Que ce soit en solo ou en équipe, je mise sur une gestion efficace des projets, l'agilité et une communication ouverte pour assurer le succès.",
     "hire_me": "Embauchez-moi",
     "download_cv": "Telecharger CV",
 
@@ -406,7 +406,7 @@ const translations = {
 
     "about_me": "About me",
     "title_introduction": "Innovative application solution? Let's realize your ideas!",
-    "introduction": "Hello 👨‍💻, I'm Danih Stéphane Rakotoarison Harilanto, a confirmed application developer. Passionate about information technology, I have worked on various projects, including SaaS solutions and cloud services. My expertise covers full stack development and collaboration with creative teams, aiming to transform ideas into concrete solutions. Whether working solo or in a team, I focus on effective project management, agility, and open communication to ensure success.",
+    "introduction": "My warmest greetings 👨‍💻, I'm Danih Stéphane Rakotoarison Harilanto, a confirmed application developer. Passionate about information technology, I have worked on various projects, including SaaS solutions and cloud services. My expertise covers full stack development and collaboration with creative teams, aiming to transform ideas into concrete solutions. Whether working solo or in a team, I focus on effective project management, agility, and open communication to ensure success.",
     "hire_me": "Hire me",
     "download_cv": "Download CV",
 
@@ -793,7 +793,7 @@ const translations = {
 
     "about_me": "Über mich",
     "title_introduction": "Innovative Anwendungslösung? Lassen Sie uns Ihre Ideen verwirklichen!",
-    "introduction": "Hallo 👨‍💻, ich bin Danih Stéphane Rakotoarison Harilanto, ein erfahrener Anwendungsentwickler. Begeistert von Informationstechnologie, habe ich an verschiedenen Projekten gearbeitet, einschließlich SaaS-Lösungen und Cloud-Diensten. Meine Expertise umfasst Full-Stack-Entwicklung und die Zusammenarbeit mit Kreativteams, um Ideen in konkrete Lösungen zu verwandeln. Ob allein oder im Team, konzentriere ich mich auf effektives Projektmanagement, Agilität und offene Kommunikation, um den Erfolg sicherzustellen.",
+    "introduction": "Meine herzlichsten Grüße 👨‍💻, ich bin Danih Stéphane Rakotoarison Harilanto, ein erfahrener Anwendungsentwickler. Begeistert von Informationstechnologie, habe ich an verschiedenen Projekten gearbeitet, einschließlich SaaS-Lösungen und Cloud-Diensten. Meine Expertise umfasst Full-Stack-Entwicklung und die Zusammenarbeit mit Kreativteams, um Ideen in konkrete Lösungen zu verwandeln. Ob allein oder im Team, konzentriere ich mich auf effektives Projektmanagement, Agilität und offene Kommunikation, um den Erfolg sicherzustellen.",
     "hire_me": "Stellen Sie mich ein",
     "download_cv": "Lebenslauf herunterladen",
 
@@ -1179,7 +1179,7 @@ const translations = {
 
     "about_me": "Momba ahy",
     "title_introduction": "Vahaolana amin'ny tetikasa vaovao ? Aleo fa ho ataontsika tanteraka izay eritreritrao!",
-    "introduction": "Salama 👨‍💻, Danih Stéphane Rakotoarison Harilanto no anarako, mpamorona rindrambaiko efa za-draharaha. Mahafinaritra ahy ny haitao fampahalalam-baovao amin'ny teknolojia, ary efa niasa tamin'ny tetikasa maro, anisan'izany ny vahaolana SaaS sy ny serivisy rahona (Cloud). Ny fahaizako dia mandrakotra ny fampivoarana feno ary ny fiaraha-miasa amin'ny ekipa famoronana mba hanova hevitra ho vahaolana azo tanterahina. Na miasa irery na ao anaty ekipa, mifantoka amin'ny fitantanana tetikasa mahomby, ny fahamatorana, ary ny fifandraisana misokatra mba hahazoana antoka ny fahombiazana.",
+    "introduction": "Veloma sy fiarahabana feno hafaliana 👨‍💻, Danih Stéphane Rakotoarison Harilanto no anarako, mpamorona rindrambaiko efa za-draharaha. Mahafinaritra ahy ny haitao fampahalalam-baovao amin'ny teknolojia, ary efa niasa tamin'ny tetikasa maro, anisan'izany ny vahaolana SaaS sy ny serivisy rahona (Cloud). Ny fahaizako dia mandrakotra ny fampivoarana feno ary ny fiaraha-miasa amin'ny ekipa famoronana mba hanova hevitra ho vahaolana azo tanterahina. Na miasa irery na ao anaty ekipa, mifantoka amin'ny fitantanana tetikasa mahomby, ny fahamatorana, ary ny fifandraisana misokatra mba hahazoana antoka ny fahombiazana.",
     "hire_me": "Hiasa miaraka amiko",
     "download_cv": "Hisintona ny taratasy Fiainan'asa",
 

@@ -148,6 +148,15 @@ let autoScrollInterval;
 
 const autoScrollNext = () => {
     autoScrollInterval = setInterval(() => {
+        // Pause si l'utilisateur interagit avec le sélecteur de pays du
+        // téléphone (intl-tel-input) : le clic simulé sur "next" bulle jusqu'à
+        // document et serait interprété par iti comme un clic extérieur, ce qui
+        // refermerait son déroulant. Le champ de recherche d'iti a le focus
+        // tant que le déroulant est ouvert.
+        const active = document.activeElement;
+        if (active && active.closest && active.closest('.iti, .iti__country-selector')) {
+            return;
+        }
         right.click(); // Simuler un clic sur le bouton "next"
     }, 2000); // Toutes les 2 secondes
 };

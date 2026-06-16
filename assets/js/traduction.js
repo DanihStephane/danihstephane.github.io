@@ -67,6 +67,11 @@ const translations = {
     "eighth_box_title": "Agentic IA & Analyse Géospatiale",
     "eighth_box_role": "Projet AGREETECH",
     "eighth_box_description": "Développement d'une plateforme d'analyse géospatiale agentique dans le cadre du projet AGREETECH. Conception de modules permettant le dessin interactif de zones agricoles sur carte, l'analyse d'imagerie satellite via Google Earth Engine, les calculs géospatiaux avancés (surface, périmètre, centroïde) avec Turf.js, et la visualisation de données environnementales via Chart.js. Architecture React 19 + TypeScript, état applicatif Redux Toolkit, données serveur React Query, UI Material-UI et build Vite.",
+    "aug_2025_oct_2025": "Août 2025 - Octobre 2025",
+
+    "ninth_box_title": "Holding sur Plusieurs Entités",
+    "ninth_box_role": "Lead Technique & Architecte Fullstack",
+    "ninth_box_description": "Développement de solutions web fullstack sur mesure en réponse aux besoins spécifiques des clients de plusieurs entités du holding. Leadership technique des projets de bout en bout : architecture, supervision des équipes et livraison dans les délais. Conception d'architectures logicielles scalables et maintenables, adaptées aux contraintes métier. Collaboration directe avec les parties prenantes pour aligner les développements aux objectifs stratégiques. Stack : React, Next.js, TypeScript, Symfony, PHP 8, Docker, API REST et IA agentique.",
 
     "jul_2025_present": "Juil. 2025 - Présent",
     "fifth_box_title": "Lead Technique & PMO — IA et Cartographie Temps Réel",
@@ -332,6 +337,30 @@ const translations = {
 
       "popup_image59title": "Chart.js — Visualisation Environnementale",
       "popup_image59": "Chart.js (via react-chartjs-2) visualise les données environnementales extraites : graphiques NDVI temporels, histogrammes d'occupation des sols, courbes climatiques et indicateurs agricoles. Les graphiques sont synchronisés avec les zones sélectionnées sur la carte.",
+
+      "popup_image60title": "React — Architecture Composants",
+      "popup_image60": "React structure les interfaces des solutions sur mesure livrées aux entités du holding : composants réutilisables, gestion d'état maîtrisée et UX réactive. Une architecture modulaire qui accélère la livraison tout en restant maintenable d'un projet à l'autre.",
+
+      "popup_image61title": "Next.js — Applications Fullstack",
+      "popup_image61": "Next.js sert de socle fullstack : rendu SSR/SSG pour la performance et le SEO, App Router, API routes et server actions. Il permet de concevoir des applications scalables alignées sur les contraintes métier de chaque entité.",
+
+      "popup_image62title": "TypeScript — Typage Statique",
+      "popup_image62": "TypeScript garantit la robustesse et la maintenabilité du code à l'échelle de plusieurs projets : typage strict des modèles métier, contrats d'API et composants. Un facteur clé pour fiabiliser les livraisons et faciliter la reprise par les équipes.",
+
+      "popup_image63title": "Symfony — Backend Robuste",
+      "popup_image63": "Symfony porte le backend des solutions : architecture en couches, services découplés, sécurité et qualité de code. Sa structure favorise des fondations scalables et maintenables adaptées aux besoins spécifiques des clients.",
+
+      "popup_image64title": "PHP 8 — Langage Serveur",
+      "popup_image64": "PHP 8 (types, attributs, enums, JIT) alimente la logique serveur des applications. Une base moderne et performante qui soutient le leadership technique sur la conception et la supervision des développements.",
+
+      "popup_image65title": "Docker — Conteneurisation",
+      "popup_image65": "Docker assure des environnements reproductibles du développement à la production : conteneurisation des services, orchestration locale et déploiements fiables. Un levier de cohérence pour livrer dans les délais sur plusieurs entités.",
+
+      "popup_image66title": "API REST — Architecture API",
+      "popup_image66": "Les API REST structurent les échanges entre frontends, backends et services tiers : endpoints clairs, versionnés et documentés. Elles permettent d'aligner les développements aux objectifs stratégiques et d'intégrer durablement les systèmes.",
+
+      "popup_image67title": "IA Agentique — Agents Autonomes",
+      "popup_image67": "Intégration d'IA agentique au cœur des solutions livrées : agents autonomes capables de raisonner, planifier et exécuter des tâches multi-étapes (orchestration d'outils, appels d'API, RAG sur données métier). Cette brique apporte de l'automatisation intelligente aux produits des entités du holding, du copilote applicatif à l'automatisation de workflows, tout en gardant l'humain dans la boucle pour le contrôle et la fiabilité.",
       //service
     "what_i_offer": "Ce que je propose",
     "mes_services": "Mes Services",
@@ -454,6 +483,11 @@ const translations = {
     "eighth_box_title": "Agentic AI & Geospatial Analysis",
     "eighth_box_role": "AGREETECH Project",
     "eighth_box_description": "Development of an agentic geospatial analysis platform within the AGREETECH project. Design of modules enabling interactive drawing of agricultural zones on a map, satellite imagery analysis via Google Earth Engine, advanced geospatial calculations (area, perimeter, centroid) with Turf.js, and environmental data visualization via Chart.js. React 19 + TypeScript architecture, Redux Toolkit for app state, React Query for server state, Material-UI and Vite build.",
+    "aug_2025_oct_2025": "Aug. 2025 - October 2025",
+
+    "ninth_box_title": "Holding Across Multiple Entities",
+    "ninth_box_role": "Technical Lead & Fullstack Architect",
+    "ninth_box_description": "Built tailor-made fullstack web solutions in response to the specific needs of clients across several entities of the holding. Led the technical direction of projects end to end: architecture, team supervision and on-time delivery. Designed scalable, maintainable software architectures suited to business constraints. Worked directly with stakeholders to align development with strategic goals. Stack: React, Next.js, TypeScript, Symfony, PHP 8, Docker, REST APIs and agentic AI.",
 
     "jul_2025_present": "Jul. 2025 - Present",
     "fifth_box_title": "Lead Technical & PMO — AI and Real-Time Mapping",
@@ -718,6 +752,30 @@ const translations = {
 
       "popup_image59title": "Chart.js — Environmental Visualization",
       "popup_image59": "Chart.js (via react-chartjs-2) visualizes extracted environmental data: temporal NDVI charts, land use histograms, climate curves and agricultural indicators, synchronized with zones selected on the map.",
+
+      "popup_image60title": "React — Component Architecture",
+      "popup_image60": "React structures the interfaces of the tailor-made solutions delivered to the holding's entities: reusable components, controlled state management and a responsive UX. A modular architecture that speeds up delivery while staying maintainable from one project to the next.",
+
+      "popup_image61title": "Next.js — Fullstack Applications",
+      "popup_image61": "Next.js serves as the fullstack foundation: SSR/SSG rendering for performance and SEO, App Router, API routes and server actions. It enables scalable applications aligned with each entity's business constraints.",
+
+      "popup_image62title": "TypeScript — Static Typing",
+      "popup_image62": "TypeScript ensures code robustness and maintainability across multiple projects: strict typing of business models, API contracts and components. A key factor for reliable delivery and easy handover between teams.",
+
+      "popup_image63title": "Symfony — Robust Backend",
+      "popup_image63": "Symfony powers the backend of the solutions: layered architecture, decoupled services, security and code quality. Its structure fosters scalable, maintainable foundations tailored to clients' specific needs.",
+
+      "popup_image64title": "PHP 8 — Server Language",
+      "popup_image64": "PHP 8 (types, attributes, enums, JIT) drives the server-side logic of the applications. A modern, performant base that supports technical leadership over design and supervision of development.",
+
+      "popup_image65title": "Docker — Containerization",
+      "popup_image65": "Docker provides reproducible environments from development to production: service containerization, local orchestration and reliable deployments. A lever for consistency to deliver on time across multiple entities.",
+
+      "popup_image66title": "REST API — API Architecture",
+      "popup_image66": "REST APIs structure the exchanges between frontends, backends and third-party services: clear, versioned and documented endpoints. They help align development with strategic goals and integrate systems for the long term.",
+
+      "popup_image67title": "Agentic AI — Autonomous Agents",
+      "popup_image67": "Integration of agentic AI at the core of the delivered solutions: autonomous agents able to reason, plan and carry out multi-step tasks (tool orchestration, API calls, RAG over business data). This building block brings intelligent automation to the holding entities' products, from in-app copilots to workflow automation, while keeping a human in the loop for control and reliability.",
       //service
 
     "authentification_securisee": "Secure Authentication",
@@ -841,6 +899,11 @@ const translations = {
     "eighth_box_title": "Agentische KI & Geodatenanalyse",
     "eighth_box_role": "AGREETECH-Projekt",
     "eighth_box_description": "Entwicklung einer agentischen Geodatenanalyse-Plattform im Rahmen des AGREETECH-Projekts. Module für interaktives Zeichnen landwirtschaftlicher Zonen auf der Karte, Satellitenbildanalyse via Google Earth Engine, erweiterte räumliche Berechnungen mit Turf.js und Datenvisualisierung mit Chart.js. React 19 + TypeScript, Redux Toolkit, React Query, Material-UI und Vite.",
+    "aug_2025_oct_2025": "Aug. 2025 - Oktober 2025",
+
+    "ninth_box_title": "Holding über mehrere Gesellschaften",
+    "ninth_box_role": "Technischer Leiter & Fullstack-Architekt",
+    "ninth_box_description": "Entwicklung maßgeschneiderter Fullstack-Weblösungen als Antwort auf die spezifischen Bedürfnisse der Kunden mehrerer Gesellschaften der Holding. Technische Leitung der Projekte von A bis Z: Architektur, Teamsteuerung und termingerechte Lieferung. Konzeption skalierbarer, wartbarer Softwarearchitekturen, abgestimmt auf die fachlichen Anforderungen. Direkte Zusammenarbeit mit den Stakeholdern, um die Entwicklung an den strategischen Zielen auszurichten. Stack: React, Next.js, TypeScript, Symfony, PHP 8, Docker, REST-APIs und agentische KI.",
 
     "jul_2025_present": "Jul. 2025 - Heute",
     "fifth_box_title": "Lead Technisch & PMO — KI und Echtzeit-Kartierung",
@@ -1105,6 +1168,30 @@ const translations = {
 
       "popup_image59title": "Chart.js — Umweltdatenvisualisierung",
       "popup_image59": "Chart.js visualisiert Umweltdaten: zeitliche NDVI-Diagramme, Landnutzungshistogramme und Klimakurven, synchronisiert mit Kartenzonen.",
+
+      "popup_image60title": "React — Komponentenarchitektur",
+      "popup_image60": "React strukturiert die Oberflächen der maßgeschneiderten Lösungen für die Gesellschaften der Holding: wiederverwendbare Komponenten, kontrolliertes State-Management und reaktive UX. Eine modulare Architektur, die die Lieferung beschleunigt und projektübergreifend wartbar bleibt.",
+
+      "popup_image61title": "Next.js — Fullstack-Anwendungen",
+      "popup_image61": "Next.js dient als Fullstack-Basis: SSR/SSG-Rendering für Performance und SEO, App Router, API-Routes und Server Actions. Es ermöglicht skalierbare Anwendungen, abgestimmt auf die fachlichen Anforderungen jeder Gesellschaft.",
+
+      "popup_image62title": "TypeScript — Statische Typisierung",
+      "popup_image62": "TypeScript sichert Robustheit und Wartbarkeit des Codes über mehrere Projekte hinweg: strikte Typisierung von Geschäftsmodellen, API-Verträgen und Komponenten. Ein Schlüsselfaktor für zuverlässige Lieferungen und einfache Übergaben zwischen Teams.",
+
+      "popup_image63title": "Symfony — Robustes Backend",
+      "popup_image63": "Symfony bildet das Backend der Lösungen: Schichtenarchitektur, entkoppelte Services, Sicherheit und Codequalität. Seine Struktur fördert skalierbare, wartbare Fundamente, die auf die spezifischen Kundenbedürfnisse zugeschnitten sind.",
+
+      "popup_image64title": "PHP 8 — Serversprache",
+      "popup_image64": "PHP 8 (Typen, Attribute, Enums, JIT) treibt die serverseitige Logik der Anwendungen an. Eine moderne, performante Basis, die die technische Leitung bei Konzeption und Steuerung der Entwicklung unterstützt.",
+
+      "popup_image65title": "Docker — Containerisierung",
+      "popup_image65": "Docker sorgt für reproduzierbare Umgebungen von der Entwicklung bis zur Produktion: Containerisierung der Services, lokale Orchestrierung und zuverlässige Deployments. Ein Hebel für Konsistenz, um über mehrere Gesellschaften hinweg termingerecht zu liefern.",
+
+      "popup_image66title": "REST-API — API-Architektur",
+      "popup_image66": "REST-APIs strukturieren den Austausch zwischen Frontends, Backends und Drittanbieter-Services: klare, versionierte und dokumentierte Endpunkte. Sie helfen, die Entwicklung an strategischen Zielen auszurichten und Systeme langfristig zu integrieren.",
+
+      "popup_image67title": "Agentische KI — Autonome Agenten",
+      "popup_image67": "Integration agentischer KI im Kern der gelieferten Lösungen: autonome Agenten, die schließen, planen und mehrstufige Aufgaben ausführen können (Tool-Orchestrierung, API-Aufrufe, RAG über Geschäftsdaten). Dieser Baustein bringt intelligente Automatisierung in die Produkte der Holding-Gesellschaften, vom In-App-Copiloten bis zur Workflow-Automatisierung, und behält den Menschen für Kontrolle und Zuverlässigkeit in der Schleife.",
 //service
     "authentification_securisee": "Gesicherte Authentifizierung",
     "integration_paiement": "Zahlungsintegration",
@@ -1227,6 +1314,11 @@ const translations = {
     "eighth_box_title": "Agentic AI & Famakafakana Jeospasialy",
     "eighth_box_role": "Tetikasa AGREETECH",
     "eighth_box_description": "Fampandrosoana sehatra famakafakana jeospasialy agentique amin'ny tetikasa AGREETECH. Modiolin'ny famoronana tanana ny faritra fambolena amin'ny sarintany, famakafakana sarin'ny satalaita amin'ny Google Earth Engine, kajy jeospasialy mandroso (velarana, sisiny, centroïde) amin'ny Turf.js ary fisehoana angon-drakitra amin'ny Chart.js. React 19 + TypeScript, Redux Toolkit, React Query, Material-UI ary Vite.",
+    "aug_2025_oct_2025": "Aogositra 2025 - Oktobra 2025",
+
+    "ninth_box_title": "Holding amin'ny Orinasa Maromaro",
+    "ninth_box_role": "Mpitarika Ara-teknika & Mpamorona Rafitra Fullstack",
+    "ninth_box_description": "Famoronana vahaolana web fullstack natao manokana ho valin'ny filàna manokan'ny mpanjifa amin'ny orinasa maromaro ao anatin'ny holding. Fitarihana ara-teknika ny tetikasa manontolo: rafitra, fanaraha-maso ny ekipa ary fanaterana ara-potoana. Famolavolana rafitra logiciel azo itarina sy mora kojakojaina, mifanaraka amin'ny fepetra ara-barotra. Fiaraha-miasa mivantana amin'ny mpiantsehatra mba hampifanaraka ny fampandrosoana amin'ny tanjona stratejika. Stack: React, Next.js, TypeScript, Symfony, PHP 8, Docker, API REST ary IA agentique.",
 
     "jul_2025_present": "Jul. 2025 - Ankehitriny",
     "fifth_box_title": "Lead Teknika & PMO — AI sy Sarintany Fotoana Tena",
@@ -1490,6 +1582,30 @@ const translations = {
 
       "popup_image59title": "Chart.js — Fisehoana Tontolo Iainana",
       "popup_image59": "Chart.js (react-chartjs-2) mampiseho angon-drakitra tontolo iainana: grafika NDVI, histograma fampiasana tany ary setriny ara-toetrandro, mifandray amin'ny faritra voafantina amin'ny sarintany.",
+
+      "popup_image60title": "React — Rafitra Composants",
+      "popup_image60": "React no manamboatra ny interface amin'ny vahaolana natao manokana ho an'ny orinasan'ny holding: composants azo averina ampiasaina, fitantanana state voafehy ary UX mivantana. Rafitra modular izay manafaingana ny fanaterana sady mora kojakojaina manerana ny tetikasa rehetra.",
+
+      "popup_image61title": "Next.js — Rindrambaiko Fullstack",
+      "popup_image61": "Next.js no fototra fullstack: rendering SSR/SSG ho an'ny hafainganam-pandeha sy SEO, App Router, API routes ary server actions. Mamela rindrambaiko azo itarina mifanaraka amin'ny fepetra ara-barotr'ny orinasa tsirairay.",
+
+      "popup_image62title": "TypeScript — Typage Statique",
+      "popup_image62": "TypeScript miantoka ny fahamafisana sy ny fahamora-kojakojaina ny kaody manerana ny tetikasa maro: typage hentitra ny modely ara-barotra, contrat API ary composants. Anton-javatra lehibe ho an'ny fanaterana azo antoka sy ny famindrana mora amin'ny ekipa.",
+
+      "popup_image63title": "Symfony — Backend Mafy Orina",
+      "popup_image63": "Symfony no mitondra ny backend: rafitra misy sosona, services misaraka, fiarovana ary kalitaon'ny kaody. Ny firafiny dia mamporisika fototra azo itarina sy mora kojakojaina mifanaraka amin'ny filàna manokan'ny mpanjifa.",
+
+      "popup_image64title": "PHP 8 — Fiteny Server",
+      "popup_image64": "PHP 8 (types, attributes, enums, JIT) no mampandeha ny lojika server amin'ny rindrambaiko. Fototra maoderina sy mahomby izay manohana ny fitarihana ara-teknika amin'ny famolavolana sy fanaraha-maso ny fampandrosoana.",
+
+      "popup_image65title": "Docker — Conteneurisation",
+      "popup_image65": "Docker miantoka tontolo azo averina avy amin'ny fampandrosoana ka hatramin'ny famokarana: conteneurisation ny services, orchestration an-toerana ary deploiement azo antoka. Fitaovana ho an'ny firindrana mba hanaterana ara-potoana manerana ny orinasa maromaro.",
+
+      "popup_image66title": "API REST — Rafitra API",
+      "popup_image66": "Ny API REST no manamboatra ny fifanakalozana eo amin'ny frontend, backend ary services hafa: endpoints mazava, versionné ary voasoratra. Manampy hampifanaraka ny fampandrosoana amin'ny tanjona stratejika sy hampiditra ny rafitra maharitra.",
+
+      "popup_image67title": "IA Agentique — Agents Mahaleo Tena",
+      "popup_image67": "Fampidirana IA agentique ho fototry ny vahaolana atolotra: agents mahaleo tena afaka misaina, mandrindra ary manatanteraka asa misy dingana maro (orchestration fitaovana, antso API, RAG amin'ny angona ara-barotra). Mitondra automatisation hendry ho an'ny vokatry ny orinasan'ny holding ity singa ity, manomboka amin'ny copilote anaty rindrambaiko ka hatramin'ny automatisation workflow, sady mihazona ny olombelona ao anatin'ny dingana ho an'ny fanaraha-maso sy ny fahatokisana.",
 
       //service
     "authentification_securisee": "Fanamarinana voaaro",

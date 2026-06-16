@@ -139,7 +139,11 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Récupérer les données du formulaire
     const nom = document.getElementById('nom').value;
     const email = document.getElementById('email').value;
-    const telephone = document.getElementById('telephone').value;
+    const phoneInput = document.getElementById('telephone');
+    // Numéro complet au format international (+261 34 ...) fourni par intl-tel-input.
+    const telephone = (window.itiPhone && phoneInput.value.trim())
+        ? window.itiPhone.getNumber()
+        : phoneInput.value;
     const message = document.getElementById('message').value;
 
     startLoading();

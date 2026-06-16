@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Champ téléphone international (intl-tel-input) — formulaire de contact
+   S'adapte automatiquement aux thèmes clair/sombre via les variables du site.
+   ========================================================================== */
+
+/* Le conteneur iti (qui enveloppe l'input) occupe toute la largeur du champ. */
+.iti {
+  display: block;
+  width: 100%;
+}
+
+.input-wrapper--phone .iti__tel-input {
+  width: 100%;
+}
+
+/* Sélecteur de pays (drapeau + indicatif) à gauche du champ. */
+.iti__selected-dial-code {
+  color: var(--color-primary);
+}
+
+.input-wrapper--phone .iti__selected-country:hover,
+.input-wrapper--phone .iti__selected-country:focus {
+  background-color: rgba(127, 127, 127, 0.12);
+  border-radius: var(--radius-12, 12px) 0 0 var(--radius-12, 12px);
+}
+
+/* Liste déroulante des pays. */
+.iti__country-list {
+  background-color: var(--bg-secondary);
+  color: var(--color-primary);
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.iti__country {
+  color: var(--color-primary);
+}
+
+.iti__country.iti__highlight {
+  background-color: rgba(127, 127, 127, 0.18);
+}
+
+.iti__dial-code {
+  color: var(--color-secondary);
+}
+
+/* Recherche de pays dans le déroulant. */
+.iti__search-input {
+  background-color: var(--input-bg);
+  color: var(--color-primary);
+  border-bottom: 1px solid rgba(127, 127, 127, 0.25);
+}
+
+.iti__no-results {
+  color: var(--color-secondary);
+}
+
+/* Numéro saisi mais invalide. */
+.input-field.iti-invalid {
+  outline: 1px solid #e3342f;
+}
+
+/* ==========================================================================
+   Empilement du déroulant des pays
+   --------------------------------------------------------------------------
+   Dans #contact-form, chaque .form-wrapper porte la classe .animate qui
+   applique en permanence filter: blur(0) ET un transform : chacun crée donc
+   son propre contexte d'empilement. Le panneau déroulant (.iti__country-selector,
+   z-index: 2 par défaut) reste alors prisonnier du contexte du champ téléphone
+   et passe SOUS les champs suivants (message, bouton), qui — placés plus loin
+   dans le DOM — sont peints au-dessus. Résultat : on ne voit pas les pays et le
+   clic « traverse » vers l'élément du dessus, ce qui referme le déroulant.
+
+   Solution : élever le bloc du champ actif au-dessus de ses voisins, et porter
+   le panneau au premier plan dans son propre contexte.
+   ========================================================================== */
+#contact-form .form-wrapper:focus-within {
+  position: relative;
+  z-index: 100;
+}
+
+.iti__country-selector {
+  z-index: 1000;
+}

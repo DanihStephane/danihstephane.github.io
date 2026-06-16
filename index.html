@@ -38,6 +38,8 @@
             rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/animation.css">
     <link rel="stylesheet" href="assets/css/progress-loader.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.1.0/dist/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./assets/css/phoneInput.css">
 </head>
 
 <body id="top" class="dark_theme">
@@ -907,6 +909,64 @@
                     </div>
                     <div class="company">
                         <span class="company__year" data-translate="nov_2025_present">Nov. 2025 - Présent</span>
+                        <h3 class="company__title" data-translate="ninth_box_title">Holding sur Plusieurs Entités</h3>
+                        <span class="company__title" data-translate="ninth_box_role">Lead Technique &amp; Architecte Fullstack</span>
+                        <ul class="company__experience">
+                            <li data-translate="ninth_box_description">Développement de solutions web fullstack sur mesure et leadership technique multi-entités.</li>
+                        </ul>
+                        <ul class="company__skills">
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/React — Architecture Composants.jpg" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image60" style="display: none;"></p>
+                                <p data-translate="popup_image60title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/Next.js — Applications Fullstack.jpg" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image61" style="display: none;"></p>
+                                <p data-translate="popup_image61title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/TypeScript — Typage Statique.png" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image62" style="display: none;"></p>
+                                <p data-translate="popup_image62title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/Symfony — Backend Robuste.jpg" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image63" style="display: none;"></p>
+                                <p data-translate="popup_image63title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/PHP 8 — Langage Serveur.png" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image64" style="display: none;"></p>
+                                <p data-translate="popup_image64title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/Docker — Conteneurisation.png" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image65" style="display: none;"></p>
+                                <p data-translate="popup_image65title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/API REST — Architecture API.jpg" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image66" style="display: none;"></p>
+                                <p data-translate="popup_image66title" style="display: none;"></p>
+                            </li>
+                            <li><img class="popup-image hover-target"
+                                     src="./assets/images/EXPERIENCE/Holding — Direction Technique Multi-Entités/IA Agentique — Agents Autonomes.png" width="80px"
+                                     style="border-radius: 5%;" data-description="">
+                                <p data-translate="popup_image67" style="display: none;"></p>
+                                <p data-translate="popup_image67title" style="display: none;"></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="company">
+                        <span class="company__year" data-translate="aug_2025_oct_2025">Août 2025 - Octobre 2025</span>
                         <h3 class="company__title" data-translate="eighth_box_title">Agentic IA &amp; Analyse Géospatiale</h3>
                         <span class="company__title" data-translate="eighth_box_role">Projet AGREETECH</span>
                         <ul class="company__experience">
@@ -1899,10 +1959,9 @@
                     </div>
                     <div class="form-wrapper animate" style="--i:3;">
                         <label for="telephone" class="form-label" data-translate="phone_form">Phone</label>
-                        <div class="input-wrapper">
-                            <input data-translate="optional" type="tel" name="phone" id="telephone"
-                                   placeholder="Phone Number" class="input-field">
-                            <ion-icon name="call"></ion-icon>
+                        <div class="input-wrapper input-wrapper--phone">
+                            <input type="tel" name="phone" id="telephone"
+                                   autocomplete="tel" class="input-field">
                         </div>
                     </div>
                     <div class="form-wrapper animate" style="--i:4;">
@@ -2463,6 +2522,8 @@
 <script src="./assets/js/cursor.js"></script>
 <script src="./assets/js/animation.js"></script>
 <script src="./assets/js/traduction.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.1.0/dist/js/intlTelInputWithUtils.min.js"></script>
+<script src="./assets/js/phoneInput.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="./assets/js/email.js"></script>
 <script src="assets/js/getInTouchButton.js"></script>

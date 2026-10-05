@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./assets/css/modalProject.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/floatGif.css">
+    <link rel="stylesheet" href="./assets/css/requestModal.css">
     <!--
       - google font link
     -->
@@ -235,18 +236,18 @@
                     </a>
                 </li>
                 <li class="animate hover-target" style="--i:1;">
-                    <a href="#about" class="stats-card">
+                    <a href="#portfolio" class="stats-card" data-request-modal="projects">
                         <div class="card-icon">
                             <img src="./assets/images/stats-card_icon-2.png" alt="Checkmark icon">
                         </div>
                         <h2 class="h2 card-title">
-                            10+ <strong data-translate="completed_projects">Completed Projects</strong>
+                            20+ <strong data-translate="completed_projects">Completed Projects</strong>
                         </h2>
                         <ion-icon name="chevron-forward-outline"></ion-icon>
                     </a>
                 </li>
                 <li class="animate hover-target" style="--i:2;">
-                    <a href="#about" class="stats-card">
+                    <a href="#contact" class="stats-card" data-request-modal="clients">
                         <div class="card-icon">
                             <img src="./assets/images/stats-card_icon-3.png" alt="Peoples rating icon">
                         </div>
@@ -296,7 +297,7 @@
                                 <button class="btn btn-secondary animate hover-target" style="--i:2;"><span
                                         style="color: white;" data-translate="hire_me">Hire me</span></button>
                             </a>
-                            <a href="./assets/CVRakotoarisonHarilantoDanihStephane.pdf" target="_blank">
+                            <a href="mailto:danih.rakotoarison@gmail.com?subject=Demande%20de%20CV%20%E2%80%93%20Danih%20Stephane" data-request-modal="cv">
                                 <button class="btn btn-primary animate hover-target" style="--i:3;"
                                         data-translate="download_cv">Download cv
                                 </button>
@@ -2528,6 +2529,7 @@
 <script src="./assets/js/email.js"></script>
 <script src="assets/js/getInTouchButton.js"></script>
 <script src="./assets/js/modalProject.js"></script>
+<script src="./assets/js/requestModal.js"></script>
 <script src="./assets/js/footer.js"></script>
 <script src="./assets/js/floatGif.js"></script>
 

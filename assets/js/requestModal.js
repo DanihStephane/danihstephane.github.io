@@ -17,7 +17,7 @@
             clientsLabel: 'clients satisfaits',
             confidential: 'NDA',
             projectsTitle: 'Les vrais projets clients se présentent en entretien',
-            projectsLead: 'Plus de <strong>20 projets livrés</strong> pour <strong>7 clients</strong>, dont la plupart sont couverts par des accords de confidentialité. Leurs noms, leurs interfaces et leurs chiffres ne peuvent pas être publiés ici.',
+            projectsLead: 'Plus de <strong>19 projets livrés</strong> pour <strong>9 clients</strong>, dont la plupart sont couverts par des accords de confidentialité. Leurs noms, leurs interfaces et leurs chiffres ne peuvent pas être publiés ici.',
             projectsPoints: [
                 ['desktop-outline', 'Les projets réels, avec démonstrations et captures autorisées'],
                 ['git-network-outline', 'Les choix d\'architecture et les contraintes rencontrées'],
@@ -50,7 +50,7 @@
             clientsLabel: 'happy clients',
             confidential: 'NDA',
             projectsTitle: 'Real client projects are presented in an interview',
-            projectsLead: 'More than <strong>20 projects delivered</strong> for <strong>7 clients</strong>, most of them covered by non-disclosure agreements. Their names, interfaces and figures can\'t be published here.',
+            projectsLead: 'More than <strong>19 projects delivered</strong> for <strong>9 clients</strong>, most of them covered by non-disclosure agreements. Their names, interfaces and figures can\'t be published here.',
             projectsPoints: [
                 ['desktop-outline', 'The real projects, with demos and approved screenshots'],
                 ['git-network-outline', 'The architecture decisions and the constraints faced'],
@@ -83,7 +83,7 @@
             clientsLabel: 'zufriedene Kunden',
             confidential: 'NDA',
             projectsTitle: 'Echte Kundenprojekte stelle ich im persönlichen Gespräch vor',
-            projectsLead: 'Über <strong>20 abgeschlossene Projekte</strong> für <strong>7 Kunden</strong>, die meisten davon unter Geheimhaltungsvereinbarung. Namen, Oberflächen und Kennzahlen dürfen hier nicht veröffentlicht werden.',
+            projectsLead: 'Über <strong>19 abgeschlossene Projekte</strong> für <strong>9 Kunden</strong>, die meisten davon unter Geheimhaltungsvereinbarung. Namen, Oberflächen und Kennzahlen dürfen hier nicht veröffentlicht werden.',
             projectsPoints: [
                 ['desktop-outline', 'Die echten Projekte, mit Demos und freigegebenen Screenshots'],
                 ['git-network-outline', 'Architekturentscheidungen und die Rahmenbedingungen'],
@@ -116,7 +116,7 @@
             clientsLabel: 'mpanjifa faly',
             confidential: 'NDA',
             projectsTitle: 'Aseho mandritra ny resadresaka manokana ireo tetikasan\'ny mpanjifa tena izy',
-            projectsLead: 'Tetikasa <strong>maherin\'ny 20 vita</strong> ho an\'ny <strong>mpanjifa 7</strong>, ary ny ankamaroany dia voafehin\'ny fifanarahana tsiambaratelo. Tsy azo avoaka eto ny anarany, ny endriny ary ny tarehimarika mifandraika aminy.',
+            projectsLead: 'Tetikasa <strong>maherin\'ny 19 vita</strong> ho an\'ny <strong>mpanjifa 9</strong>, ary ny ankamaroany dia voafehin\'ny fifanarahana tsiambaratelo. Tsy azo avoaka eto ny anarany, ny endriny ary ny tarehimarika mifandraika aminy.',
             projectsPoints: [
                 ['desktop-outline', 'Ireo tetikasa tena izy, miaraka amin\'ny fampisehoana sy sary nahazoana alalana'],
                 ['git-network-outline', 'Ny safidy ara-drafitra sy ireo fameperana nosedraina'],
@@ -194,8 +194,8 @@
                 </div>
             </div>
             <div class="rq-art-caption">
-                <div class="rq-figure" data-rq-figure="projects"><strong>20+</strong><span></span></div>
-                <div class="rq-figure" data-rq-figure="clients"><strong>7+</strong><span></span></div>
+                <div class="rq-figure" data-rq-figure="projects"><strong>19+</strong><span></span></div>
+                <div class="rq-figure" data-rq-figure="clients"><strong>9+</strong><span></span></div>
             </div>
         </div>`;
 
